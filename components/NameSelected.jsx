@@ -3,7 +3,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import India from "../pages/api/decrypt";
 // import India from "../pages/api/inida";
-import NumerologyDetails from "./../components/NameSelectedComponents/NumerologyDetails";
+import NumerologyDetails from "../components/NameSelectedComponents/NumerologyDetails";
 
 const NameSelected = () => {
   const router = useRouter();
