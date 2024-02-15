@@ -351,10 +351,27 @@ const TableData = () => {
                     <th scope="col" className="px-4 py-3">
                       Name
                     </th>
-                    {selectedCulture && (
-                      <>
+                    {selectedCulture &&
+                      selectedCulture.toLowerCase() !== "all" && (
+                        <>
+                          <th scope="col" className="px-4 py-3">
+                            Name in{" "}
+                            {selectedCulture
+                              ? `${
+                                  selectedCulture.charAt(0).toUpperCase() +
+                                  selectedCulture.slice(1)
+                                } Language`
+                              : "Default Language"}
+                          </th>
+                        </>
+                      )}
+                    <th scope="col" className="px-4 py-3">
+                      Meaning
+                    </th>
+                    {selectedCulture &&
+                      selectedCulture.toLowerCase() !== "all" && (
                         <th scope="col" className="px-4 py-3">
-                          Name in{" "}
+                          Meaning in{" "}
                           {selectedCulture
                             ? `${
                                 selectedCulture.charAt(0).toUpperCase() +
@@ -362,22 +379,7 @@ const TableData = () => {
                               } Language`
                             : "Default Language"}
                         </th>
-                      </>
-                    )}
-                    <th scope="col" className="px-4 py-3">
-                      Meaning
-                    </th>
-                    {selectedCulture && (
-                      <th scope="col" className="px-4 py-3">
-                        Meaning in{" "}
-                        {selectedCulture
-                          ? `${
-                              selectedCulture.charAt(0).toUpperCase() +
-                              selectedCulture.slice(1)
-                            } Language`
-                          : "Default Language"}
-                      </th>
-                    )}
+                      )}
                     <th scope="col" className="px-4 py-3">
                       Pronunciation
                     </th>
@@ -400,21 +402,23 @@ const TableData = () => {
                             {Name}
                           </Link>
                         </td>
-                        {selectedCulture && (
-                          <>
-                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                              {Language}
-                            </td>
-                          </>
-                        )}
+                        {selectedCulture &&
+                          selectedCulture.toLowerCase() !== "all" && (
+                            <>
+                              <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {Language}
+                              </td>
+                            </>
+                          )}
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           {MeaningOfName}
                         </td>
-                        {selectedCulture && (
-                          <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {MeaningInLanguage}
-                          </td>
-                        )}
+                        {selectedCulture &&
+                          selectedCulture.toLowerCase() !== "all" && (
+                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              {MeaningInLanguage}
+                            </td>
+                          )}
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           <button
                             className="buttonStyle border border-transparent hover:border-slate-500 p-1 rounded-lg dark:hover:border-slate-100"
