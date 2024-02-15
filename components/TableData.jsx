@@ -159,7 +159,7 @@ const TableData = () => {
   ) => {
     let cultureParam = culture.toLowerCase();
     setSelectedCulture(cultureParam);
-    const genderParam = gender || "";
+    const genderParam = gender || "boy";
     const letterParam = letter || "";
 
     let url = "/india/";
@@ -172,7 +172,6 @@ const TableData = () => {
 
     url += `${genderParam}/${letterParam}`;
 
-    console.log("Constructed URL:", url);
     router.push(url);
   };
 
