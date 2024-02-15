@@ -11,7 +11,7 @@ const CategoriesList = () => {
   const router = useRouter();
 
   const handleCultureClick = (culture) => {
-    const url = `/india/${culture}`;
+    const url = `/indian/${culture}-baby-names`;
     router.push(url);
   };
 

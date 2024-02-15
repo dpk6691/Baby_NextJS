@@ -5,7 +5,6 @@ import Link from "next/link";
 import LetterSearch from "./CommonComponents/LetterSearch";
 import GenderSearch from "./CommonComponents/GenderSearch";
 import India from "../pages/api/decrypt";
-// import India from "../pages/api/india";
 
 const itemsPerPage = 50;
 const pagesToShow = 3;
@@ -60,9 +59,11 @@ const TableData = () => {
           ? Gender.toLowerCase() === selectedGender
           : true;
         const matchesCulture =
-          !selectedCulture || selectedCulture === "All Cultures"
+          selectedCulture.toLowerCase() === "" ||
+          selectedCulture.toLowerCase() === "all"
             ? true
-            : Culture === selectedCulture;
+            : Culture.toLowerCase() === selectedCulture.toLowerCase();
+
         return (
           startsWithSelectedLetter &&
           searchPattern.test(Name) &&
@@ -136,19 +137,19 @@ const TableData = () => {
     setLastSelectedLetter(letter);
     setSearchInput("");
     const cultureParam = selectedCulture
-      ? selectedCulture.toLowerCase()
-      : "all";
+      ? `${selectedCulture.toLowerCase()}-baby-names`
+      : "all-baby-names";
     const genderParam = selectedGender || "boy";
-    router.push(`/india/${cultureParam}/${genderParam}/${letter}`);
+    router.push(`/indian/${cultureParam}/${genderParam}/${letter}`);
   };
 
   const handleGenderSelect = (gender) => {
     setSelectedGender(gender);
     const cultureParam = selectedCulture
-      ? selectedCulture.toLowerCase()
-      : "all";
+      ? `${selectedCulture.toLowerCase()}-baby-names`
+      : "all-baby-names";
     router.push(
-      `/india/${cultureParam}/${gender || "boy"}/${selectedLetter || ""}`
+      `/indian/${cultureParam}/${gender || "boy"}/${selectedLetter || ""}`
     );
   };
 
@@ -162,12 +163,12 @@ const TableData = () => {
     const genderParam = gender || "boy";
     const letterParam = letter || "";
 
-    let url = "/india/";
+    let url = "/indian/";
 
     if (cultureParam !== "") {
-      url += `${cultureParam}/`;
+      url += `${cultureParam}-baby-names/`;
     } else {
-      url += "all/";
+      url += "all-baby-names/";
     }
 
     url += `${genderParam}/${letterParam}`;
@@ -177,10 +178,18 @@ const TableData = () => {
 
   useEffect(() => {
     const cultureParam = router.query.culture;
-    if (cultureParam && uniqueCultures.includes(cultureParam.toLowerCase())) {
-      setSelectedCulture(cultureParam.toLowerCase());
-    } else {
-      setSelectedCulture(""); // Reset selected culture if not valid
+    if (cultureParam) {
+      if (cultureParam.includes("baby-names")) {
+        // Extract culture name without "baby-names"
+        const cultureName = cultureParam.replace("-baby-names", "");
+        setSelectedCulture(cultureName.toLowerCase());
+      } else if (cultureParam === "all-baby-names") {
+        setSelectedCulture(""); // Set selected culture to empty string for "all" option
+      } else if (uniqueCultures.includes(cultureParam.toLowerCase())) {
+        setSelectedCulture(cultureParam.toLowerCase());
+      } else {
+        setSelectedCulture(""); // Reset selected culture if not valid
+      }
     }
   }, [router.query, uniqueCultures]);
 
@@ -315,17 +324,19 @@ const TableData = () => {
                   htmlFor="cultures"
                   className="block text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Select Dipak Cultures
+                  Select Cultures
                 </label>
                 <select
                   id="cultures"
-                  value={selectedCulture}
-                  onChange={(e) => handleSelectCulture(e.target.value)}
+                  value={selectedCulture} // Ensure this is bound to selectedCulture
+                  onChange={(e) => handleSelectCulture(e.target.value)} // Pass the selected value to handleSelectCulture
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                 >
                   <option value="">All</option>
                   {uniqueCultures.map((culture) => (
                     <option key={culture} value={culture}>
+                      {" "}
+                      {/* Ensure the value is set to culture */}
                       {culture.charAt(0).toUpperCase() + culture.slice(1)}
                     </option>
                   ))}
@@ -343,20 +354,32 @@ const TableData = () => {
                     {selectedCulture && (
                       <>
                         <th scope="col" className="px-4 py-3">
-                          Gujarati
+                          Name in{" "}
+                          {selectedCulture
+                            ? `${
+                                selectedCulture.charAt(0).toUpperCase() +
+                                selectedCulture.slice(1)
+                              } Language`
+                            : "Default Language"}
                         </th>
                       </>
                     )}
                     <th scope="col" className="px-4 py-3">
-                      Meaning of Name
+                      Meaning
                     </th>
                     {selectedCulture && (
                       <th scope="col" className="px-4 py-3">
-                        Meaning In Language
+                        Meaning in{" "}
+                        {selectedCulture
+                          ? `${
+                              selectedCulture.charAt(0).toUpperCase() +
+                              selectedCulture.slice(1)
+                            } Language`
+                          : "Default Language"}
                       </th>
                     )}
                     <th scope="col" className="px-4 py-3">
-                      Pronounce
+                      Pronunciation
                     </th>
                   </tr>
                 </thead>
@@ -371,7 +394,9 @@ const TableData = () => {
                         className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                          <Link href={`/india/name/${Name.toLowerCase()}`}>
+                          <Link
+                            href={`/indian/baby-name/${Name.toLowerCase()}`}
+                          >
                             {Name}
                           </Link>
                         </td>

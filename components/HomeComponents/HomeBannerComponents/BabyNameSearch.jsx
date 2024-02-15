@@ -38,9 +38,9 @@ const BabyNameSearch = () => {
     } else {
       setError("");
       router.push(
-        `/india/all/${selectedGender ? selectedGender.toLowerCase() : ""}/${
-          selectedLetter ? selectedLetter.toLowerCase() : ""
-        }`
+        `/indian/all-baby-names/${
+          selectedGender ? selectedGender.toLowerCase() : ""
+        }/${selectedLetter ? selectedLetter.toLowerCase() : ""}`
       );
     }
   };
