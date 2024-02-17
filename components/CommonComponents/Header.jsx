@@ -2,11 +2,20 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import India from "../../pages/api/decrypt";
+
 import "flowbite";
 
 const Header = () => {
   const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
+
+  const isActive = (path) => {
+    return router.pathname === path;
+  };
+
+  const isIndianActive = () => {
+    return router.pathname.startsWith("/indian/");
+  };
 
   const isClient = typeof window !== "undefined";
 
@@ -35,7 +44,11 @@ const Header = () => {
               <Link href="/">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                   <span className="text-2xl font-semibold whitespace-nowrap dark:text-gray-900">
-                    Dipak
+                    <img
+                      className="w-60 m-auto max-h-screen py-4"
+                      src="/images/logo.png"
+                      alt="Logo"
+                    />
                   </span>
                 </div>
               </Link>
@@ -44,7 +57,7 @@ const Header = () => {
                   <input
                     type="search"
                     id="default-search"
-                    className="block w-full py-3 pr-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Name..."
                     required
                     value={searchValue}
@@ -58,13 +71,13 @@ const Header = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                       stroke="currentColor"
-                      class="w-6 h-6"
+                      className="w-6 h-6 hover:stroke-pink-500 stroke-blue-500"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                       />
                     </svg>
@@ -100,17 +113,20 @@ const Header = () => {
                 className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
                 id="navbar-search"
               >
-                <ul className="flex flex-col md:flex-row px-4 py-2 font-medium rounded-lg space-x-8 rtl:space-x-reverse">
+                <ul className="flex flex-col md:flex-row px-4 py-2 font-medium rounded-lg space-x-3 rtl:space-x-reverse">
                   <li>
                     <Link href="/">
-                      <div className="drop-shadow-xl bg-white text-gray-900 shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:bg-white hover:text-gray-900">
+                      <div className="block py-1 px-3 ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           strokeWidth="1.5"
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className={`w-6 h-6 hover:stroke-pink-500 ${
+                            isActive("/") &&
+                            "hover:stroke-blue-500 stroke-blue-500"
+                          }`}
                         >
                           <path
                             strokeLinecap="round"
@@ -125,7 +141,11 @@ const Header = () => {
                     <button
                       id="indian-button"
                       data-dropdown-toggle="indian"
-                      className="flex items-center drop-shadow-xl shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:bg-white hover:text-gray-900 dark:text-white"
+                      className={
+                        isIndianActive()
+                          ? "flex py-1 px-3 items-center hover:text-blue-500 text-blue-500"
+                          : "flex py-1 px-3 items-center hover:text-pink-500"
+                      }
                     >
                       Indian
                       <svg
@@ -152,7 +172,7 @@ const Header = () => {
                         {uniqueCultures.map((culture, index) => (
                           <li key={index}>
                             <div
-                              className="min-w-28 flex items-center py-2 cursor-pointer inline-block hover:font-bold"
+                              className="min-w-28 flex items-center py-2 cursor-pointer inline-block hover:text-pink-500"
                               onClick={() => handleCultureClick(culture)}
                             >
                               <svg
@@ -181,7 +201,11 @@ const Header = () => {
                     <button
                       id="tools"
                       data-dropdown-toggle="tools-dropdown"
-                      className="flex items-center drop-shadow-xl shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:bg-white hover:text-gray-900 dark:text-white"
+                      className={
+                        isActive("/tools")
+                          ? "flex py-1 px-3 items-center hover:text-blue-500 text-blue-500"
+                          : "flex py-1 px-3 items-center hover:text-pink-500"
+                      }
                     >
                       Tools
                       <svg
@@ -249,29 +273,44 @@ const Header = () => {
                     </div>
                   </li>
                   <li>
-                    <Link href="https://blog.xyz.com">
-                      <div className="text-gray-900 shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:text-gray-900">
+                    <Link href="https://www.google.com">
+                      <div className="block py-1 px-3 hover:text-pink-500">
                         Blog
                       </div>
                     </Link>
                   </li>
                   <li>
                     <Link href="/advertise-with-us">
-                      <div className="text-gray-900 shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:text-gray-900">
+                      <div
+                        className={`block py-1 px-3 hover:text-pink-500 ${
+                          isActive("/advertise-with-us") &&
+                          "hover:text-blue-500 text-blue-500"
+                        }`}
+                      >
                         Advertise with us
                       </div>
                     </Link>
                   </li>
                   <li>
                     <Link href="/write-for-us">
-                      <div className="text-gray-900 shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:text-gray-900">
+                      <div
+                        className={`block py-1 px-3 hover:text-pink-500 ${
+                          isActive("/write-for-us") &&
+                          "hover:text-blue-500 text-blue-500"
+                        }`}
+                      >
                         Write for us
                       </div>
                     </Link>
                   </li>
                   <li>
                     <Link href="/contact-us">
-                      <div className="text-gray-900 shadow-black block py-1 px-3 text-gray-900 rounded-xl hover:text-gray-900">
+                      <div
+                        className={`block py-1 px-3 hover:text-pink-500 ${
+                          isActive("/contact-us") &&
+                          "hover:text-blue-500 text-blue-500"
+                        }`}
+                      >
                         Contact
                       </div>
                     </Link>
