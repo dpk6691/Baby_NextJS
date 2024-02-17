@@ -11,16 +11,16 @@ const BabyNameSearch = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    fetch("https://ipapi.co/json/")
-      .then((res) => res.json())
-      .then((response) => {
-        setCountryData(response);
-      })
-      .catch((error) => {
-        console.log("Request failed:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://ipapi.co/json/")
+  //     .then((res) => res.json())
+  //     .then((response) => {
+  //       setCountryData(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Request failed:", error);
+  //     });
+  // }, []);
 
   const handleGenderSelect = (gender) => {
     setSelectedGender(gender);
@@ -46,44 +46,65 @@ const BabyNameSearch = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 content-center place-items-center lg:mt-0">
-      <h2 className="text-4xl mb-2 dark:text-gray-900 text-center">
-        Largest Collection of
-      </h2>
-      <h1 className="text-6xl font-black dark:text-gray-900 text-center">
-        Baby Names
-      </h1>
-
+    <div className="grid grid-cols-1 content-center place-items-center">
       <GenderSearch genderSelected={handleGenderSelect} />
 
       <LetterSearch onSelectLetter={handleLetterSelect} />
 
-      {countryData && (
-        <div className="mt-9">
-          {error && <p className="text-red-500">{error}</p>}
-          {!error && (
-            <>
-              <p>Country: {countryData.country_name}</p>
-              <p className="mb-7">Region: {countryData.region}</p>
-              {!selectedGender || !selectedLetter ? (
-                <button
-                  className="py-2 px-4 drop-shadow-xl shadow-black text-2xl font-medium rounded-xl bg-gray-500 cursor-not-allowed"
-                  disabled
+      {/* {countryData && ( */}
+      <div className="mt-9">
+        {error && <p className="text-red-500">{error}</p>}
+        {!error && (
+          <>
+            {/* <p>Country: {countryData.country_name}</p>
+            <p className="mb-7">Region: {countryData.region}</p> */}
+            {!selectedGender || !selectedLetter ? (
+              <button
+                className="flex items-center py-2 px-4 drop-shadow-xl shadow-black text-2xl font-medium rounded-xl bg-gray-500 cursor-not-allowed"
+                disabled
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 pr-2 stroke-state-500"
                 >
-                  Search
-                </button>
-              ) : (
-                <button
-                  className="py-2 px-4 drop-shadow-xl shadow-black text-2xl font-medium rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white"
-                  onClick={handleSearch}
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  ></path>
+                </svg>{" "}
+                Search
+              </button>
+            ) : (
+              <button
+                className="flex items-center py-2 px-4 drop-shadow-xl shadow-black text-2xl font-medium rounded-xl bg-gray-900 text-white"
+                onClick={handleSearch}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-8 h-8 pr-2 stroke-state-500"
                 >
-                  Search
-                </button>
-              )}
-            </>
-          )}
-        </div>
-      )}
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  ></path>
+                </svg>{" "}
+                Search
+              </button>
+            )}
+          </>
+        )}
+      </div>
+      {/* )} */}
     </div>
   );
 };

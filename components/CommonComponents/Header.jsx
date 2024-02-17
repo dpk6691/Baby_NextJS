@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import India from "../../pages/api/decrypt";
-
 import "flowbite";
 
 const Header = () => {
@@ -40,16 +39,14 @@ const Header = () => {
       <header className="fixed z-50 w-full bg-transparent backdrop-blur-xl">
         <div className="w-11/12 m-auto">
           <nav className="border-gray-200 ">
-            <div className="flex flex-wrap items-center justify-between mx-auto py-4">
+            <div className="flex flex-wrap items-center justify-between mx-auto py-3  ">
               <Link href="/">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
-                  <span className="text-2xl font-semibold whitespace-nowrap dark:text-gray-900">
-                    <img
-                      className="w-60 m-auto max-h-screen py-4"
-                      src="/images/logo.png"
-                      alt="Logo"
-                    />
-                  </span>
+                  <img
+                    className="w-60 m-auto max-h-screen py-4"
+                    src="/images/logo.png"
+                    alt="Logo"
+                  />
                 </div>
               </Link>
               <div className="flex md:order-2">
@@ -166,7 +163,7 @@ const Header = () => {
                     </button>
                     <div
                       id="indian"
-                      className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700"
+                      className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md dark:border-gray-700 dark:bg-gray-700"
                     >
                       <ul className="p-4 flex w-96 flex-wrap">
                         {uniqueCultures.map((culture, index) => (

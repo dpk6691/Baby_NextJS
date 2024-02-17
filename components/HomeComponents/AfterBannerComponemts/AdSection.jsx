@@ -1,5 +1,5 @@
 const AdSection = () => {
-  return <div className="googlead"></div>;
+  return <div className="text-xl font-semibold">Advertise with us</div>;
 };
 
 export default AdSection;

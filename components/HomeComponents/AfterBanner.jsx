@@ -1,39 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import AdSection from "./AfterBannerComponemts/AdSection";
-import PopularCategory from "./AfterBannerComponemts/PopularCategory";
 
 const AfterBanner = () => {
-  // State to track clicks for each culture
-  const [cultureClicks, setCultureClicks] = useState({});
-
-  const handleCultureClick = (culture) => {
-    console.log("Culture clicked:", culture);
-    setCultureClicks((prevClicks) => {
-      const updatedClicks = {
-        ...prevClicks,
-        [culture]: (prevClicks[culture] || 0) + 1,
-      };
-
-      // Log the updated state
-      // console.log("Updated culture clicks:", updatedClicks);
-
-      return updatedClicks;
-    });
-  };
-
-  const popularCultures = Object.keys(cultureClicks)
-    .sort((a, b) => cultureClicks[b] - cultureClicks[a])
-    .slice(0, 5);
-
-  // console.log(popularCultures); // Add this line to check popularCultures
-
   return (
-    <div className="w-11/12 m-auto pt-10">
+    <div className="w-11/12 m-auto pt-20">
       <div className="flex justify-between">
-        <AdSection />
-        <PopularCategory popularCultures={popularCultures} />
-
-        <AdSection />
+        <div className="w-9/12">
+          <h1 className="text-2xl mb-2">
+            Largest Collection of<br></br>
+            <span className="text-4xl font-black pb-6 text-blue-500">
+              Baby <b className="text-pink-500">Names</b>
+            </span>
+          </h1>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged.
+          </p>
+          <p className="pt-2">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+        <div className="ml-3 bg-slate-100 rounded-3xl grid place-content-center w-1/4">
+          <AdSection />
+        </div>
       </div>
     </div>
   );

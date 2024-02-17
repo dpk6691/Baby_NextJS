@@ -14,10 +14,10 @@ const HomePage = () => {
   return (
     <>
       <Head>
-        <title>Your Next.js App</title>
+        <title>FirstStep.Baby</title>
         <meta
           name="description"
-          content="Your Next.js application description"
+          content="Your FirstStep.Baby application description"
         />
       </Head>
       {isHomePage ? (
