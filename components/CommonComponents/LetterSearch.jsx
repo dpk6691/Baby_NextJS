@@ -20,9 +20,9 @@ const LetterSearch = ({ activeLetter, onSelectLetter }) => {
             key={letter}
             className={`inline-flex items-center cursor-pointer w-8 flex justify-center ${
               active === letter
-                ? "text-white bg-gray-900 shadow-xl "
-                : "bg-white text-gray-900 drop-shadow-xl shadow-black"
-            } py-1 px-3 rounded-xl hover:text-white hover:bg-gray-900`}
+                ? "text-white bg-gray-900"
+                : "bg-white text-gray-900 border-2  hover:bg-gray-500"
+            } py-1 px-3 rounded-xl hover:text-white`}
             onClick={() => getLetter(letter)}
           >
             {letter.toUpperCase()}

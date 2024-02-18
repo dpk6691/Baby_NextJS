@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import GenderSearch from "../../CommonComponents/GenderSearch";
+import India from "../../../pages/api/decrypt";
 import LetterSearch from "../../CommonComponents/LetterSearch";
 import { useRouter } from "next/router";
 
 const BabyNameSearch = () => {
-  const [countryData, setCountryData] = useState(null);
+  // const [countryData, setCountryData] = useState(null);
   const [selectedGender, setSelectedGender] = useState(null);
   const [selectedLetter, setSelectedLetter] = useState(null);
   const [error, setError] = useState("");
 
   const router = useRouter();
+
+  const allEntries = Object.values(India).flat();
+  const uniqueCultures = [
+    ...new Set(allEntries.map((entry) => entry.Culture.toLowerCase())),
+  ];
 
   // useEffect(() => {
   //   fetch("https://ipapi.co/json/")
@@ -33,21 +39,48 @@ const BabyNameSearch = () => {
   };
 
   const handleSearch = () => {
-    if (!selectedGender || !selectedLetter) {
-      setError("Please select both gender and letter.");
+    let url = "/indian/";
+
+    const cultureSelect = document.getElementById("underline_select");
+    const selectedCulture =
+      cultureSelect.options[cultureSelect.selectedIndex].value.toLowerCase();
+    if (selectedCulture !== "all") {
+      url += `${selectedCulture}-`;
     } else {
-      setError("");
-      router.push(
-        `/indian/all-baby-names/${
-          selectedGender ? selectedGender.toLowerCase() : ""
-        }/${selectedLetter ? selectedLetter.toLowerCase() : ""}`
-      );
+      url += "all-";
     }
+
+    url += "baby-names/";
+
+    url += `${selectedGender ? selectedGender.toLowerCase() : ""}/${
+      selectedLetter ? selectedLetter.toLowerCase() : ""
+    }`;
+
+    router.push(url);
   };
 
   return (
-    <div className="grid grid-cols-1 content-center place-items-center">
-      <GenderSearch genderSelected={handleGenderSelect} />
+    <div className="grid p-9 bg-white rounded-xl grid-cols-1 content-center place-items-center">
+      <div className="grid grid-cols-2">
+        <GenderSearch genderSelected={handleGenderSelect} />
+
+        <form className="max-w-sm mx-auto">
+          <label htmlfor="underline_select" className="sr-only">
+            Underline select
+          </label>
+          <select
+            id="underline_select"
+            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-xl font-medium rounded-2xl border-2 border-gray-100 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white focus:border-gray-50 "
+          >
+            <option selected>All</option>
+            {uniqueCultures.map((culture, index) => (
+              <option key={index} value={culture}>
+                {culture.charAt(0).toUpperCase() + culture.slice(1)}
+              </option>
+            ))}
+          </select>
+        </form>
+      </div>
 
       <LetterSearch onSelectLetter={handleLetterSelect} />
 
@@ -58,43 +91,61 @@ const BabyNameSearch = () => {
           <>
             {/* <p>Country: {countryData.country_name}</p>
             <p className="mb-7">Region: {countryData.region}</p> */}
+
             {!selectedGender || !selectedLetter ? (
-              <button
-                className="flex items-center py-2 px-4 drop-shadow-xl shadow-black text-2xl font-medium rounded-xl bg-gray-500 cursor-not-allowed"
-                disabled
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-8 h-8 pr-2 stroke-state-500"
+              <div className="text-center">
+                <button
+                  className="m-auto flex items-center py-2 px-4 text-2xl font-medium rounded-xl bg-slate-200 text-slate-400 cursor-not-allowed"
+                  disabled
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                  ></path>
-                </svg>{" "}
-                Search
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-8 h-8 pr-2 stroke-state-500"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    ></path>
+                  </svg>{" "}
+                  Search
+                </button>
+
+                <div className="mt-3">
+                  <div className="bg-pink-50 text-sm rounded-full px-4 py-2">
+                    <svg
+                      className="flex-shrink-0 inline w-4 h-4 mr-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                    </svg>
+                    Kindly select Gender and Letter both
+                  </div>
+                </div>
+              </div>
             ) : (
               <button
-                className="flex items-center py-2 px-4 drop-shadow-xl shadow-black text-2xl font-medium rounded-xl bg-gray-900 text-white"
+                className="flex items-center py-2 px-4 text-2xl font-medium rounded-xl bg-gray-900 text-white"
                 onClick={handleSearch}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
-                  class="w-8 h-8 pr-2 stroke-state-500"
+                  className="w-8 h-8 pr-2 stroke-state-500"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                   ></path>
                 </svg>{" "}

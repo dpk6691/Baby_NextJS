@@ -1,5 +1,5 @@
 import React from "react";
-import India from "../../../pages/api/decrypt";
+import India from "../../pages/api/decrypt";
 // import India from "../../../pages/api/india";
 import { useRouter } from "next/router";
 
@@ -17,13 +17,13 @@ const CategoriesList = () => {
 
   return (
     <div className="grid grid-cols-1 content-center justify-items-end">
-      <div className="shadow-lg border-4 bg-white/35 w-12/12 border-black-500/100 dark:border-white-500/100 p-4 rounded-3xl dark:bg-black/35 lg:w-11/12">
-        <h2 className="text-4xl mb-3 dark:text-white">All Categories</h2>
-        <ul className="overflow-auto flex flex-wrap gap-4 dark:text-white">
+      <div className="bg-pink-50 p-10 mt-20 rounded-3xl w-11/12 m-auto">
+        <h2 className="text-2xl mb-8 text-center">Select by Culture</h2>
+        <ul className="overflow-auto grid grid-cols-5 gap-5">
           {uniqueCultures.map((culture, index) => (
             <li key={index}>
               <div
-                className="min-w-24 cursor-pointer inline-block hover:font-bold"
+                className="min-w-24 bg-pink-200 text-center rounded-3xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-pink-500 hover:text-white"
                 onClick={() => handleCultureClick(culture)}
               >
                 {culture.charAt(0).toUpperCase() + culture.slice(1)}

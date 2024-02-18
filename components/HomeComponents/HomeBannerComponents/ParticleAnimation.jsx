@@ -48,29 +48,50 @@ const ParticleAnimation = () => {
       return;
     }
 
+    const tempCanvas = document.createElement("canvas");
+    const tempContext = tempCanvas.getContext("2d");
+
     const w = window.innerWidth;
     const h = window.innerHeight / 3;
     canvas.width = w;
     canvas.height = h;
 
     selectedNames.forEach((name) => {
-      string_handle(name, words, w, h);
+      string_handle(name, words, tempContext, w, h);
     });
 
     if (canvas.getContext) {
       const c = canvas.getContext("2d");
 
       function animation() {
+        c.clearRect(0, 0, w, h);
+
         const wordKeys = Object.keys(words);
-        for (let i = wordKeys.length - 1; i >= 0; i--) {
+        wordKeys.sort((a, b) => {
+          const wordA = words[a];
+          const wordB = words[b];
+          const colorOrder =
+            getColorOrder(wordA.color) - getColorOrder(wordB.color);
+          if (colorOrder !== 0) return colorOrder;
+          return wordB.text.length - wordA.text.length;
+        });
+
+        for (let i = 0; i < wordKeys.length; i++) {
           const word = words[wordKeys[i]];
           c.font = word.font;
-          c.fillStyle = word.color; // Set fill color based on word color
+          c.fillStyle = word.color;
           c.fillText(word.text, word.x, word.y);
-          c.strokeStyle = word.color; // Set stroke color based on word color
-          c.strokeText(word.text, word.x, word.y); // Add stroke for better visibility
+          c.strokeStyle = word.color;
+          c.strokeText(word.text, word.x, word.y);
         }
         move();
+      }
+
+      function getColorOrder(color) {
+        if (color === "rgb(244 114 182)") return 30;
+        else if (color === "rgb(249 168 212)") return 20;
+        else if (color === "rgb(251 207 232)") return 10;
+        else return 0;
       }
 
       function move() {
@@ -78,31 +99,28 @@ const ParticleAnimation = () => {
           const word = words[key];
           if (word.direction === 1) {
             if (word.x > w) {
-              word.x = -Math.random() * 100; // Start from the left side of the canvas
-              word.y = Math.random() * h;
+              word.x = -word.width;
             } else {
-              word.x += word.speed; // Move from left to right
+              word.x += word.speed;
             }
           } else {
-            if (word.x < -100) {
-              word.x = w; // Start from the right side of the canvas
-              word.y = Math.random() * h;
+            if (word.x < -word.width) {
+              word.x = w;
             } else {
-              word.x -= word.speed; // Move from right to left
+              word.x -= word.speed;
             }
           }
         }
       }
 
       const intervalId = setInterval(() => {
-        c.clearRect(0, 0, w, h);
         animation();
       }, 24);
 
       return () => clearInterval(intervalId);
     }
 
-    function string_handle(str, words) {
+    function string_handle(str, words, tempContext, canvasWidth, canvasHeight) {
       if (typeof str !== "string") {
         return;
       }
@@ -111,32 +129,41 @@ const ParticleAnimation = () => {
       for (let i = 0; i < split_str.length; i++) {
         const word = split_str[i];
         let fontSize, color;
-        if (word.length <= 5) {
-          fontSize = Math.floor(Math.random() * 20) + 10; // Small font size
-          color = "rgb(51 65 85)"; // Small font color
-        } else if (word.length <= 8) {
-          fontSize = Math.floor(Math.random() * 30) + 20; // Medium font size
-          color = "rgb(100 116 139)"; // Medium font color
+        if (word.length >= 8) {
+          fontSize = Math.floor(Math.random() * 20) + 10;
+          color = "rgb(251 207 232)";
+        } else if (word.length >= 6) {
+          fontSize = Math.floor(Math.random() * 30) + 20;
+          color = "rgb(249 168 212)";
         } else {
-          fontSize = Math.floor(Math.random() * 40) + 30; // Large font size
-          color = "rgb(148 163 184)"; // Large font color
+          fontSize = Math.floor(Math.random() * 40) + 30;
+          color = "rgb(244 114 182)";
         }
         const speed = Math.random() * 2 + 0.5;
 
+        tempContext.font = `${fontSize}px Arial`;
+        const width = tempContext.measureText(word).width;
+
+        const maxY = canvasHeight - fontSize;
+
+        const x = Math.random() * (canvasWidth - width);
+        const y = Math.random() * (maxY - fontSize) + fontSize;
+
         words[word] = {
           text: word,
-          x: Math.random() * w,
-          y: Math.random() * h,
+          x: x,
+          y: y,
           font: `${fontSize}px Arial`,
           speed: speed,
           direction: Math.random() < 0.5 ? -1 : 1,
           color: color,
+          width: width,
         };
       }
     }
   }, []);
 
-  return <canvas className="bg-slate-900" ref={canvasRef} id="c"></canvas>;
+  return <canvas className="bg-pink-50" ref={canvasRef} id="c"></canvas>;
 };
 
 export default ParticleAnimation;

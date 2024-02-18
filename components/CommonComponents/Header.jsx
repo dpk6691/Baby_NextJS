@@ -54,7 +54,7 @@ const Header = () => {
                   <input
                     type="search"
                     id="default-search"
-                    className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
                     placeholder="Name..."
                     required
                     value={searchValue}
@@ -84,7 +84,7 @@ const Header = () => {
                 <button
                   data-collapse-toggle="navbar-search"
                   type="button"
-                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                   aria-controls="navbar-search"
                   aria-expanded="false"
                 >
@@ -163,7 +163,7 @@ const Header = () => {
                     </button>
                     <div
                       id="indian"
-                      className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md dark:border-gray-700 dark:bg-gray-700"
+                      className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md"
                     >
                       <ul className="p-4 flex w-96 flex-wrap">
                         {uniqueCultures.map((culture, index) => (
@@ -223,18 +223,18 @@ const Header = () => {
                     </button>
                     <div
                       id="tools-dropdown"
-                      className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700"
+                      className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md"
                     >
-                      <div className="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                      <div className="p-4 pb-0 text-gray-900 md:pb-4">
                         <ul className="space-y-4" aria-labelledby="tools">
                           <li>
                             <a
                               href="#"
-                              className="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
+                              className="flex items-center text-gray-500 hover:text-blue-600"
                             >
                               <span className="sr-only">About us</span>
                               <svg
-                                className="w-3 h-3 me-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                className="w-3 h-3 me-2 text-gray-400 group-hover:text-blue-600"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -248,11 +248,11 @@ const Header = () => {
                           <li>
                             <a
                               href="#"
-                              className="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group"
+                              className="flex items-center text-gray-500 hover:text-blue-600 group"
                             >
                               <span className="sr-only">Library</span>
                               <svg
-                                className="w-3 h-3 me-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                className="w-3 h-3 me-2 text-gray-400 group-hover:text-blue-600"
                                 aria-hidden="true"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
