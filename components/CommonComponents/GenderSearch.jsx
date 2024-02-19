@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 const GenderSearch = ({ genderSelected }) => {
   const router = useRouter();
-  const { gender } = router.query; // Extract gender param from URL
+  const { gender } = router.query;
   const [selectedGender, setSelectedGender] = useState(gender || null);
 
   useEffect(() => {

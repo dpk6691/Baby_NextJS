@@ -40,17 +40,17 @@ const Header = () => {
         <div className="w-11/12 m-auto">
           <nav className="border-gray-200 ">
             <div className="flex flex-wrap items-center justify-between mx-auto py-3  ">
-              <Link href="/">
+              <Link href="/" className="w-full md:w-auto">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                   <img
-                    className="w-60 m-auto max-h-screen py-4"
+                    className="w-60 m-auto max-h-screen py-2 md:py-4"
                     src="/images/logo.png"
                     alt="Logo"
                   />
                 </div>
               </Link>
-              <div className="flex md:order-2">
-                <div className="max-w-md mx-auto relative">
+              <div className="flex justify-between md:order-2 w-full md:w-auto">
+                <div className="max-w-md md:mx-auto relative">
                   <input
                     type="search"
                     id="default-search"
@@ -110,7 +110,7 @@ const Header = () => {
                 className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
                 id="navbar-search"
               >
-                <ul className="flex flex-col md:flex-row px-4 py-2 font-medium rounded-lg space-x-3 rtl:space-x-reverse">
+                <ul className="flex flex-col mt-5 md:mt-0 md:flex-row md:px-4 py-2 font-medium rounded-lg space-y-3 md:space-y-0 md:space-x-3 rtl:space-x-reverse">
                   <li>
                     <Link href="/">
                       <div className="block py-1 px-3 ">
@@ -165,7 +165,7 @@ const Header = () => {
                       id="indian"
                       className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md"
                     >
-                      <ul className="p-4 flex w-96 flex-wrap">
+                      <ul className="p-4 flex md:w-96 flex-wrap">
                         {uniqueCultures.map((culture, index) => (
                           <li key={index}>
                             <div
@@ -225,7 +225,7 @@ const Header = () => {
                       id="tools-dropdown"
                       className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md"
                     >
-                      <div className="p-4 pb-0 text-gray-900 md:pb-4">
+                      <div className="p-4 pb-0 text-gray-900 pb-4">
                         <ul className="space-y-4" aria-labelledby="tools">
                           <li>
                             <a

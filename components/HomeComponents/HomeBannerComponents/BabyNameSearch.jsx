@@ -61,10 +61,10 @@ const BabyNameSearch = () => {
 
   return (
     <div className="grid p-9 bg-white rounded-xl grid-cols-1 content-center place-items-center">
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2">
         <GenderSearch genderSelected={handleGenderSelect} />
 
-        <form className="max-w-sm mx-auto">
+        <form className="max-w-sm mx-auto mt-5 md:mt-0">
           <label htmlfor="underline_select" className="sr-only">
             Underline select
           </label>

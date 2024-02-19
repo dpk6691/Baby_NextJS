@@ -3,9 +3,9 @@ import AdSection from "./AfterBannerComponemts/AdSection";
 
 const AfterBanner = () => {
   return (
-    <div className="w-11/12 m-auto pt-14">
-      <div className="flex justify-between">
-        <div className="w-9/12">
+    <div className="w-11/12 m-auto pt-5 md:pt-14">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="md:w-9/12">
           <h1 className="text-2xl mb-2">
             Largest Collection of<br></br>
             <span className="text-4xl font-black pb-6 text-blue-500">
@@ -40,7 +40,7 @@ const AfterBanner = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
-        <div className="ml-5 bg-gray-50 rounded-3xl grid place-content-center w-1/4">
+        <div className="ml-0 md:ml-5 mt-5 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center md:w-1/4">
           <AdSection />
         </div>
       </div>

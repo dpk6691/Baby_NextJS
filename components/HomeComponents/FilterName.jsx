@@ -10,8 +10,8 @@ const FilterName = () => {
   return (
     <>
       <div className="w-11/12 m-auto pt-14">
-        <div className="flex justify-between">
-          <div className="w-9/12">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="md:w-9/12">
             <div className="text-sm text-center">
               <ul className="flex flex-wrap">
                 <li className="basis-1/2">
@@ -97,7 +97,7 @@ const FilterName = () => {
               </div>
             </div>
           </div>
-          <div className="ml-5 bg-gray-50 rounded-3xl grid place-content-center w-1/4">
+          <div className="md:ml-5 mt-5 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center md:w-1/4">
             <AdSection />
           </div>
         </div>
