@@ -17,7 +17,7 @@ const CategoriesList = () => {
 
   return (
     <div className="grid grid-cols-1 content-center justify-items-end">
-      <div className="bg-pink-50 p-10 mt-20 rounded-3xl w-11/12 m-auto">
+      <div className="bg-pink-50 p-10 mt-14 rounded-3xl w-11/12 m-auto">
         <h2 className="text-2xl mb-8 text-center">Select by Culture</h2>
         <ul className="overflow-auto grid grid-cols-5 gap-5">
           {uniqueCultures.map((culture, index) => (

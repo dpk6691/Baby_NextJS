@@ -3,7 +3,7 @@ import AdSection from "./AfterBannerComponemts/AdSection";
 
 const AfterBanner = () => {
   return (
-    <div className="w-11/12 m-auto pt-20">
+    <div className="w-11/12 m-auto pt-14">
       <div className="flex justify-between">
         <div className="w-9/12">
           <h1 className="text-2xl mb-2">
@@ -40,7 +40,7 @@ const AfterBanner = () => {
             PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
-        <div className="ml-3 bg-blue-50 rounded-3xl grid place-content-center w-1/4">
+        <div className="ml-5 bg-gray-50 rounded-3xl grid place-content-center w-1/4">
           <AdSection />
         </div>
       </div>
