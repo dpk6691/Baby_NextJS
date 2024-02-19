@@ -17,10 +17,10 @@ const FilterName = () => {
                 <li className="basis-1/2">
                   <a
                     href="JavaScript:void(0)"
-                    className={`w-full bg-blue-50 inline-block text-2xl rounded-t-3xl p-4 border-b-4 border-blue-200 ${
+                    className={`w-full inline-block text-2xl rounded-t-3xl p-4 border-b-4 border-blue-200 ${
                       activeTab === "filter"
-                        ? "border-blue-800 bg-blue-200"
-                        : "hover:border-pink-300"
+                        ? "border-blue-200 bg-blue-200"
+                        : "hover:border-pink-300 bg-blue-50"
                     }`}
                     onClick={() => setActiveTab("filter")}
                   >
@@ -30,10 +30,10 @@ const FilterName = () => {
                 <li className="basis-1/2">
                   <a
                     href="JavaScript:void(0)"
-                    className={`w-full bg-blue-50 inline-block text-2xl rounded-t-3xl p-4 border-b-4 border-blue-200 ${
+                    className={`w-full inline-block text-2xl rounded-t-3xl p-4 border-b-4 border-blue-200 ${
                       activeTab === "name"
-                        ? "border-blue-800 bg-blue-200"
-                        : "hover:border-pink-300"
+                        ? "border-blue-200 bg-blue-200"
+                        : "hover:border-pink-300 bg-blue-50 "
                     }`}
                     onClick={() => setActiveTab("name")}
                   >
