@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import India from "../../pages/api/decrypt";
+import Image from "next/image";
+import logo from "./../../public/images/logo.png";
 import "flowbite";
 
 const Header = () => {
@@ -42,9 +44,9 @@ const Header = () => {
             <div className="flex flex-wrap items-center justify-between mx-auto py-3  ">
               <Link href="/" className="w-full md:w-auto">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
-                  <img
+                  <Image
                     className="w-60 m-auto max-h-screen py-2 md:py-4"
-                    src="/images/logo.png"
+                    src={logo}
                     alt="Logo"
                   />
                 </div>
