@@ -47,7 +47,7 @@ const FilterName = () => {
                 <BabyNameSearch />
               </div>
               <div className={activeTab === "name" ? "block" : "hidden"}>
-                <div className="grid p-9 bg-white rounded-xl grid-cols-1 ">
+                <div className="grid p-5 md:p-9 bg-white rounded-xl grid-cols-1 ">
                   <p>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
@@ -65,7 +65,7 @@ const FilterName = () => {
                     <div className="w-96 mt-5 relative">
                       <input
                         type="search"
-                        id="default-search"
+                        id="default-search-filter"
                         className="rounded-xl text-xl block bg-pink-50 w-full py-3 pr-12 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
                         placeholder="Name..."
                         required
@@ -104,8 +104,8 @@ const FilterName = () => {
       </div>
 
       <div className="w-11/12 m-auto pt-14">
-        <div class="bg-gray-50 rounded-3xl grid place-content-center w-full">
-          <div class="text-xl min-h-20 grid place-content-center font-semibold">
+        <div className="bg-gray-50 rounded-3xl grid place-content-center w-full">
+          <div className="text-xl min-h-20 grid place-content-center font-semibold">
             <p>Advertise with us</p>
           </div>
         </div>

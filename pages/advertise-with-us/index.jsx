@@ -4,8 +4,8 @@ import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdS
 const index = () => {
   return (
     <div className="w-11/12 m-auto pt-28">
-      <div className="flex justify-between">
-        <div className="bg-pink-50 p-10 rounded-3xl w-9/12">
+      <div className="flex justify-between flex-col md:flex-row">
+        <div className="bg-pink-50 p-10 rounded-3xl md:w-9/12">
           <h1 className="text-2xl mb-8 text-center">
             {" "}
             For advertising enquiries contact:
@@ -34,7 +34,7 @@ const index = () => {
             </div>
           </dl>
         </div>
-        <div className="ml-5 bg-gray-50 rounded-3xl grid place-content-center w-1/4">
+        <div className="md:ml-5 mt-5 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center md:w-1/4">
           <AdSection />
         </div>
       </div>

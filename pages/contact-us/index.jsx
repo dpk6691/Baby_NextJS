@@ -3,8 +3,8 @@ import React from "react";
 const Contact = () => {
   return (
     <>
-      <div className="w-11/12 m-auto pt-28">
-        <div className="gap-6 grid-cols-2 grid">
+      <div className="w-11/12 m-auto pt-32">
+        <div className="gap-6 md:grid-cols-2 grid">
           <div className="grid place-content-center">
             <span className="mb-4 block text-base font-semibold text-primary">
               Contact Us

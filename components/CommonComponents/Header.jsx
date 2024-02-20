@@ -9,6 +9,7 @@ import "flowbite";
 const Header = () => {
   const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
+  const [isNavbarSearchOpen, setIsNavbarSearchOpen] = useState(false); // State to control the visibility of navbar search
 
   const isActive = (path) => {
     return router.pathname === path;
@@ -36,6 +37,10 @@ const Header = () => {
     router.push(url);
   };
 
+  const hideMenuClick = () => {
+    document.querySelector("#navbar-search").classList.add("hidden");
+  };
+
   return (
     <>
       <header className="fixed z-50 w-full bg-transparent backdrop-blur-xl">
@@ -45,6 +50,7 @@ const Header = () => {
               <Link href="/" className="w-full md:w-auto">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                   <Image
+                    onClick={hideMenuClick}
                     className="w-60 m-auto max-h-screen py-2 md:py-4"
                     src={logo}
                     alt="Logo"
@@ -55,7 +61,7 @@ const Header = () => {
                 <div className="max-w-md md:mx-auto relative">
                   <input
                     type="search"
-                    id="default-search"
+                    id="default-search-header"
                     className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
                     placeholder="Name..."
                     required
@@ -86,7 +92,7 @@ const Header = () => {
                 <button
                   data-collapse-toggle="navbar-search"
                   type="button"
-                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
                   aria-controls="navbar-search"
                   aria-expanded="false"
                 >
@@ -114,7 +120,7 @@ const Header = () => {
               >
                 <ul className="flex flex-col mt-5 md:mt-0 md:flex-row md:px-4 py-2 font-medium rounded-lg space-y-3 md:space-y-0 md:space-x-3 rtl:space-x-reverse">
                   <li>
-                    <Link href="/">
+                    <Link href="/" onClick={hideMenuClick}>
                       <div className="block py-1 px-3 ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +175,7 @@ const Header = () => {
                     >
                       <ul className="p-4 flex md:w-96 flex-wrap">
                         {uniqueCultures.map((culture, index) => (
-                          <li key={index}>
+                          <li key={index} onClick={hideMenuClick}>
                             <div
                               className="min-w-28 flex items-center py-2 cursor-pointer inline-block hover:text-pink-500"
                               onClick={() => handleCultureClick(culture)}
@@ -235,15 +241,6 @@ const Header = () => {
                               className="flex items-center text-gray-500 hover:text-blue-600"
                             >
                               <span className="sr-only">About us</span>
-                              <svg
-                                className="w-3 h-3 me-2 text-gray-400 group-hover:text-blue-600"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                              >
-                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                              </svg>
                               About Us
                             </a>
                           </li>
@@ -253,17 +250,6 @@ const Header = () => {
                               className="flex items-center text-gray-500 hover:text-blue-600 group"
                             >
                               <span className="sr-only">Library</span>
-                              <svg
-                                className="w-3 h-3 me-2 text-gray-400 group-hover:text-blue-600"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                              >
-                                <path d="m1.56 6.245 8 3.924a1 1 0 0 0 .88 0l8-3.924a1 1 0 0 0 0-1.8l-8-3.925a1 1 0 0 0-.88 0l-8 3.925a1 1 0 0 0 0 1.8Z" />
-                                <path d="M18 8.376a1 1 0 0 0-1 1v.163l-7 3.434-7-3.434v-.163a1 1 0 0 0-2 0v.786a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.786a1 1 0 0 0-1-1Z" />
-                                <path d="M17.993 13.191a1 1 0 0 0-1 1v.163l-7 3.435-7-3.435v-.163a1 1 0 1 0-2 0v.787a1 1 0 0 0 .56.9l8 3.925a1 1 0 0 0 .88 0l8-3.925a1 1 0 0 0 .56-.9v-.787a1 1 0 0 0-1-1Z" />
-                              </svg>
                               Library
                             </a>
                           </li>
@@ -279,7 +265,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/advertise-with-us">
+                    <Link href="/advertise-with-us" onClick={hideMenuClick}>
                       <div
                         className={`block py-1 px-3 hover:text-pink-500 ${
                           isActive("/advertise-with-us") &&
@@ -303,7 +289,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact-us">
+                    <Link href="/contact-us" onClick={hideMenuClick}>
                       <div
                         className={`block py-1 px-3 hover:text-pink-500 ${
                           isActive("/contact-us") &&
