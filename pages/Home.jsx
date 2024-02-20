@@ -7,7 +7,7 @@ import CategoriesList from "../components/HomeComponents/CategoriesList";
 const Home = () => {
   return (
     <>
-      <HomeBanner />
+      {/* <HomeBanner /> */}
       <AfterBanner />
       <CategoriesList />
       <FilterName />
