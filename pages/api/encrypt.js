@@ -1,4 +1,4 @@
-import India from "./India.json";
+import India from "./JsonMinify.json";
 import CryptoJS from "crypto-js";
 
 const IndiaData = India;
