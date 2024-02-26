@@ -9,7 +9,6 @@ import "flowbite";
 const Header = () => {
   const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
-  const [isNavbarSearchOpen, setIsNavbarSearchOpen] = useState(false); // State to control the visibility of navbar search
 
   const isActive = (path) => {
     return router.pathname === path;
@@ -236,13 +235,13 @@ const Header = () => {
                       <div className="p-4 pb-0 text-gray-900 pb-4">
                         <ul className="space-y-4" aria-labelledby="tools">
                           <li>
-                            <a
-                              href="#"
+                            <Link
+                              href="/tools/rashi"
                               className="flex items-center text-gray-500 hover:text-blue-600"
                             >
-                              <span className="sr-only">About us</span>
-                              About Us
-                            </a>
+                              <span className="sr-only">Rashi</span>
+                              Rashi
+                            </Link>
                           </li>
                           <li>
                             <a
