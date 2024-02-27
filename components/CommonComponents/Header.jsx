@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import India from "../../pages/api/decrypt";
+import India from "./../../pages/api/India";
 import Image from "next/image";
 import logo from "./../../public/images/logo.png";
 import "flowbite";
 
 const Header = () => {
+  const { IndiaData } = India();
   const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
 
@@ -26,10 +27,16 @@ const Header = () => {
     setShowSearchButton(isClient);
   }, [isClient]);
 
-  const allEntries = Object.values(India).flat();
-  const uniqueCultures = [
-    ...new Set(allEntries.map((entry) => entry.Culture.toLowerCase())),
-  ];
+  const allEntries = Object.values(IndiaData || {}).flat();
+
+  const allCultures = useMemo(
+    () => allEntries.map((entry) => entry.culture),
+    [allEntries]
+  );
+  const uniqueCultures = useMemo(
+    () => [...new Set(allCultures)],
+    [allCultures]
+  );
 
   const handleCultureClick = (culture) => {
     const url = `/indian/${culture}-baby-names`;
@@ -193,8 +200,9 @@ const Header = () => {
                                   d="m8.25 4.5 7.5 7.5-7.5 7.5"
                                 />
                               </svg>
-                              {culture.charAt(0).toUpperCase() +
-                                culture.slice(1)}
+                              {culture &&
+                                culture.charAt(0).toUpperCase() +
+                                  culture.slice(1)}
                             </div>
                           </li>
                         ))}

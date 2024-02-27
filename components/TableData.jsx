@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import LetterSearch from "./CommonComponents/LetterSearch";
 import GenderSearch from "./CommonComponents/GenderSearch";
-import India from "../pages/api/decrypt";
+import India from "./../pages/api/India";
 
 const itemsPerPage = 50;
 const pagesToShow = 3;
@@ -19,6 +19,7 @@ const TableData = () => {
     categories: urlCulture,
   } = router.query;
 
+  const { IndiaData } = India();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInput, setSearchInput] = useState("");
   const [searchWarning, setSearchWarning] = useState(false);
@@ -30,7 +31,7 @@ const TableData = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
 
-  const allEntries = useMemo(() => Object.values(India).flat(), []);
+  const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.Culture),
     [allEntries]

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import GenderSearch from "../../CommonComponents/GenderSearch";
-import India from "../../../pages/api/decrypt";
+import India from "./../../../pages/api/India";
 import LetterSearch from "../../CommonComponents/LetterSearch";
 import { useRouter } from "next/router";
 
 const BabyNameSearch = () => {
+  const { IndiaData } = India();
   // const [countryData, setCountryData] = useState(null);
   const [selectedGender, setSelectedGender] = useState(null);
   const [selectedLetter, setSelectedLetter] = useState(null);
@@ -12,10 +13,16 @@ const BabyNameSearch = () => {
 
   const router = useRouter();
 
-  const allEntries = Object.values(India).flat();
-  const uniqueCultures = [
-    ...new Set(allEntries.map((entry) => entry.Culture.toLowerCase())),
-  ];
+  const allEntries = Object.values(IndiaData || {}).flat();
+
+  const allCultures = useMemo(
+    () => allEntries.map((entry) => entry.culture),
+    [allEntries]
+  );
+  const uniqueCultures = useMemo(
+    () => [...new Set(allCultures)],
+    [allCultures]
+  );
 
   // useEffect(() => {
   //   fetch("https://ipapi.co/json/")
@@ -75,7 +82,7 @@ const BabyNameSearch = () => {
             <option selected>All</option>
             {uniqueCultures.map((culture, index) => (
               <option key={index} value={culture}>
-                {culture.charAt(0).toUpperCase() + culture.slice(1)}
+                {culture && culture.charAt(0).toUpperCase() + culture.slice(1)}
               </option>
             ))}
           </select>

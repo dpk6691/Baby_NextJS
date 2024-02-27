@@ -1,31 +1,31 @@
 import { useEffect, useRef } from "react";
-import India from "./../../../pages/api/decrypt";
+import India from "./../../../pages/api/India";
 
 const ParticleAnimation = () => {
+  const { IndiaData } = India();
   const canvasRef = useRef(null);
+
+  console.log(IndiaData);
 
   useEffect(() => {
     const namesByLetter = {};
 
-    if (India && typeof India === "object") {
-      for (const culture in India) {
-        if (Array.isArray(India[culture]) && India[culture].length > 0) {
-          India[culture].forEach((nameObj) => {
-            if (nameObj && nameObj.Name) {
-              const firstLetter = nameObj.Name[0].toLowerCase();
-              if (!namesByLetter[firstLetter]) {
-                namesByLetter[firstLetter] = [];
-              }
-              namesByLetter[firstLetter].push(nameObj.Name);
-            }
-          });
+    // Process IndiaData to categorize names by their first letter
+    IndiaData.forEach((nameObj) => {
+      if (nameObj && nameObj.name) {
+        // Change from nameObj.Name to nameObj.name
+        const firstLetter = nameObj.name[0].toLowerCase(); // Change from nameObj.Name to nameObj.name
+        if (!namesByLetter[firstLetter]) {
+          namesByLetter[firstLetter] = [];
         }
+        namesByLetter[firstLetter].push(nameObj.name); // Change from nameObj.Name to nameObj.name
       }
-    }
+    });
 
     const alphabet = "abcdefghijklmnopqrstuvwxyz";
     const selectedNames = [];
 
+    // Randomly select names from each category
     for (let i = 0; i < alphabet.length; i++) {
       const letter = alphabet[i];
       const namesStartingWithLetter = namesByLetter[letter];
@@ -131,13 +131,13 @@ const ParticleAnimation = () => {
         let fontSize, color;
         if (word.length >= 8) {
           fontSize = Math.floor(Math.random() * 20) + 10;
-          color = "rgb(251 207 232)";
+          color = "rgb(251, 207, 232)"; // Corrected color format
         } else if (word.length >= 6) {
           fontSize = Math.floor(Math.random() * 30) + 20;
-          color = "rgb(249 168 212)";
+          color = "rgb(249, 168, 212)"; // Corrected color format
         } else {
           fontSize = Math.floor(Math.random() * 40) + 30;
-          color = "rgb(244 114 182)";
+          color = "rgb(244, 114, 182)"; // Corrected color format
         }
         const speed = Math.random() * 2 + 0.5;
 
@@ -161,7 +161,7 @@ const ParticleAnimation = () => {
         };
       }
     }
-  }, []);
+  }, [IndiaData]); // Added IndiaData as dependency
 
   return <canvas className="bg-pink-50" ref={canvasRef} id="c"></canvas>;
 };
