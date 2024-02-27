@@ -1,13 +1,19 @@
-import React from "react";
-import India from "./../../pages/api/decrypt";
+import React, { useMemo } from "react";
+import India from "./../../pages/api/India";
 import { useRouter } from "next/router";
 import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdSection";
 
 const index = () => {
-  const allEntries = Object.values(India).flat();
-  const uniqueCultures = [
-    ...new Set(allEntries.map((entry) => entry.Culture.toLowerCase())),
-  ];
+  const { IndiaData } = India();
+  const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
+  const allCultures = useMemo(
+    () => allEntries.map((entry) => entry.culture),
+    [allEntries]
+  );
+  const uniqueCultures = useMemo(
+    () => [...new Set(allCultures)],
+    [allCultures]
+  );
   const router = useRouter();
 
   const handleCultureClick = (culture) => {
@@ -38,7 +44,8 @@ const index = () => {
                   className="min-w-24 bg-pink-200 text-center rounded-3xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-pink-500 hover:text-white"
                   onClick={() => handleCultureClick(culture)}
                 >
-                  {culture.charAt(0).toUpperCase() + culture.slice(1)}
+                  {culture &&
+                    culture.charAt(0).toUpperCase() + culture.slice(1)}
                 </div>
               </li>
             ))}
