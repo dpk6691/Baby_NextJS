@@ -1,38 +1,43 @@
-// components/NameSelected.jsx
 import React from "react";
 import { useRouter } from "next/router";
 import India from "./../pages/api/India";
-// import India from "../pages/api/inida";
 import NumerologyDetails from "../components/NameSelectedComponents/NumerologyDetails";
 
 const NameSelected = () => {
+  const { IndiaData } = India();
   const router = useRouter();
   const { name } = router.query;
 
   const lowerCaseName = name ? name.toLowerCase() : null;
 
   let selectedName = null;
-  if (lowerCaseName && India) {
-    for (const category in India) {
-      if (India.hasOwnProperty(category)) {
-        for (const entry of India[category]) {
-          if (entry.Name && entry.Name.toLowerCase() === lowerCaseName) {
-            selectedName = entry;
-            break;
+  if (lowerCaseName && IndiaData) {
+    for (const category in IndiaData) {
+      if (IndiaData.hasOwnProperty(category)) {
+        if (Array.isArray(IndiaData[category])) {
+          // Check if it's an array
+          for (const entry of IndiaData[category]) {
+            if (entry.Name && entry.Name.toLowerCase() === lowerCaseName) {
+              selectedName = entry;
+              break;
+            }
           }
         }
-        if (selectedName) break;
       }
+      if (selectedName) break;
     }
   }
 
   const genders = [];
-  if (lowerCaseName && India) {
-    for (const category in India) {
-      if (India.hasOwnProperty(category)) {
-        for (const entry of India[category]) {
-          if (entry.Name && entry.Name.toLowerCase() === lowerCaseName) {
-            genders.push(entry.Gender);
+  if (lowerCaseName && IndiaData) {
+    for (const category in IndiaData) {
+      if (IndiaData.hasOwnProperty(category)) {
+        if (Array.isArray(IndiaData[category])) {
+          // Check if it's an array
+          for (const entry of IndiaData[category]) {
+            if (entry.Name && entry.Name.toLowerCase() === lowerCaseName) {
+              genders.push(entry.Gender);
+            }
           }
         }
       }

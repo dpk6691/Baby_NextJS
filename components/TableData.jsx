@@ -12,14 +12,13 @@ const pagesToShow = 3;
 const TableData = () => {
   const router = useRouter();
   const { culture, gender, letter } = router.query;
-
+  const { IndiaData } = India();
   const {
     gender: urlGender,
     letter: urlLetter,
     categories: urlCulture,
   } = router.query;
 
-  const { IndiaData } = India();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchInput, setSearchInput] = useState("");
   const [searchWarning, setSearchWarning] = useState(false);
@@ -32,14 +31,18 @@ const TableData = () => {
   const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
 
   const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
+
   const allCultures = useMemo(
-    () => allEntries.map((entry) => entry.Culture),
+    () => allEntries.map((entry) => entry.culture),
     [allEntries]
   );
+
   const uniqueCultures = useMemo(
     () => [...new Set(allCultures)],
     [allCultures]
   );
+
+  console.log(uniqueCultures);
 
   const { speak, voices } = useSpeechSynthesis();
 
@@ -50,24 +53,24 @@ const TableData = () => {
 
   useEffect(() => {
     const newFilteredData = allEntries.filter((entry) => {
-      if (entry && entry.Name) {
-        const { Name, Gender, Culture } = entry;
+      if (entry && entry.name) {
+        const { name, gender, culture } = entry; // Use lowercase keys
         const startsWithSelectedLetter =
           !selectedLetter ||
-          Name.toLowerCase().startsWith(selectedLetter.toLowerCase());
+          name.toLowerCase().startsWith(selectedLetter.toLowerCase()); // Use lowercase key and selectedLetter
         const searchPattern = new RegExp(`\\b${searchInput.trim()}`, "i");
         const matchesGender = selectedGender
-          ? Gender.toLowerCase() === selectedGender
-          : true;
+          ? gender.toLowerCase() === selectedGender
+          : true; // Use lowercase key and selectedGender
         const matchesCulture =
           selectedCulture.toLowerCase() === "" ||
           selectedCulture.toLowerCase() === "all"
             ? true
-            : Culture.toLowerCase() === selectedCulture.toLowerCase();
+            : culture.toLowerCase() === selectedCulture.toLowerCase(); // Use lowercase keys and selectedCulture
 
         return (
           startsWithSelectedLetter &&
-          searchPattern.test(Name) &&
+          searchPattern.test(name) &&
           matchesGender &&
           matchesCulture
         );
@@ -75,10 +78,11 @@ const TableData = () => {
       return false;
     });
 
+    console.log(allEntries);
     setFilteredData(newFilteredData);
 
     const uniqueFilteredNames = new Set(
-      newFilteredData.map((entry) => entry.Name)
+      newFilteredData.map((entry) => entry.name)
     );
     setTotalFilteredObjects(uniqueFilteredNames.size);
   }, [
@@ -105,6 +109,8 @@ const TableData = () => {
 
   const visibleData = filteredData.slice(startIndex, endIndex);
 
+  console.log(visibleData);
+
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
@@ -113,7 +119,7 @@ const TableData = () => {
 
   const uniqueVisibleData = visibleData.filter(
     (entry, index, self) =>
-      index === self.findIndex((t) => t.Name === entry.Name)
+      index === self.findIndex((t) => t.name === entry.name)
   );
 
   const handleSearchChange = (event) => {
@@ -329,16 +335,19 @@ const TableData = () => {
                 </label>
                 <select
                   id="cultures"
-                  value={selectedCulture} // Ensure this is bound to selectedCulture
-                  onChange={(e) => handleSelectCulture(e.target.value)} // Pass the selected value to handleSelectCulture
+                  value={selectedCulture || ""} // Ensure a default value if selectedCulture is null or undefined
+                  onChange={(e) => handleSelectCulture(e.target.value)}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5"
                 >
                   <option value="">All</option>
                   {uniqueCultures.map((culture) => (
-                    <option key={culture} value={culture}>
-                      {" "}
-                      {/* Ensure the value is set to culture */}
-                      {culture.charAt(0).toUpperCase() + culture.slice(1)}
+                    <option
+                      key={culture}
+                      value={culture ? culture.toLowerCase() : ""}
+                    >
+                      {culture
+                        ? culture.charAt(0).toUpperCase() + culture.slice(1)
+                        : ""}
                     </option>
                   ))}
                 </select>
@@ -389,7 +398,7 @@ const TableData = () => {
                 <tbody>
                   {uniqueVisibleData.map(
                     (
-                      { Name, MeaningOfName, Language, MeaningInLanguage },
+                      { name, meaning_of_name, language, meaning_in_language },
                       index
                     ) => (
                       <tr
@@ -398,26 +407,26 @@ const TableData = () => {
                       >
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           <Link
-                            href={`/indian/baby-name/${Name.toLowerCase()}`}
+                            href={`/indian/baby-name/${name.toLowerCase()}`}
                           >
-                            {Name}
+                            {name}
                           </Link>
                         </td>
                         {selectedCulture &&
                           selectedCulture.toLowerCase() !== "all" && (
                             <>
                               <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {Language}
+                                {language}
                               </td>
                             </>
                           )}
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                          {MeaningOfName}
+                          {meaning_of_name}
                         </td>
                         {selectedCulture &&
                           selectedCulture.toLowerCase() !== "all" && (
                             <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                              {MeaningInLanguage}
+                              {meaning_in_language}
                             </td>
                           )}
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
