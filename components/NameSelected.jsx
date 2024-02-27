@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import India from "./../pages/api/India";
 import NumerologyDetails from "../components/NameSelectedComponents/NumerologyDetails";
@@ -10,69 +10,81 @@ const NameSelected = () => {
 
   const lowerCaseName = name ? name.toLowerCase() : null;
 
-  let selectedName = null;
+  let selectedNames = [];
+  let genders = [];
+
   if (lowerCaseName && IndiaData) {
-    for (const category in IndiaData) {
-      if (IndiaData.hasOwnProperty(category)) {
-        if (Array.isArray(IndiaData[category])) {
-          // Check if it's an array
-          for (const entry of IndiaData[category]) {
-            if (entry.Name && entry.Name.toLowerCase() === lowerCaseName) {
-              selectedName = entry;
-              break;
-            }
-          }
-        }
+    // Filter IndiaData based on lowercase name
+    selectedNames = IndiaData.filter(
+      (entry) => entry.name && entry.name.toLowerCase() === lowerCaseName
+    );
+
+    // Extract genders from the selected names
+    genders = selectedNames.reduce((acc, curr) => {
+      if (curr.gender && !acc.includes(curr.gender)) {
+        acc.push(curr.gender);
       }
-      if (selectedName) break;
-    }
+      return acc;
+    }, []);
   }
 
-  const genders = [];
-  if (lowerCaseName && IndiaData) {
-    for (const category in IndiaData) {
-      if (IndiaData.hasOwnProperty(category)) {
-        if (Array.isArray(IndiaData[category])) {
-          // Check if it's an array
-          for (const entry of IndiaData[category]) {
-            if (entry.Name && entry.Name.toLowerCase() === lowerCaseName) {
-              genders.push(entry.Gender);
-            }
-          }
-        }
-      }
-    }
-  }
   const uniqueGenders = [...new Set(genders)];
 
   return (
     <div className="container mx-auto pt-24">
-      {selectedName ? (
-        <>
-          <h1 className="text-3xl text-center">
-            Selected Name:{" "}
-            <span className="font-bold">{selectedName.Name}</span>
-          </h1>
-          <p className="mt-4 text-xl text-center">
-            Meaning of {name[0].toUpperCase() + name.slice(1).toLowerCase()}:{" "}
-            <span className="font-bold">{selectedName.MeaningOfName}</span>
-          </p>
-          <p className="text-xl text-center">
-            Gender:{" "}
-            <span className="font-bold">
-              {uniqueGenders.length > 0
-                ? uniqueGenders.join(" / ")
-                : "Not specified"}
-            </span>
-          </p>
-
-          <div className="mt-4 shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35 dark:text-white">
-            <NumerologyDetails lowerCaseName={lowerCaseName} />
-          </div>
-        </>
-      ) : (
-        <p className="text-red-500">Name not found</p>
+      <h1 className="text-3xl mb-4 text-center">
+        Selected Name:{" "}
+        <span className="font-bold">
+          {lowerCaseName &&
+            lowerCaseName.charAt(0).toUpperCase() + lowerCaseName.slice(1)}
+        </span>
+      </h1>
+      {selectedNames.map((entry, index) => (
+        <div key={index}>
+          {/* Display meanings in different cultures */}
+          {Array.isArray(entry.meaning_of_name) ? (
+            entry.meaning_of_name.map((meaning, i) => {
+              if (
+                displayedMeanings[entry.culture] &&
+                displayedMeanings[entry.culture].has(meaning)
+              ) {
+                return null; // Skip rendering duplicate meanings for this culture
+              }
+              if (!displayedMeanings[entry.culture]) {
+                displayedMeanings[entry.culture] = new Set();
+              }
+              displayedMeanings[entry.culture].add(meaning); // Add meaning to displayed set for this culture
+              return (
+                <p key={i} className="mt-4 text-xl text-center">
+                  Meaning of {entry.name} in {entry.culture}:{" "}
+                  <span className="font-bold">{meaning}</span>
+                </p>
+              );
+            })
+          ) : (
+            <p className="my-2 text-xl text-center">
+              Meaning of {entry.name} in {entry.culture}:{" "}
+              <span className="font-bold">{entry.meaning_of_name}</span>
+            </p>
+          )}
+          {index < selectedNames.length - 1 && <hr />}
+        </div>
+      ))}
+      {selectedNames.length === 0 && (
+        <p className="text-red-500 text-center">Name not found</p>
       )}
+      <p className="text-xl text-center">
+        Gender:{" "}
+        <span className="font-bold">
+          {uniqueGenders.length > 0
+            ? uniqueGenders.join(" / ")
+            : "Not specified"}
+        </span>
+      </p>
+      <div className="mt-4 shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35 dark:text-white">
+        {/* Check if name is defined before accessing its properties */}
+        {name && <NumerologyDetails lowerCaseName={lowerCaseName} />}
+      </div>
     </div>
   );
 };
