@@ -17,8 +17,6 @@ const Rashi = () => {
 
   const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
 
-  console.log(allEntries);
-
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
     [allEntries]

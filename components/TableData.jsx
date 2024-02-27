@@ -42,8 +42,6 @@ const TableData = () => {
     [allCultures]
   );
 
-  console.log(uniqueCultures);
-
   const { speak, voices } = useSpeechSynthesis();
 
   useEffect(() => {
@@ -78,7 +76,6 @@ const TableData = () => {
       return false;
     });
 
-    console.log(allEntries);
     setFilteredData(newFilteredData);
 
     const uniqueFilteredNames = new Set(
@@ -108,9 +105,6 @@ const TableData = () => {
   const endIndex = Math.min(startIndex + itemsPerPage, totalFilteredObjects);
 
   const visibleData = filteredData.slice(startIndex, endIndex);
-
-  console.log(visibleData);
-
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);

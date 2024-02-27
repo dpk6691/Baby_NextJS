@@ -5,8 +5,6 @@ const ParticleAnimation = () => {
   const { IndiaData } = India();
   const canvasRef = useRef(null);
 
-  console.log(IndiaData);
-
   useEffect(() => {
     const namesByLetter = {};
 
