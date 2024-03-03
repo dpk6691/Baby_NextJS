@@ -146,11 +146,15 @@ const TableData = () => {
 
   const handleGenderSelect = (gender) => {
     setSelectedGender(gender);
+
+    // Use the last selected letter if available, otherwise default to 'a'
+    const selectedLetterToUse = lastSelectedLetter || "a";
+
     const cultureParam = selectedCulture
       ? `${selectedCulture.toLowerCase()}-baby-names`
       : "all-baby-names";
     router.push(
-      `/indian/${cultureParam}/${gender || "boy"}/${selectedLetter || ""}`
+      `/indian/${cultureParam}/${gender || "boy"}/${selectedLetterToUse}`
     );
   };
 
@@ -240,11 +244,15 @@ const TableData = () => {
         <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
           <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 dark:border-white-500/100 p-4 rounded-3xl dark:bg-black/35">
             <div className="flex items-center justify-evenly">
-              <GenderSearch genderSelected={handleGenderSelect} />
+              <GenderSearch
+                genderSelected={handleGenderSelect}
+                selectedGender={selectedGender}
+              />
             </div>
             <LetterSearch
               activeLetter={selectedLetter}
               onSelectLetter={handleLetterSelect}
+              selectedGender={selectedGender} // Pass the selectedGender prop here
             />
 
             <div className="flex mt-3 flex-col md:flex-row items-center justify-evenly space-y-3 md:space-y-0 md:space-x-4 p-4">

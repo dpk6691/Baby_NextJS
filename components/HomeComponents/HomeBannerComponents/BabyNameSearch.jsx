@@ -69,7 +69,10 @@ const BabyNameSearch = () => {
   return (
     <div className="grid p-5 md:p-9 bg-white rounded-xl grid-cols-1 content-center place-items-center">
       <div className="grid md:grid-cols-2">
-        <GenderSearch genderSelected={handleGenderSelect} />
+        <GenderSearch
+          genderSelected={handleGenderSelect}
+          selectedGender={selectedGender}
+        />
 
         <form className="max-w-sm mx-auto mt-5 md:mt-0">
           <label htmlFor="underline_select" className="sr-only">
@@ -89,7 +92,11 @@ const BabyNameSearch = () => {
         </form>
       </div>
 
-      <LetterSearch onSelectLetter={handleLetterSelect} />
+      <LetterSearch
+        onSelectLetter={handleLetterSelect}
+        selectedLetter={selectedLetter}
+        selectedGender={selectedGender}
+      />
 
       {/* {countryData && ( */}
       <div className="mt-9">

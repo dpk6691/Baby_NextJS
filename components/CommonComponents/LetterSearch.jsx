@@ -1,15 +1,25 @@
 import React, { useState, useEffect } from "react";
 
-const LetterSearch = ({ activeLetter, onSelectLetter }) => {
-  const [active, setActive] = useState(activeLetter);
+const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
+  const [active, setActive] = useState(activeLetter || null);
 
   useEffect(() => {
     setActive(activeLetter);
   }, [activeLetter]);
 
-  const getLetter = (letter) => {
+  const handleLetterClick = (letter) => {
     setActive(letter);
     onSelectLetter(letter);
+  };
+
+  const getBackgroundColor = () => {
+    if (selectedGender === "boy") {
+      return "bg-blue-500";
+    } else if (selectedGender === "girl") {
+      return "bg-pink-500";
+    } else {
+      return "bg-gray-900";
+    }
   };
 
   return (
@@ -20,10 +30,10 @@ const LetterSearch = ({ activeLetter, onSelectLetter }) => {
             key={letter}
             className={`inline-flex items-center cursor-pointer w-8 flex justify-center ${
               active === letter
-                ? "text-white bg-gray-900"
-                : "bg-white text-gray-900 border-2  hover:bg-gray-500"
+                ? "text-white " + getBackgroundColor()
+                : "bg-white text-gray-900 border-2 hover:bg-gray-500"
             } py-1 px-3 rounded-xl hover:text-white`}
-            onClick={() => getLetter(letter)}
+            onClick={() => handleLetterClick(letter)}
           >
             {letter.toUpperCase()}
           </div>
