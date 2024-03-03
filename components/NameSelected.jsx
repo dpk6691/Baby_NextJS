@@ -73,18 +73,22 @@ const NameSelected = () => {
       {selectedNames.length === 0 && (
         <p className="text-red-500 text-center">Name not found</p>
       )}
-      <p className="text-xl text-center">
-        Gender:{" "}
-        <span className="font-bold">
-          {uniqueGenders.length > 0
-            ? uniqueGenders.join(" / ")
-            : "Not specified"}
-        </span>
-      </p>
-      <div className="mt-4 shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35 dark:text-white">
-        {/* Check if name is defined before accessing its properties */}
-        {name && <NumerologyDetails lowerCaseName={lowerCaseName} />}
-      </div>
+      {selectedNames.length > 0 && (
+        <>
+          <p className="text-xl text-center">
+            Gender:{" "}
+            <span className="font-bold">
+              {uniqueGenders.length > 0
+                ? uniqueGenders.join(" / ")
+                : "Not specified"}
+            </span>
+          </p>
+          <div className="mt-4 shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35 dark:text-white">
+            {/* Check if name is defined before accessing its properties */}
+            {name && <NumerologyDetails lowerCaseName={lowerCaseName} />}
+          </div>
+        </>
+      )}
     </div>
   );
 };
