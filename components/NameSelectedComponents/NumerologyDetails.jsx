@@ -68,7 +68,10 @@ const NumerologyDetails = ({ lowerCaseName }) => {
       <p key="numSum" className="pt-1 text-xl text-center">
         Numerology of the name{" "}
         <span className="font-bold">
-          {name[0].toUpperCase() + name.slice(1).toLowerCase()}
+          {lowerCaseName && lowerCaseName.length > 0
+            ? lowerCaseName[0].toUpperCase() +
+              lowerCaseName.slice(1).toLowerCase()
+            : ""}
         </span>{" "}
         is{" "}
         <span className="font-bold">{reduceToSingleDigit(numerologySum)}</span>

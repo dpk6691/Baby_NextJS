@@ -19,6 +19,10 @@ const Header = () => {
     return router.pathname.startsWith("/indian/");
   };
 
+  const isToolsActive = () => {
+    return router.pathname.startsWith("/tools");
+  };
+
   const isClient = typeof window !== "undefined";
 
   const [showSearchButton, setShowSearchButton] = useState(false);
@@ -39,12 +43,29 @@ const Header = () => {
   );
 
   const handleCultureClick = (culture) => {
-    const url = `/indian/${culture}-baby-names`;
+    const url = `/indian/${culture.toLowerCase()}-baby-names`;
     router.push(url);
+    hideMenuClick(); // Call hideMenuClick after clicking on a sub-menu item
   };
 
   const hideMenuClick = () => {
-    document.querySelector("#navbar-search").classList.add("hidden");
+    const navbarSearch = document.getElementById("navbar-search");
+    const indianDropdown = document.getElementById("indian");
+    const toolsDropdown = document.getElementById("tools-dropdown");
+
+    if (navbarSearch) {
+      navbarSearch.classList.add("hidden");
+    }
+    if (indianDropdown) {
+      indianDropdown.classList.add("hidden");
+    }
+    if (toolsDropdown) {
+      toolsDropdown.classList.add("hidden");
+    }
+  };
+
+  const handleToolsItemClick = () => {
+    hideMenuClick();
   };
 
   return (
@@ -214,7 +235,7 @@ const Header = () => {
                       id="tools"
                       data-dropdown-toggle="tools-dropdown"
                       className={
-                        isActive("/tools")
+                        isToolsActive("/tools")
                           ? "flex py-1 px-3 items-center hover:text-blue-500 text-blue-500"
                           : "flex py-1 px-3 items-center hover:text-pink-500"
                       }
@@ -244,6 +265,7 @@ const Header = () => {
                         <ul className="space-y-4" aria-labelledby="tools">
                           <li>
                             <Link
+                              onClick={handleToolsItemClick}
                               href="/tools/rashi"
                               className="flex items-center text-gray-500 hover:text-blue-600"
                             >
@@ -252,13 +274,14 @@ const Header = () => {
                             </Link>
                           </li>
                           <li>
-                            <a
-                              href="#"
-                              className="flex items-center text-gray-500 hover:text-blue-600 group"
+                            <Link
+                              onClick={handleToolsItemClick}
+                              href="/tools/numerology"
+                              className="flex items-center text-gray-500 hover:text-blue-600"
                             >
-                              <span className="sr-only">Library</span>
-                              Library
-                            </a>
+                              <span className="sr-only">Numerology</span>
+                              Numerology
+                            </Link>
                           </li>
                         </ul>
                       </div>

@@ -6,7 +6,42 @@ import AdSection from "./AfterBannerComponemts/AdSection";
 const FilterName = () => {
   const [activeTab, setActiveTab] = useState("filter");
   const [searchValue, setSearchValue] = useState("");
+  const renderDataWithAds = () => {
+    const result = [];
+    let adCounter = 0;
 
+    filteredData.forEach((entry, index) => {
+      result.push(
+        <tr
+          key={index}
+          className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+        >
+          {/* Your existing table row content */}
+        </tr>
+      );
+
+      adCounter++;
+      if (adCounter === 10) {
+        result.push(
+          <tr key={`ad-${index}`} className="border-b dark:border-gray-600">
+            <td colSpan="4" className="px-4 py-6">
+              {/* Advertisement Component */}
+              <div className="w-11/12 m-auto pt-14">
+                <div className="bg-gray-50 rounded-3xl grid place-content-center w-full">
+                  <div className="text-xl min-h-20 grid place-content-center font-semibold">
+                    <p>Advertise with us</p>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        );
+        adCounter = 0; // Reset the ad counter
+      }
+    });
+
+    return result;
+  };
   return (
     <>
       <div className="w-11/12 m-auto pt-14">

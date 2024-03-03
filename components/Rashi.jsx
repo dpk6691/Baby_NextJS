@@ -26,39 +26,49 @@ const Rashi = () => {
     [allCultures]
   );
 
-  const rashiInitials = {
-    Dhanu: ["BH", "F", "DH"],
-    Kanya: ["P", "THA"],
-    Karka: ["DD", "H"],
-    Kumbha: ["G", "S", "Sh"],
-    Makar: ["KH", "J"],
-    Meena: ["D", "CH", "Z", "TH"],
-    Mesha: ["A", "L", "E", "I", "O"],
-    Mithun: ["K", "CHH", "GH", "Q", "C"],
-    Simha: ["M", "TT"],
-    Tula: ["R", "T"],
-    Vrishabha: ["B", "V", "U", "W"],
-    Vruschika: ["N", "Y"],
-  };
+  const rashiInitials = useMemo(
+    () => ({
+      Dhanu: ["BH", "F", "DH"],
+      Kanya: ["P", "THA"],
+      Karka: ["DD", "H"],
+      Kumbha: ["G", "S", "Sh"],
+      Makar: ["KH", "J"],
+      Meena: ["D", "CH", "Z", "TH"],
+      Mesha: ["A", "L", "E", "I", "O"],
+      Mithun: ["K", "CHH", "GH", "Q", "C"],
+      Simha: ["M", "TT"],
+      Tula: ["R", "T"],
+      Vrishabha: ["B", "V", "U", "W"],
+      Vruschika: ["N", "Y"],
+    }),
+    []
+  );
 
-  const rashiZodiacMapping = {
-    Dhanu: "Sagittarius",
-    Kanya: "Virgo",
-    Karka: "Cancer",
-    Kumbha: "Aquarius",
-    Makar: "Capricorn",
-    Meena: "Pisces",
-    Mesha: "Aries",
-    Mithun: "Gemini",
-    Simha: "Leo",
-    Tula: "Libra",
-    Vrishabha: "Taurus",
-    Vruschika: "Scorpio",
-  };
+  const rashiZodiacMapping = useMemo(
+    () => ({
+      Dhanu: "Sagittarius",
+      Kanya: "Virgo",
+      Karka: "Cancer",
+      Kumbha: "Aquarius",
+      Makar: "Capricorn",
+      Meena: "Pisces",
+      Mesha: "Aries",
+      Mithun: "Gemini",
+      Simha: "Leo",
+      Tula: "Libra",
+      Vrishabha: "Taurus",
+      Vruschika: "Scorpio",
+    }),
+    []
+  );
 
   useEffect(() => {
     filterData();
   }, [selectedGender, selectedCulture, selectedRashi, currentPage, allEntries]);
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset to the first page when filters change
+  }, [selectedCulture, selectedRashi]);
 
   const filterData = () => {
     let filtered = allEntries;
@@ -90,14 +100,12 @@ const Rashi = () => {
     }
 
     setFilteredData(filtered);
-    setCurrentPage(1); // Reset to the first page when filters change
   };
 
-  useEffect(() => {
-    filterData();
-  }, [selectedCulture]);
-
-  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const totalPages = useMemo(
+    () => Math.ceil(filteredData.length / itemsPerPage),
+    [filteredData]
+  );
 
   const handlePageChange = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
@@ -110,129 +118,136 @@ const Rashi = () => {
     : [];
 
   return (
-    <section className="pt-24 py-3">
-      <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
-        <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35">
-          <div className="flex justify-between mb-5">
-            <GenderSearch
-              genderSelected={(gender) => {
-                setSelectedGender(gender);
-              }}
-            />
+    <div className="pt-24 px-4 mx-auto max-w-screen-2xl lg:px-12">
+      <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35">
+        <div className="flex justify-between mb-5">
+          <GenderSearch
+            genderSelected={(gender) => {
+              setSelectedGender(gender);
+            }}
+          />
 
-            <select
-              value={selectedCulture}
-              onChange={(e) => {
-                setSelectedCulture(e.target.value);
-              }}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block p-2.5"
-            >
-              <option value="">Select Culture</option>
-              {uniqueCultures.map((culture) => (
-                <option key={culture} value={culture}>
-                  {culture &&
-                    culture.charAt(0).toUpperCase() + culture.slice(1)}
-                </option>
-              ))}
-            </select>
+          <select
+            value={selectedCulture}
+            onChange={(e) => {
+              setSelectedCulture(e.target.value);
+            }}
+            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+          >
+            <option value="">Select Culture</option>
+            {uniqueCultures.map((culture) => (
+              <option key={culture} value={culture}>
+                {culture && culture.charAt(0).toUpperCase() + culture.slice(1)}
+              </option>
+            ))}
+          </select>
 
-            <select
-              value={selectedRashi}
-              onChange={(e) => setSelectedRashi(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block p-2.5"
-            >
-              <option value="">Select Rashi</option>
-              {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
-                <option key={rashi} value={rashi}>
-                  {`${rashi} - ${zodiac}`}
-                </option>
-              ))}
-            </select>
-          </div>
-          {selectedRashi && (
-            <div className="relative overflow-x-auto shadow-md mb-10">
-              <table className="w-full text-sm text-left">
-                <tbody>
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
-                    >
-                      Rashi
-                    </th>
-                    <td className="px-6 py-4">{selectedRashi}</td>
-                  </tr>
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
-                    >
-                      Zodiac
-                    </th>
-                    <td className="px-6 py-4">
-                      {rashiZodiacMapping[selectedRashi]}
-                    </td>
-                  </tr>
-                  <tr className="border-b border-gray-200 dark:border-gray-700">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
-                    >
-                      Letter
-                    </th>
-                    <td className="px-6 py-4">
-                      {selectedRashiLetters.join(", ")}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          )}
-          {filteredData.length > 0 ? (
-            <table className="w-full text-sm text-left text-gray-500">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                  <th scope="col" className="px-4 py-3">
-                    Name
-                  </th>
-                  <th scope="col" className="px-4 py-3">
-                    Gender
-                  </th>
-                  <th scope="col" className="px-4 py-3">
-                    Culture
-                  </th>
-                  <th scope="col" className="px-4 py-3">
-                    Pronunciation
-                  </th>
-                </tr>
-              </thead>
+          <select
+            value={selectedRashi}
+            onChange={(e) => setSelectedRashi(e.target.value)}
+            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+          >
+            <option value="">Select Rashi</option>
+            {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
+              <option key={rashi} value={rashi}>
+                {`${rashi} - ${zodiac}`}
+              </option>
+            ))}
+          </select>
+        </div>
+        {selectedRashi && (
+          <div className="relative overflow-x-auto shadow-md mb-10">
+            <table className="w-full text-sm text-left">
               <tbody>
-                {filteredData
-                  .slice(
-                    (currentPage - 1) * itemsPerPage,
-                    currentPage * itemsPerPage
-                  )
-                  .map((entry, index) => (
+                <tr className="border-b border-gray-200 dark:border-gray-700">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+                  >
+                    Rashi
+                  </th>
+                  <td className="px-6 py-4">{selectedRashi}</td>
+                </tr>
+                <tr className="border-b border-gray-200 dark:border-gray-700">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+                  >
+                    Zodiac
+                  </th>
+                  <td className="px-6 py-4">
+                    {rashiZodiacMapping[selectedRashi]}
+                  </td>
+                </tr>
+                <tr className="border-b border-gray-200 dark:border-gray-700">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+                  >
+                    Letter
+                  </th>
+                  <td className="px-6 py-4">
+                    {selectedRashiLetters.join(", ")}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+        {filteredData.length > 0 ? (
+          <table className="w-full text-sm text-left text-gray-500">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="px-4 py-3">
+                  Name
+                </th>
+                <th scope="col" className="px-4 py-3">
+                  Gender
+                </th>
+                <th scope="col" className="px-4 py-3">
+                  Culture
+                </th>
+                <th scope="col" className="px-4 py-3">
+                  Pronunciation
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredData
+                .slice(
+                  (currentPage - 1) * itemsPerPage,
+                  currentPage * itemsPerPage
+                )
+                .map((entry, index) => (
+                  <>
                     <tr
                       key={index}
-                      className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="border-b dark:border-gray-600 hover:bg-gray-100"
                     >
-                      <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td
+                        className={`px-4 py-2 font-bold whitespace-nowrap dark:text-white ${
+                          selectedGender === "boy"
+                            ? "text-blue-500"
+                            : selectedGender === "girl"
+                            ? "text-pink-500"
+                            : "text-gray-500"
+                        }`}
+                      >
                         <Link
                           href={`/indian/baby-name/${entry.name.toLowerCase()}`}
                         >
                           {entry.name}
                         </Link>
                       </td>
-                      <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="px-4 py-2 text-gray-900 whitespace-nowrap dark:text-white">
                         {entry.gender}
                       </td>
-                      <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="px-4 py-2 text-gray-900 whitespace-nowrap dark:text-white">
                         {entry.culture &&
                           entry.culture.charAt(0).toUpperCase() +
                             entry.culture.slice(1)}
                       </td>
-                      <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                      <td className="px-4 py-2 text-gray-900 whitespace-nowrap dark:text-white">
                         <button
                           className="buttonStyle border border-transparent hover:border-slate-500 p-1 rounded-lg dark:hover:border-slate-100"
                           onClick={() => {
@@ -270,32 +285,45 @@ const Rashi = () => {
                         </button>
                       </td>
                     </tr>
-                  ))}
-              </tbody>
-            </table>
-          ) : (
-            <div>No data found</div>
-          )}
-          <div className="flex items-center justify-between px-4 py-3">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
-            >
-              Previous
-            </button>
-            <span>{`Page ${currentPage} of ${totalPages}`}</span>
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800"
-            >
-              Next
-            </button>
-          </div>
+                    {index === 4 && (
+                      <tr
+                        className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        key="custom-row"
+                      >
+                        <td
+                          className="bg-gray-200 text-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          colSpan={Object.keys(filteredData[0]).length}
+                        >
+                          AD
+                        </td>
+                      </tr>
+                    )}
+                  </>
+                ))}
+            </tbody>
+          </table>
+        ) : (
+          <div>No data found</div>
+        )}
+        <div className="flex items-center justify-between px-4 py-3">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+          >
+            Previous
+          </button>
+          <span>{`Page ${currentPage} of ${totalPages}`}</span>
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+          >
+            Next
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
