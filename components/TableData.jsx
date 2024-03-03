@@ -24,7 +24,9 @@ const TableData = () => {
   const [searchWarning, setSearchWarning] = useState(false);
   const [lastSelectedLetter, setLastSelectedLetter] = useState(null);
   const [selectedCulture, setSelectedCulture] = useState(urlCulture || "");
-  const [selectedLetter, setSelectedLetter] = useState("");
+  const [selectedLetter, setSelectedLetter] = useState(
+    urlLetter || letter || null // Initialize selectedLetter with the value from URL, falling back to the current letter in the query
+  );
   const [selectedGender, setSelectedGender] = useState("");
 
   const [filteredData, setFilteredData] = useState([]);
@@ -48,6 +50,14 @@ const TableData = () => {
     setSelectedGender(urlGender);
     setSelectedLetter(urlLetter);
   }, [urlGender, urlLetter, culture, gender, letter]);
+
+  useEffect(() => {
+    console.log("urlLetter:", urlLetter);
+    console.log("router.query.letter:", router.query.letter);
+    setSelectedLetter(
+      urlLetter || (router.query.letter ? router.query.letter : null)
+    );
+  }, [urlLetter, router.query.letter]);
 
   useEffect(() => {
     const newFilteredData = allEntries.filter((entry) => {
@@ -147,8 +157,8 @@ const TableData = () => {
   const handleGenderSelect = (gender) => {
     setSelectedGender(gender);
 
-    // Use the last selected letter if available, otherwise default to 'a'
-    const selectedLetterToUse = lastSelectedLetter || "a";
+    // Keep the current selected letter when the gender changes
+    const selectedLetterToUse = selectedLetter || lastSelectedLetter;
 
     const cultureParam = selectedCulture
       ? `${selectedCulture.toLowerCase()}-baby-names`
@@ -250,9 +260,10 @@ const TableData = () => {
               />
             </div>
             <LetterSearch
-              activeLetter={selectedLetter}
               onSelectLetter={handleLetterSelect}
-              selectedGender={selectedGender} // Pass the selectedGender prop here
+              selectedLetter={selectedLetter}
+              selectedGender={selectedGender}
+              activeLetter={selectedLetter} // Pass selectedLetter as activeLetter
             />
 
             <div className="flex mt-3 flex-col md:flex-row items-center justify-evenly space-y-3 md:space-y-0 md:space-x-4 p-4">

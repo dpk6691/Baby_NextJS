@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from "react";
+// LetterSearch.js
+
+import React from "react";
 
 const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
-  const [active, setActive] = useState(activeLetter || null);
-
-  useEffect(() => {
-    setActive(activeLetter);
-  }, [activeLetter]);
-
-  const handleLetterClick = (letter) => {
-    setActive(letter);
-    onSelectLetter(letter);
-  };
-
   const getBackgroundColor = () => {
     if (selectedGender === "boy") {
       return "bg-blue-500";
@@ -22,6 +13,10 @@ const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
     }
   };
 
+  const handleLetterClick = (letter) => {
+    onSelectLetter(letter);
+  };
+
   return (
     <div>
       <div className="flex flex-wrap justify-center mt-7 gap-4 dark:text-white">
@@ -29,7 +24,7 @@ const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
           <div
             key={letter}
             className={`inline-flex items-center cursor-pointer w-8 flex justify-center ${
-              active === letter
+              activeLetter === letter
                 ? "text-white " + getBackgroundColor()
                 : "bg-white text-gray-900 border-2 hover:bg-gray-500"
             } py-1 px-3 rounded-xl hover:text-white`}

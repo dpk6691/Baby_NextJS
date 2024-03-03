@@ -96,6 +96,7 @@ const BabyNameSearch = () => {
         onSelectLetter={handleLetterSelect}
         selectedLetter={selectedLetter}
         selectedGender={selectedGender}
+        activeLetter={selectedLetter} // Pass selectedLetter as activeLetter
       />
 
       {/* {countryData && ( */}
