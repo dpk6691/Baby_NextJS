@@ -158,7 +158,7 @@ const TableData = () => {
     setSelectedGender(gender);
 
     // Keep the current selected letter when the gender changes
-    const selectedLetterToUse = selectedLetter || lastSelectedLetter;
+    const selectedLetterToUse = selectedLetter || lastSelectedLetter || "a";
 
     const cultureParam = selectedCulture
       ? `${selectedCulture.toLowerCase()}-baby-names`
