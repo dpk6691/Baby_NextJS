@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+// India.js
+import { useQuery } from "react-query";
 import supabase from "./supabase";
 
+const fetchIndiaData = async () => {
+  const { data, error } = await supabase
+    .from("India")
+    .select(
+      "gender, culture, name, language, meaning_of_name, meaning_in_language"
+    );
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data || [];
+};
+
 const India = () => {
-  const [IndiaData, setIndiaData] = useState([]);
-  const [error, setError] = useState(null);
-  const [totalCount, setTotalCount] = useState(null);
+  const {
+    data: IndiaData,
+    isLoading,
+    isError,
+  } = useQuery("IndiaData", fetchIndiaData, {
+    staleTime: 600000000, // Cache data for 1 minute (adjust as needed)
+  });
 
-  useEffect(() => {
-    async function fetchIndiaData() {
-      try {
-        const { data, error, count } = await supabase.from("India").select("*");
-
-        if (error) {
-          setError(error.message);
-        } else {
-          setIndiaData(data || []);
-          setTotalCount(count || 0);
-        }
-      } catch (error) {
-        setError(error.message);
-      }
-    }
-
-    fetchIndiaData();
-  }, []);
-
-  return { IndiaData, totalCount, error };
+  return { IndiaData, isLoading, isError };
 };
 
 export default India;

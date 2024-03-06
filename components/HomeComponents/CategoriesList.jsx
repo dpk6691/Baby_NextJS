@@ -4,7 +4,10 @@ import { useRouter } from "next/router";
 
 const CategoriesList = () => {
   const { IndiaData } = India();
-  const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
+  const allEntries = useMemo(() => {
+    // Check if IndiaData exists before using flat()
+    return IndiaData ? IndiaData.flat() : [];
+  }, [IndiaData]);
 
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),

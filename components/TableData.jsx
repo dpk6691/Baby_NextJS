@@ -32,7 +32,10 @@ const TableData = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
 
-  const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
+  const allEntries = useMemo(() => {
+    // Check if IndiaData exists before using flat()
+    return IndiaData ? IndiaData.flat() : [];
+  }, [IndiaData]);
 
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
@@ -52,8 +55,6 @@ const TableData = () => {
   }, [urlGender, urlLetter, culture, gender, letter]);
 
   useEffect(() => {
-    console.log("urlLetter:", urlLetter);
-    console.log("router.query.letter:", router.query.letter);
     setSelectedLetter(
       urlLetter || (router.query.letter ? router.query.letter : null)
     );

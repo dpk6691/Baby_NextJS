@@ -16,7 +16,7 @@ const GenderSearch = ({ genderSelected }) => {
   };
 
   return (
-    <div className="inline-flex" role="group">
+    <div className="inline-flex justify-center" role="group">
       <label className="inline-flex items-center">
         <input
           type="radio"
