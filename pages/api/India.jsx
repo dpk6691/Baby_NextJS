@@ -13,7 +13,10 @@ const fetchIndiaData = async () => {
     throw new Error(error.message);
   }
 
-  return data || [];
+  // Filter out entries where culture is blank
+  const filteredData = data.filter((entry) => entry.culture !== "");
+
+  return filteredData || [];
 };
 
 const India = () => {
