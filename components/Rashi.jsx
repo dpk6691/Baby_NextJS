@@ -7,13 +7,30 @@ import India from "./../pages/api/India";
 const itemsPerPage = 50;
 
 const Rashi = () => {
-  const { IndiaData } = India();
+  const { IndiaData, isLoading, isError } = India();
   const [selectedGender, setSelectedGender] = useState("");
   const [selectedCulture, setSelectedCulture] = useState("");
   const [selectedRashi, setSelectedRashi] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const { speak, voices } = useSpeechSynthesis();
+  useEffect(() => {
+    if (!isLoading && !isError) {
+      filterData();
+    }
+  }, [
+    isLoading,
+    isError,
+    selectedGender,
+    selectedCulture,
+    selectedRashi,
+    currentPage,
+    IndiaData,
+  ]);
+
+  useEffect(() => {
+    setCurrentPage(1); // Reset to the first page when filters change
+  }, [selectedCulture, selectedRashi]);
 
   const allEntries = useMemo(() => {
     return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
