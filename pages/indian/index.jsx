@@ -5,7 +5,11 @@ import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdS
 
 const index = () => {
   const { IndiaData } = India();
-  const allEntries = useMemo(() => IndiaData.flat(), [IndiaData]);
+
+  const allEntries = useMemo(() => {
+    return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
+  }, [IndiaData]);
+
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
     [allEntries]
