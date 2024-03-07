@@ -13,8 +13,10 @@ const fetchIndiaData = async () => {
     throw new Error(error.message);
   }
 
-  // Filter out entries where culture is blank
-  const filteredData = data.filter((entry) => entry.culture !== "");
+  // Filter out entries where culture is blank or only whitespace
+  const filteredData = data.filter(
+    (entry) => entry.culture && entry.culture.trim() !== ""
+  );
 
   return filteredData || [];
 };
