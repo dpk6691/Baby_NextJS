@@ -120,7 +120,7 @@ const Rashi = () => {
     : [];
 
   return (
-    <div className="pt-32 md:pt-24 px-4 mx-auto max-w-screen-2xl lg:px-12">
+    <div className="pt-32 md:pt-28 px-4 mx-auto max-w-screen-2xl lg:px-12">
       <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl">
         <div className="flex flex-col md:flex-row justify-between mb-5">
           <GenderSearch

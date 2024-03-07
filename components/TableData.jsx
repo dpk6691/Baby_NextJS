@@ -250,7 +250,7 @@ const TableData = () => {
 
   return (
     <div>
-      <section className="pt-24 py-3">
+      <section className="pt-32 md:pt-28 py-3">
         <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
           <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 dark:border-white-500/100 p-4 rounded-3xl dark:bg-black/35">
             <div className="flex items-center justify-evenly">

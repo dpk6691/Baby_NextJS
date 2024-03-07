@@ -26,9 +26,9 @@ const index = () => {
   };
 
   return (
-    <div className="w-11/12 m-auto pt-28">
-      <div className="flex justify-between">
-        <div className="bg-pink-50 p-10 rounded-3xl w-9/12">
+    <div className="w-11/12 m-auto pt-32 md:pt-28">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="bg-pink-50 p-10 rounded-3xl w-full md:w-9/12">
           <h1 className="text-2xl mb-8 text-center">Indian Baby Names</h1>
           <p className="text-center mb-10">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -41,7 +41,7 @@ const index = () => {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
-          <ul className="overflow-auto grid grid-cols-5 gap-5">
+          <ul className="overflow-auto grid grid-cols-2 md:grid-cols-5 gap-5">
             {uniqueCultures.map((culture, index) => (
               <li key={index}>
                 <div
@@ -55,7 +55,7 @@ const index = () => {
             ))}
           </ul>
         </div>
-        <div className="ml-5 bg-gray-50 rounded-3xl grid place-content-center w-1/4">
+        <div className="md:ml-5 mt-3 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center w-full md:w-1/4">
           <AdSection />
         </div>
       </div>

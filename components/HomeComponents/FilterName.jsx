@@ -52,7 +52,7 @@ const FilterName = () => {
                 <li className="basis-1/2">
                   <a
                     href="JavaScript:void(0)"
-                    className={`w-full inline-block text-2xl rounded-t-3xl p-4 border-b-4 border-blue-200 ${
+                    className={`w-full inline-block text-xl md:text-2xl rounded-t-3xl px-2 py-4 md:px-4 border-b-4 border-blue-200 ${
                       activeTab === "filter"
                         ? "border-blue-200 bg-blue-200"
                         : "hover:border-pink-300 bg-blue-50"
@@ -65,7 +65,7 @@ const FilterName = () => {
                 <li className="basis-1/2">
                   <a
                     href="JavaScript:void(0)"
-                    className={`w-full inline-block text-2xl rounded-t-3xl p-4 border-b-4 border-blue-200 ${
+                    className={`w-full inline-block text-xl md:text-2xl rounded-t-3xl px-2 py-4 md:px-4 border-b-4 border-blue-200 ${
                       activeTab === "name"
                         ? "border-blue-200 bg-blue-200"
                         : "hover:border-pink-300 bg-blue-50 "

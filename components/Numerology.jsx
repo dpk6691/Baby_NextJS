@@ -20,7 +20,7 @@ const Numerology = () => {
   };
 
   return (
-    <section className="pt-24 px-4 mx-auto max-w-screen-2xl lg:px-12">
+    <section className="pt-32 md:pt-28 px-4 mx-auto max-w-screen-2xl lg:px-12">
       <div className="w-96 mt-5 m-auto mb-5 relative">
         <input
           type="search"

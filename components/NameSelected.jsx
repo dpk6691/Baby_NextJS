@@ -31,7 +31,7 @@ const NameSelected = () => {
   const uniqueGenders = [...new Set(genders)];
 
   return (
-    <div className="container mx-auto pt-24">
+    <div className="container mx-auto  pt-32 md:pt-28">
       <h1 className="text-3xl mb-4 text-center">
         Selected Name:{" "}
         <span className="font-bold">
