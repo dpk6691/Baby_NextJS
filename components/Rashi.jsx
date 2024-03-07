@@ -16,8 +16,7 @@ const Rashi = () => {
   const { speak, voices } = useSpeechSynthesis();
 
   const allEntries = useMemo(() => {
-    // Check if IndiaData exists before using flat()
-    return IndiaData ? IndiaData.flat() : [];
+    return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
   }, [IndiaData]);
 
   const allCultures = useMemo(

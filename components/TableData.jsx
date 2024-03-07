@@ -33,8 +33,7 @@ const TableData = () => {
   const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
 
   const allEntries = useMemo(() => {
-    // Check if IndiaData exists before using flat()
-    return IndiaData ? IndiaData.flat() : [];
+    return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
   }, [IndiaData]);
 
   const allCultures = useMemo(

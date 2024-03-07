@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const CategoriesList = () => {
   const { IndiaData } = India();
   const allEntries = useMemo(() => {
-    // Check if IndiaData exists before using flat()
     return IndiaData ? IndiaData.flat() : [];
   }, [IndiaData]);
 

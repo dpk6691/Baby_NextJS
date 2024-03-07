@@ -31,7 +31,9 @@ const Header = () => {
     setShowSearchButton(isClient);
   }, [isClient]);
 
-  const allEntries = Object.values(IndiaData || {}).flat();
+  const allEntries = useMemo(() => {
+    return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
+  }, [IndiaData]);
 
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
