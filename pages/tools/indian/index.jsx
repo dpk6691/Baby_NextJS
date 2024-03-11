@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
-import India from "./../../pages/api/India";
+import India from "./../../api/India";
 import { useRouter } from "next/router";
-import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdSection";
+import AdSection from "./../../../components/HomeComponents/AfterBannerComponemts/AdSection";
 
 const index = () => {
   const { IndiaData } = India();
