@@ -1,24 +1,11 @@
-// India.js
 import { useQuery } from "react-query";
-import supabase from "./supabase";
 
 const fetchIndiaData = async () => {
-  const { data, error } = await supabase
-    .from("India")
-    .select(
-      "gender, culture, name, language, meaning_of_name, meaning_in_language"
-    );
-
-  if (error) {
-    throw new Error(error.message);
+  const response = await fetch("/api/getData"); // Fetch data from server-side function
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
   }
-
-  // Filter out entries where culture is blank or only whitespace
-  const filteredData = data.filter(
-    (entry) => entry.culture && entry.culture.trim() !== ""
-  );
-
-  return filteredData || [];
+  return response.json();
 };
 
 const India = () => {
