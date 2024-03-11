@@ -1,11 +1,22 @@
 import { useQuery } from "react-query";
 
 const fetchIndiaData = async () => {
-  const response = await fetch("/api/getData"); // Fetch data from server-side function
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
+  try {
+    const response = await fetch("/api/getData"); // Fetch data from server-side function
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await response.json();
+
+    // Filter out entries where culture is blank or only whitespace
+    const filteredData = data.filter(
+      (entry) => entry.culture && entry.culture.trim() !== ""
+    );
+
+    return filteredData || [];
+  } catch (error) {
+    throw new Error("Failed to fetch and filter data: " + error.message);
   }
-  return response.json();
 };
 
 const India = () => {
