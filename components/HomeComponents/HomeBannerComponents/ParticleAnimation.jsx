@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import India from "./../../../pages/api/India";
 
 const ParticleAnimation = () => {
-  const { IndiaData } = India();
+  const { IndiaData, isLoading } = India();
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -154,7 +154,25 @@ const ParticleAnimation = () => {
     }
   }, [IndiaData]);
 
-  return <canvas className="bg-pink-50" ref={canvasRef} id="c"></canvas>;
+  return (
+    <div className="relative">
+      <div
+        className={`bg-pink-50 grid animate-pulse  place-items-center ${
+          isLoading ? "animate-fade-in" : "animate-fade-out"
+        } w-full text-pink-500 text-4xl font-black h-[33vh] transition-opacity duration-1000`}
+      >
+        Worlds Laregest Baby Name Collection
+      </div>
+      <canvas
+        className={`bg-pink-50 ${
+          isLoading ? "animate-fade-out" : "animate-fade-in"
+        } transition-opacity duration-1000 absolute top-0 left-0`}
+        style={{ opacity: isLoading ? 0 : 1 }}
+        ref={canvasRef}
+        id="c"
+      ></canvas>
+    </div>
+  );
 };
 
 export default ParticleAnimation;
