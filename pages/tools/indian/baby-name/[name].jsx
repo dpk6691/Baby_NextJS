@@ -1,5 +1,5 @@
 // pages/name/[name].jsx
-import NameSelected from "../../../components/NameSelected";
+import NameSelected from "./../../../../components/NameSelected";
 
 const NamePage = () => {
   return <NameSelected />;

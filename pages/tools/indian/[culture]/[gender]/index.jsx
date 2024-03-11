@@ -1,4 +1,4 @@
-import TableData from "../../../../components/TableData";
+import TableData from "./../../../../../components/TableData";
 
 const GenderPage = () => {
   return <TableData />;
