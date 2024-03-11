@@ -7,9 +7,10 @@ import logo from "./../../public/images/logo.png";
 import "flowbite";
 
 const Header = () => {
-  const { IndiaData } = India();
+  const { IndiaData, isLoading } = India();
   const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
+  const [showSearchButton, setShowSearchButton] = useState(false);
 
   const isActive = (path) => {
     return router.pathname === path;
@@ -23,13 +24,9 @@ const Header = () => {
     return router.pathname.startsWith("/tools");
   };
 
-  const isClient = typeof window !== "undefined";
-
-  const [showSearchButton, setShowSearchButton] = useState(false);
-
   useEffect(() => {
-    setShowSearchButton(isClient);
-  }, [isClient]);
+    setShowSearchButton(typeof window !== "undefined");
+  }, []);
 
   const allEntries = useMemo(() => {
     return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
@@ -47,7 +44,7 @@ const Header = () => {
   const handleCultureClick = (culture) => {
     const url = `/indian/${culture.toLowerCase()}-baby-names`;
     router.push(url);
-    hideMenuClick(); // Call hideMenuClick after clicking on a sub-menu item
+    hideMenuClick();
   };
 
   const hideMenuClick = () => {
@@ -121,7 +118,7 @@ const Header = () => {
                 <button
                   data-collapse-toggle="navbar-search"
                   type="button"
-                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+                  className="inline-flex items-center p-2 w-10 h-5 justify-center text-sm text-gray-500 rounded-lg md:hidden"
                   aria-controls="navbar-search"
                   aria-expanded="false"
                 >
@@ -202,34 +199,70 @@ const Header = () => {
                       id="indian"
                       className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md"
                     >
-                      <ul className="p-4 flex md:w-96 flex-wrap">
-                        {uniqueCultures.map((culture, index) => (
-                          <li key={index} onClick={hideMenuClick}>
-                            <div
-                              className="min-w-28 flex items-center py-2 cursor-pointer inline-block hover:text-pink-500"
-                              onClick={() => handleCultureClick(culture)}
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="1.5"
-                                stroke="currentColor"
-                                className="w-5 h-5 pr-1"
+                      {isLoading ? (
+                        <div className="space-y-5 md:w-96 px-3 py-5 text-center animate-pulse">
+                          <div class="flex items-center w-full">
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                          </div>
+                          <div class="flex items-center w-full">
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                          </div>
+                          <div class="flex items-center w-full">
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                          </div>
+                          <div class="flex items-center w-full">
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                          </div>
+                          <div class="flex items-center w-full">
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                          </div>
+                          <span class="sr-only">Loading...</span>
+                        </div>
+                      ) : (
+                        <ul className="p-4 flex md:w-96 flex-wrap">
+                          {uniqueCultures.map((culture, index) => (
+                            <li key={index} onClick={hideMenuClick}>
+                              <div
+                                className="min-w-28 flex items-center py-2 cursor-pointer inline-block hover:text-pink-500"
+                                onClick={() => handleCultureClick(culture)}
                               >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                                />
-                              </svg>
-                              {culture &&
-                                culture.charAt(0).toUpperCase() +
-                                  culture.slice(1)}
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  strokeWidth="1.5"
+                                  stroke="currentColor"
+                                  className="w-5 h-5 pr-1"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                                  />
+                                </svg>
+                                {culture &&
+                                  culture.charAt(0).toUpperCase() +
+                                    culture.slice(1)}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </li>
                   <li>
