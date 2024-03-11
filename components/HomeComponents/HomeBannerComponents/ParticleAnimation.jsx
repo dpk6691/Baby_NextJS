@@ -157,7 +157,7 @@ const ParticleAnimation = () => {
   return (
     <div className="relative">
       <div
-        className={`bg-pink-50 grid animate-pulse  place-items-center ${
+        className={`bg-pink-50 grid text-center animate-pulse  place-items-center ${
           isLoading ? "animate-fade-in" : "animate-fade-out"
         } w-full text-pink-500 text-4xl font-black h-[33vh] transition-opacity duration-1000`}
       >

@@ -267,8 +267,8 @@ const TableData = () => {
             />
 
             <div className="flex mt-3 flex-col md:flex-row items-center justify-evenly space-y-3 md:space-y-0 md:space-x-4 p-4">
-              <div className="flex flex-1 w-full">
-                <form className="flex flex-col items-center">
+              <div className="flex flex-1 w-full justify-center md:justify-start">
+                <form className="flex flex-col ">
                   <label htmlFor="simple-search" className="sr-only">
                     Search
                   </label>

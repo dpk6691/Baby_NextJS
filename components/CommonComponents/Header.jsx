@@ -72,19 +72,19 @@ const Header = () => {
       <header className="fixed z-50 w-full bg-transparent backdrop-blur-xl">
         <div className="w-11/12 m-auto">
           <nav className="border-gray-200 ">
-            <div className="flex flex-wrap items-center justify-between mx-auto py-3  ">
-              <Link href="/" className="w-full md:w-auto">
+            <div className="flex flex-wrap items-center justify-between mx-auto py-2  ">
+              <Link href="/" className="w-full xl:w-auto">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                   <Image
                     onClick={hideMenuClick}
-                    className="w-60 m-auto max-h-screen py-2 md:py-4"
+                    className="w-60 m-auto max-h-screen py-2 xl:py-4"
                     src={logo}
                     alt="Logo"
                   />
                 </div>
               </Link>
-              <div className="flex justify-between md:order-2 w-full md:w-auto">
-                <div className="max-w-md md:mx-auto relative">
+              <div className="flex items-center justify-between xl:order-2 w-full xl:w-auto">
+                <div className="max-w-md xl:mx-auto relative">
                   <input
                     type="search"
                     id="default-search-header"
@@ -118,7 +118,7 @@ const Header = () => {
                 <button
                   data-collapse-toggle="navbar-search"
                   type="button"
-                  className="inline-flex items-center p-2 w-10 h-5 justify-center text-sm text-gray-500 rounded-lg md:hidden"
+                  className="inline-flex items-center p-2 w-10 h-5 justify-center text-sm text-gray-500 rounded-lg xl:hidden"
                   aria-controls="navbar-search"
                   aria-expanded="false"
                 >
@@ -141,10 +141,10 @@ const Header = () => {
                 </button>
               </div>
               <div
-                className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                className="items-center justify-between hidden w-full xl:flex xl:w-auto xl:order-1"
                 id="navbar-search"
               >
-                <ul className="flex flex-col mt-5 md:mt-0 md:flex-row md:px-4 py-2 font-medium rounded-lg space-y-3 md:space-y-0 md:space-x-3 rtl:space-x-reverse">
+                <ul className="flex flex-col mt-5 xl:mt-0 xl:flex-row xl:px-4 py-2 font-medium rounded-lg space-y-3 xl:space-y-0 xl:space-x-3 rtl:space-x-reverse">
                   <li>
                     <Link href="/" onClick={hideMenuClick}>
                       <div className="block py-1 px-3 ">
@@ -200,7 +200,7 @@ const Header = () => {
                       className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md"
                     >
                       {isLoading ? (
-                        <div className="space-y-5 md:w-96 px-3 py-5 text-center animate-pulse">
+                        <div className="space-y-5 xl:w-96 px-3 py-5 text-center animate-pulse">
                           <div class="flex items-center w-full">
                             <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
                             <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
@@ -234,7 +234,7 @@ const Header = () => {
                           <span class="sr-only">Loading...</span>
                         </div>
                       ) : (
-                        <ul className="p-4 flex md:w-96 flex-wrap">
+                        <ul className="p-4 flex xl:w-96 flex-wrap">
                           {uniqueCultures.map((culture, index) => (
                             <li key={index} onClick={hideMenuClick}>
                               <div
