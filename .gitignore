@@ -127,3 +127,6 @@ dist
 .pnp.*
 
 ./pages/api
+
+.DS_Store
+pages/api
