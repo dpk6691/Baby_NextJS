@@ -89,10 +89,17 @@ const Header = () => {
                     type="search"
                     id="default-search-header"
                     className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
-                    placeholder="Name..."
+                    placeholder="Enter Name..."
                     required
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        router.push(
+                          `/indian/baby-name/${searchValue.toLowerCase()}`
+                        );
+                      }
+                    }}
                   />
                   <Link
                     className="absolute p-2 bottom-1 right-1"

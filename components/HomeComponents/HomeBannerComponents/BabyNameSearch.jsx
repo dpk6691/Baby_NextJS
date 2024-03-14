@@ -76,12 +76,15 @@ const BabyNameSearch = () => {
           selectedGender={selectedGender}
         />
 
-        <form className="max-w-sm mx-auto mt-5 md:mt-0">
-          <label htmlFor="underline_select" className="sr-only">
-            Underline select
+        <form className="w-full md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
+          <label
+            for="cultures"
+            class="block text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Select Cultures
           </label>
           <select
-            id="underline_select"
+            id="cultures"
             className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-xl font-medium rounded-2xl border-2 border-gray-100 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white focus:border-gray-50 "
           >
             <option selected>All</option>

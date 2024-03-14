@@ -157,14 +157,14 @@ const ParticleAnimation = () => {
   return (
     <div className="relative">
       <div
-        className={`bg-pink-50 grid text-center animate-pulse  place-items-center ${
+        className={`bg-blue-50 grid text-center animate-pulse  place-items-center ${
           isLoading ? "animate-fade-in" : "animate-fade-out"
         } w-full text-pink-500 text-4xl font-black h-[33vh] transition-opacity duration-1000`}
       >
         Worlds Laregest Baby Name Collection
       </div>
       <canvas
-        className={`bg-pink-50 ${
+        className={`bg-blue-50 ${
           isLoading ? "animate-fade-out" : "animate-fade-in"
         } transition-opacity duration-1000 absolute top-0 left-0`}
         style={{ opacity: isLoading ? 0 : 1 }}

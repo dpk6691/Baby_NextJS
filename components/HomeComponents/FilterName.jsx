@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import BabyNameSearch from "./HomeBannerComponents/BabyNameSearch";
-import AdSection from "./AfterBannerComponemts/AdSection";
 
 const FilterName = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("filter");
   const [searchValue, setSearchValue] = useState("");
 
@@ -42,7 +43,7 @@ const FilterName = () => {
                 </li>
               </ul>
             </div>
-            <div className="bg-blue-50 p-5 rounded-b-3xl border-t-4 border-8 border-blue-200 ">
+            <div className="bg-pink-50 p-5 rounded-b-3xl border-t-4 border-8 border-blue-200 ">
               <div className={activeTab === "filter" ? "block" : "hidden"}>
                 <BabyNameSearch />
               </div>
@@ -67,7 +68,14 @@ const FilterName = () => {
                         type="search"
                         id="default-search-filter"
                         className="rounded-xl text-xl block bg-pink-50 w-full py-3 pr-12 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
-                        placeholder="Name..."
+                        placeholder="Enter Name..."
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            router.push(
+                              `/indian/baby-name/${searchValue.toLowerCase()}`
+                            );
+                          }
+                        }}
                         required
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}

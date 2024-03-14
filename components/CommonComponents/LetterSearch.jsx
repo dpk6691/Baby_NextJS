@@ -19,7 +19,7 @@ const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center mt-7 gap-4 dark:text-white">
+      <div className="flex max-w-[920px] flex-wrap justify-center mt-7 gap-4 dark:text-white">
         {Array.from("abcdefghijklmnopqrstuvwxyz").map((letter) => (
           <div
             key={letter}
