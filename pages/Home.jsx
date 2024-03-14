@@ -3,7 +3,8 @@ import HomeBanner from "../components/HomeComponents/HomeBanner";
 import AfterBanner from "../components/HomeComponents/AfterBanner";
 import TopTen from "../components/HomeComponents/TopTen";
 import Shortcut from "../components/HomeComponents/Shortcut";
-import NameNumorology from "../components/HomeComponents/NameNumorology";
+import NumorologyCategory from "../components/HomeComponents/NumorologyCategory";
+import LastSection from "../components/HomeComponents/LastSection";
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
       <AfterBanner />
       <TopTen />
       <Shortcut />
-      <NameNumorology />
+      <NumorologyCategory />
+      <LastSection />
     </>
   );
 };

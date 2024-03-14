@@ -3,7 +3,7 @@ import React from "react";
 const Shortcut = () => {
   return (
     <div className="w-11/12 m-auto pt-14 grid lg:grid-cols-4 gap-5 grid-cols-2 md:pt-24">
-      <div className="w-full max-w-sm bg-white hover:bg-blue-50 border-4 border-blue-200 rounded-3xl">
+      <div className="w-full max-w-sm hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <a href="#">
           <img
             className="p-8 rounded-t-lg"
@@ -19,7 +19,7 @@ const Shortcut = () => {
           </a>
         </div>
       </div>
-      <div className="w-full max-w-sm bg-white hover:bg-pink-50 border-4 border-pink-200 rounded-3xl">
+      <div className="w-full max-w-sm hover:bg-pink-100 bg-pink-50 rounded-3xl">
         <a href="#">
           <img
             className="p-8 rounded-t-lg"
@@ -35,7 +35,7 @@ const Shortcut = () => {
           </a>
         </div>
       </div>
-      <div className="w-full max-w-sm bg-white hover:bg-blue-50 border-4 border-blue-200 rounded-3xl">
+      <div className="w-full max-w-sm hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <a href="#">
           <img
             className="p-8 rounded-t-lg"
@@ -51,7 +51,7 @@ const Shortcut = () => {
           </a>
         </div>
       </div>
-      <div className="w-full max-w-sm bg-white hover:bg-pink-50 border-4 border-pink-200 rounded-3xl">
+      <div className="w-full max-w-sm hover:bg-pink-100 bg-pink-50 rounded-3xl">
         <a href="#">
           <img
             className="p-8 rounded-t-lg"

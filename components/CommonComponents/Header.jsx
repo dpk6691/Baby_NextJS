@@ -89,7 +89,7 @@ const Header = () => {
                     type="search"
                     id="default-search-header"
                     className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
-                    placeholder="Enter Name..."
+                    placeholder="Search by name..."
                     required
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}

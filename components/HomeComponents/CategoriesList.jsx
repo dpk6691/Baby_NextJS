@@ -26,8 +26,8 @@ const CategoriesList = () => {
 
   return (
     <div className="grid grid-cols-1 content-center justify-items-end">
-      <div className="bg-pink-50 p-10 mt-14 rounded-3xl w-11/12 m-auto">
-        <h2 className="text-2xl mb-8 text-center">Select by Culture</h2>
+      <div className="bg-pink-50 border-white border-4 p-5 rounded-3xl w-full m-auto">
+        <h2 className="text-2xl mb-8 text-center">Search Name by Culture</h2>
         {isLoading ? (
           <LoadingSkeleton />
         ) : (

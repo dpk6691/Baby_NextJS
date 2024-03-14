@@ -2,28 +2,28 @@ import React from "react";
 import Link from "next/link";
 
 const TopGirlName = [
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
+  "Ananya",
+  "Saanvi",
+  "Aaradhya",
+  "Kiara",
+  "Diya",
+  "Avni",
+  "Anika",
+  "Meera",
+  "Ishani",
+  "Arya",
 ];
 const TopBoyName = [
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
-  "dipak",
+  "Aarav",
+  "Vihaan",
+  "Advik",
+  "Reyansh",
+  "Arjun",
+  "Dhruv",
+  "Krish",
+  "Ayaan",
+  "Kabir",
+  "Shaurya",
 ];
 
 const TopTen = () => {
@@ -82,7 +82,7 @@ const TopTen = () => {
           </g>
         </svg>
         <h2 className="text-2xl mb-2 text-center text-blue-500">
-          Top 10 Most Popular Indian Baby Girl Names of 2024!
+          Top 10 Most Popular Indian Baby Boy Names of 2024!
         </h2>
         <p class="pt-2 text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -91,7 +91,7 @@ const TopTen = () => {
           scrambled it to make a type specimen book.
         </p>
         <div class="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
-          {TopGirlName.map((item) => (
+          {TopBoyName.map((item) => (
             <Link
               href={`/indian/baby-name/${item.toLowerCase()}`}
               class="min-w-20 bg-blue-200 text-center rounded-2xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-blue-500 hover:text-white"

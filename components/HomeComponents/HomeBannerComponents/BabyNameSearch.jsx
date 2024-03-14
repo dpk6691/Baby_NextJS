@@ -50,7 +50,7 @@ const BabyNameSearch = () => {
   const handleSearch = () => {
     let url = "/indian/";
 
-    const cultureSelect = document.getElementById("underline_select");
+    const cultureSelect = document.getElementById("cultures"); // Corrected ID here
     const selectedCulture =
       cultureSelect.options[cultureSelect.selectedIndex].value.toLowerCase();
     if (selectedCulture !== "all") {
