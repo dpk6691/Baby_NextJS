@@ -6,47 +6,12 @@ import AdSection from "./AfterBannerComponemts/AdSection";
 const FilterName = () => {
   const [activeTab, setActiveTab] = useState("filter");
   const [searchValue, setSearchValue] = useState("");
-  // const renderDataWithAds = () => {
-  //   const result = [];
-  //   let adCounter = 0;
 
-  //   filteredData.forEach((entry, index) => {
-  //     result.push(
-  //       <tr
-  //         key={index}
-  //         className="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
-  //       >
-  //         {/* Your existing table row content */}
-  //       </tr>
-  //     );
-
-  //     adCounter++;
-  //     if (adCounter === 10) {
-  //       result.push(
-  //         <tr key={`ad-${index}`} className="border-b dark:border-gray-600">
-  //           <td colSpan="4" className="px-4 py-6">
-  //             {/* Advertisement Component */}
-  //             <div className="w-11/12 m-auto pt-14">
-  //               <div className="bg-gray-50 rounded-3xl grid place-content-center w-full">
-  //                 <div className="text-xl min-h-20 grid place-content-center font-semibold">
-  //                   <p>Advertise with us</p>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           </td>
-  //         </tr>
-  //       );
-  //       adCounter = 0; // Reset the ad counter
-  //     }
-  //   });
-
-  //   return result;
-  // };
   return (
     <>
-      <div className="w-11/12 m-auto pt-14">
+      <div className="w-full m-auto pt-14">
         <div className="flex flex-col md:flex-row justify-between">
-          <div className="md:w-9/12">
+          <div className="md:w-full">
             <div className="text-sm text-center">
               <ul className="flex flex-wrap">
                 <li className="basis-1/2">
@@ -131,17 +96,6 @@ const FilterName = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="md:ml-5 mt-5 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center md:w-1/4">
-            <AdSection />
-          </div>
-        </div>
-      </div>
-
-      <div className="w-11/12 m-auto pt-14">
-        <div className="bg-gray-50 rounded-3xl grid place-content-center w-full">
-          <div className="text-xl min-h-20 grid place-content-center font-semibold">
-            <p>Advertise with us</p>
           </div>
         </div>
       </div>

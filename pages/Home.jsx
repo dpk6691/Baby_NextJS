@@ -9,8 +9,8 @@ const Home = () => {
     <>
       <HomeBanner />
       <AfterBanner />
+      {/* <FilterName /> */}
       <CategoriesList />
-      <FilterName />
     </>
   );
 };
