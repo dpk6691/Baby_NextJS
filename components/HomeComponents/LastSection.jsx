@@ -15,21 +15,23 @@ const LastSection = () => {
             Most popular names in India
           </h5>
 
-          <ul class="my-4 space-y-3">
+          <ul className="my-4 space-y-3">
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Modern baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Modern baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Baby names inspired by the sun
                 </span>
               </a>
@@ -37,9 +39,9 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Gift of God'
                 </span>
               </a>
@@ -47,17 +49,19 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Short baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Short baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Love & Kindness'
                 </span>
               </a>
@@ -75,21 +79,23 @@ const LastSection = () => {
           <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
             Baby names by origin
           </h5>
-          <ul class="my-4 space-y-3">
+          <ul className="my-4 space-y-3">
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Modern baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Modern baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Baby names inspired by the sun
                 </span>
               </a>
@@ -97,9 +103,9 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Gift of God'
                 </span>
               </a>
@@ -107,17 +113,19 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Short baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Short baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Love & Kindness'
                 </span>
               </a>
@@ -135,21 +143,23 @@ const LastSection = () => {
           <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
             Baby names by theme
           </h5>
-          <ul class="my-4 space-y-3">
+          <ul className="my-4 space-y-3">
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Modern baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Modern baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Baby names inspired by the sun
                 </span>
               </a>
@@ -157,9 +167,9 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Gift of God'
                 </span>
               </a>
@@ -167,17 +177,19 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Short baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Short baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Love & Kindness'
                 </span>
               </a>
@@ -197,21 +209,23 @@ const LastSection = () => {
             All Baby Name Lists
           </h5>
 
-          <ul class="my-4 space-y-3">
+          <ul className="my-4 space-y-3">
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Modern baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Modern baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Baby names inspired by the sun
                 </span>
               </a>
@@ -219,9 +233,9 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Gift of God'
                 </span>
               </a>
@@ -229,17 +243,19 @@ const LastSection = () => {
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">Short baby names</span>
+                <span className="flex-1 ms-3 text-center ">
+                  Short baby names
+                </span>
               </a>
             </li>
             <li>
               <a
                 href="#"
-                class="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
+                className="flex items-center p-2 text-gray-900 rounded-lg bg-white border hover:border-gray-300 group hover:shadow"
               >
-                <span class="flex-1 ms-3 text-center ">
+                <span className="flex-1 ms-3 text-center ">
                   Names meaning 'Love & Kindness'
                 </span>
               </a>

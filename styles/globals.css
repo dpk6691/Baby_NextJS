@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+/* html,
 body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -11,7 +11,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   overflow-x: hidden;
-}
+} */
 
 @keyframes fade-in {
   from {

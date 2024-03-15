@@ -79,7 +79,7 @@ const BabyNameSearch = () => {
         <form className="w-full md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
           <label
             for="cultures"
-            class="block text-sm font-medium text-gray-900 dark:text-white"
+            className="block text-sm font-medium text-gray-900 dark:text-white"
           >
             Select Cultures
           </label>

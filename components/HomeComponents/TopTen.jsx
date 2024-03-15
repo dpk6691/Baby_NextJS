@@ -48,17 +48,17 @@ const TopTen = () => {
         <h2 className="text-2xl mb-2 text-center text-pink-500">
           Top 10 Most Popular Indian Baby Girl Names of 2024!
         </h2>
-        <p class="pt-2 text-center">
+        <p className="pt-2 text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
         </p>
-        <div class="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
+        <div className="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
           {TopGirlName.map((item) => (
             <Link
               href={`/indian/baby-name/${item.toLowerCase()}`}
-              class="min-w-20 bg-pink-200 text-center rounded-2xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-pink-500 hover:text-white"
+              className="min-w-20 bg-pink-200 text-center rounded-2xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-pink-500 hover:text-white"
             >
               {item}
             </Link>
@@ -84,17 +84,17 @@ const TopTen = () => {
         <h2 className="text-2xl mb-2 text-center text-blue-500">
           Top 10 Most Popular Indian Baby Boy Names of 2024!
         </h2>
-        <p class="pt-2 text-center">
+        <p className="pt-2 text-center">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
         </p>
-        <div class="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
+        <div className="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
           {TopBoyName.map((item) => (
             <Link
               href={`/indian/baby-name/${item.toLowerCase()}`}
-              class="min-w-20 bg-blue-200 text-center rounded-2xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-blue-500 hover:text-white"
+              className="min-w-20 bg-blue-200 text-center rounded-2xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-blue-500 hover:text-white"
             >
               {item}
             </Link>

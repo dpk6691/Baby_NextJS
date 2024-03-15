@@ -47,7 +47,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
           const value = letterValues[char];
           if (value) {
             return (
-              <div key={index} className="py-1 px-2">
+              <div key={index} className="py-1 text-xl px-2">
                 <span className="font-bold">{char.toUpperCase()}</span>
                 <span>-{value}</span>
               </div>
@@ -65,68 +65,115 @@ const NumerologyDetails = ({ lowerCaseName }) => {
 
     numerologyDetails.push(
       <hr key="separator" className="border-gray-300 my-2" />,
-      <p key="numSum" className="pt-1 text-xl text-center">
-        Numerology of the name{" "}
-        <span className="font-bold">
-          {lowerCaseName && lowerCaseName.length > 0
-            ? lowerCaseName[0].toUpperCase() +
-              lowerCaseName.slice(1).toLowerCase()
-            : ""}
-        </span>{" "}
-        is{" "}
-        <span className="font-bold">{reduceToSingleDigit(numerologySum)}</span>
-      </p>,
-      <p key="interpretation" className="pt-1 pb-3 text-xl text-center">
-        In numerology, number{" "}
-        <span className="font-bold">{reduceToSingleDigit(numerologySum)}</span>{" "}
-        is for{" "}
-        <span className="font-bold">
-          {interpretNumerology(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="luckyColor" className="pt-1 pb-3 text-xl text-center">
-        Lucky Color of {name}:{" "}
-        <span className="font-bold">
-          {getLuckyColor(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="luckyNumber" className="pt-1 pb-3 text-xl text-center">
-        Lucky Number of {name}:{" "}
-        <span className="font-bold">
-          {getLuckyNumber(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="romanceNumber" className="pt-1 pb-3 text-xl text-center">
-        Romance Number of {name}:{" "}
-        <span className="font-bold">
-          {getRomanceNumber(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="luckyDay" className="pt-1 pb-3 text-xl text-center">
-        Lucky Day of {name}:{" "}
-        <span className="font-bold">
-          {getLuckyDay(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="rulingPlanet" className="pt-1 pb-3 text-xl text-center">
-        Ruling Planet of {name}:{" "}
-        <span className="font-bold">
-          {getRulingPlanet(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="luckGemstone" className="pt-1 pb-3 text-xl text-center">
-        Luck Gemstone of {name}:{" "}
-        <span className="font-bold">
-          {getLuckGemstone(reduceToSingleDigit(numerologySum))}
-        </span>
-      </p>,
-      <p key="gemstoneBenefits" className="pt-1 pb-3 text-xl text-center">
-        <span className="font-bold">
-          {getGemstoneBenefits(
-            getLuckGemstone(reduceToSingleDigit(numerologySum))
-          )}
-        </span>
-      </p>
+      <table className="w-full text-xl p-6 text-left whitespace-nowrap">
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="numSum" className=" border-b">
+            <td className="text-right w-1/2 p-4">
+              Numerology of the name{" "}
+              <span className="font-bold">
+                {lowerCaseName && lowerCaseName.length > 0
+                  ? lowerCaseName[0].toUpperCase() +
+                    lowerCaseName.slice(1).toLowerCase()
+                  : ""}
+              </span>
+            </td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {reduceToSingleDigit(numerologySum)}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="interpretation" className=" border-b">
+            <td className="text-right w-1/2 p-4">
+              In numerology, number{" "}
+              <span className="font-bold">
+                {reduceToSingleDigit(numerologySum)}
+              </span>{" "}
+              is for{" "}
+            </td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {interpretNumerology(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="luckyColor" className=" border-b">
+            <td className="text-right w-1/2 p-4"> Lucky Color</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {getLuckyColor(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="luckyNumber" className=" border-b">
+            <td className="text-right w-1/2 p-4">Lucky Number</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {getLuckyNumber(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="romanceNumber" className=" border-b">
+            <td className="text-right w-1/2 p-4">Romance Number</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {getRomanceNumber(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="luckyDay" className=" border-b">
+            <td className="text-right w-1/2 p-4">Lucky Day</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {getLuckyDay(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="rulingPlanet" className=" border-b">
+            <td className="text-right w-1/2 p-4">Ruling Planet</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {getRulingPlanet(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="luckGemstone" className=" border-b">
+            <td className="text-right w-1/2 p-4">Luck Gemstone</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              {" "}
+              <span className="font-bold">
+                {getLuckGemstone(reduceToSingleDigit(numerologySum))}
+              </span>
+            </td>
+          </tr>
+        )}
+        {lowerCaseName && lowerCaseName.trim().length > 0 && (
+          <tr key="gemstoneBenefits" className=" border-b">
+            <td className="text-right w-1/2 p-4">Gemstone Benefits</td>
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+              <span className="font-bold">
+                {getGemstoneBenefits(
+                  getLuckGemstone(reduceToSingleDigit(numerologySum))
+                )}
+              </span>
+            </td>
+          </tr>
+        )}
+      </table>
     );
 
     return numerologyDetails;

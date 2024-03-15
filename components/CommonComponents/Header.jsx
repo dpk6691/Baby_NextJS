@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   const isToolsActive = () => {
-    return router.pathname.startsWith("/tools");
+    return router.pathname.startsWith("/names");
   };
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const Header = () => {
   const hideMenuClick = () => {
     const navbarSearch = document.getElementById("navbar-search");
     const indianDropdown = document.getElementById("indian");
-    const toolsDropdown = document.getElementById("tools-dropdown");
+    const toolsDropdown = document.getElementById("names-dropdown");
 
     if (navbarSearch) {
       navbarSearch.classList.add("hidden");
@@ -208,37 +208,37 @@ const Header = () => {
                     >
                       {isLoading ? (
                         <div className="space-y-5 xl:w-96 px-3 py-5 text-center animate-pulse">
-                          <div class="flex items-center w-full">
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                          <div className="flex items-center w-full">
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
                           </div>
-                          <div class="flex items-center w-full">
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                          <div className="flex items-center w-full">
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
                           </div>
-                          <div class="flex items-center w-full">
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                          <div className="flex items-center w-full">
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
                           </div>
-                          <div class="flex items-center w-full">
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                          <div className="flex items-center w-full">
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
                           </div>
-                          <div class="flex items-center w-full">
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div class="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                          <div className="flex items-center w-full">
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
                           </div>
-                          <span class="sr-only">Loading...</span>
+                          <span className="sr-only">Loading...</span>
                         </div>
                       ) : (
                         <ul className="p-4 flex xl:w-96 flex-wrap">
@@ -273,16 +273,32 @@ const Header = () => {
                     </div>
                   </li>
                   <li>
+                    <Link
+                      href="/rashi"
+                      className="flex items-center"
+                      onClick={hideMenuClick}
+                    >
+                      <div
+                        className={`block py-1 px-3 hover:text-pink-500 ${
+                          isActive("/rashi") &&
+                          "hover:text-blue-500 text-blue-500"
+                        }`}
+                      >
+                        Rashi
+                      </div>
+                    </Link>
+                  </li>
+                  <li>
                     <button
-                      id="tools"
-                      data-dropdown-toggle="tools-dropdown"
+                      id="Names"
+                      data-dropdown-toggle="names-dropdown"
                       className={
-                        isToolsActive("/tools")
+                        isToolsActive("/names")
                           ? "flex py-1 px-3 items-center hover:text-blue-500 text-blue-500"
                           : "flex py-1 px-3 items-center hover:text-pink-500"
                       }
                     >
-                      Tools
+                      Names
                       <svg
                         className="w-2.5 h-2.5 ms-3"
                         aria-hidden="true"
@@ -300,29 +316,39 @@ const Header = () => {
                       </svg>
                     </button>
                     <div
-                      id="tools-dropdown"
+                      id="names-dropdown"
                       className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md"
                     >
                       <div className="p-4 pb-0 text-gray-900 pb-4">
-                        <ul className="space-y-4" aria-labelledby="tools">
+                        <ul className="space-y-4" aria-labelledby="names">
                           <li>
                             <Link
                               onClick={handleToolsItemClick}
-                              href="/tools/rashi"
+                              href="/names/numerology"
                               className="flex items-center text-gray-500 hover:text-blue-600"
                             >
-                              <span className="sr-only">Rashi</span>
-                              Rashi
+                              <span className="sr-only">Numerology</span>
+                              Numerology
                             </Link>
                           </li>
                           <li>
                             <Link
                               onClick={handleToolsItemClick}
-                              href="/tools/numerology"
+                              href="/indian/all-baby-names/boy"
                               className="flex items-center text-gray-500 hover:text-blue-600"
                             >
-                              <span className="sr-only">Numerology</span>
-                              Numerology
+                              <span className="sr-only">Boy Names</span>
+                              Boy Names
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              onClick={handleToolsItemClick}
+                              href="/indian/all-baby-names/girl"
+                              className="flex items-center text-gray-500 hover:text-blue-600"
+                            >
+                              <span className="sr-only">Girls Names</span>
+                              Girls Names
                             </Link>
                           </li>
                         </ul>
@@ -345,18 +371,6 @@ const Header = () => {
                         }`}
                       >
                         Advertise with us
-                      </div>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/write-for-us">
-                      <div
-                        className={`block py-1 px-3 hover:text-pink-500 ${
-                          isActive("/write-for-us") &&
-                          "hover:text-blue-500 text-blue-500"
-                        }`}
-                      >
-                        Write for us
                       </div>
                     </Link>
                   </li>

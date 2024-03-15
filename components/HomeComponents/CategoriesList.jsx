@@ -43,28 +43,28 @@ const CategoriesList = () => {
 
 const LoadingSkeleton = () => (
   <div role="status" className="space-y-5 text-center animate-pulse">
-    <div class="flex items-center w-full">
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+    <div className="flex items-center w-full">
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
     </div>
-    <div class="flex items-center w-full">
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+    <div className="flex items-center w-full">
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
     </div>
-    <div class="flex items-center w-full">
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
-      <div class="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+    <div className="flex items-center w-full">
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-300 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
+      <div className="h-10 bg-pink-200 mx-2 rounded-full dark:bg-pink-700 w-1/5"></div>
     </div>
-    <span class="sr-only">Loading...</span>
+    <span className="sr-only">Loading...</span>
   </div>
 );
 
