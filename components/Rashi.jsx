@@ -200,7 +200,7 @@ const Rashi = () => {
             </div>
             <div className="relative">
               <div
-                className={`mb-10 overflow-x-auto animate-fade-in`}
+                className={`overflow-x-auto animate-fade-in`}
                 style={{ transition: "opacity 0.5s" }}
               >
                 {isLoading ? (
@@ -507,7 +507,7 @@ const Rashi = () => {
                 ) : selectedRashi || filteredData.length > 0 ? (
                   <>
                     {selectedRashi.length > 0 ? (
-                      <div className=" mb-10 overflow-x-auto">
+                      <div className=" mb-3 overflow-x-auto">
                         <table className="w-full text-sm text-left">
                           <tbody>
                             <tr className="border-b border-gray-200">
@@ -546,7 +546,7 @@ const Rashi = () => {
                       </div>
                     ) : null}
 
-                    <div className=" mb-10 overflow-x-auto">
+                    <div className=" mb-3 overflow-x-auto">
                       <table className="w-full text-sm text-left text-gray-500">
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                           <tr>
