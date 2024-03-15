@@ -68,6 +68,62 @@ const Rashi = () => {
     []
   );
 
+  const rashiPersonalityTraits = useMemo(
+    () => ({
+      Dhanu: "Optimistic, adventurous, philosophical, honest, and independent.",
+      Kanya: "Practical, analytical, reliable, kind, and hardworking.",
+      Karka: "Emotional, intuitive, protective, nurturing, and imaginative.",
+      Kumbha:
+        "Innovative, intellectual, humanitarian, eccentric, and independent.",
+      Makar: "Responsible, disciplined, ambitious, practical, and cautious.",
+      Meena: "Compassionate, artistic, intuitive, gentle, and wise.",
+      Mesha:
+        "Courageous, confident, enthusiastic, determined, and independent.",
+      Mithun: "Adaptable, outgoing, intelligent, witty, and expressive.",
+      Simha: "Confident, generous, loyal, dramatic, and charismatic.",
+      Tula: "Diplomatic, charming, social, cooperative, and fair-minded.",
+      Vrishabha: "Reliable, patient, practical, devoted, and sensual.",
+      Vruschika: "Passionate, resourceful, brave, stubborn, and loyal.",
+    }),
+    []
+  );
+
+  const rashiCompatibility = useMemo(
+    () => ({
+      Dhanu: "Best with Aries(Mesh) and Leo(Simha).",
+      Kanya: "Most compatible with Taurus (Vrishabha) and Capricorn (Makar).",
+      Karka: "Most compatible with Scorpio (Vruschika) and Pisces (Meena).",
+      Kumbha: "Best with Gemini (Mithun) and Libra (Tula).",
+      Makar: "Most compatible with Taurus (Vrishabha) and Virgo (Kanya).",
+      Meena: "Most compatible with Cancer (Karka) and Scorpio (Vruschika).",
+      Mesha: "Best with Leo (Simha) and Sagittarius (Dhanu).",
+      Mithun: "Best with Libra (Tula) and Aquarius (Kumbha).",
+      Simha: "Best with Aries (Mesh) and Sagittarius (Dhanu).",
+      Tula: "Best with Gemini (Mithun) and Aquarius (Kumbha).",
+      Vrishabha: "Most compatible with Virgo (Kanya) and Capricorn (Makar).",
+      Vruschika: "Most compatible with Cancer (Karka) and Pisces (Meena).",
+    }),
+    []
+  );
+
+  const rashiChallenges = useMemo(
+    () => ({
+      Dhanu: "Challenges with Virgo (Kanya) and Pisces (Meena).",
+      Kanya: "Challenges with Gemini (Mithun) and Sagittarius (Dhanu).",
+      Karka: "Challenges with Aries (Mesh) and Libra (Tula).",
+      Kumbha: "Challenges with Taurus (Vrishabha) and Scorpio (Vruschika).",
+      Makar: "Challenges with Aries (Mesh) and Libra (Tula).",
+      Meena: "Challenges with Gemini (Mithun) and Sagittarius (Dhanu).",
+      Mesha: "Challenges with Cancer (Karka) and Capricorn (Makar).",
+      Mithun: "Challenges with Pisces (Meena) and Virgo (Kanya).",
+      Simha: "Challenges with Taurus (Vrishabha) and Scorpio (Vruschika).",
+      Tula: "Challenges with Cancer (Karka) and Capricorn (Makar).",
+      Vrishabha: "Challenges with Scorpio (Vruschika) and Aquarius (Kumbha).",
+      Vruschika: "Challenges with Leo (Simha) and Aquarius (Kumbha).",
+    }),
+    []
+  );
+
   useEffect(() => {
     filterData();
   }, [selectedGender, selectedCulture, selectedRashi, currentPage, allEntries]);
@@ -122,13 +178,53 @@ const Rashi = () => {
     }
 
     if (selectedRashi) {
-      filtered = filtered.filter(
-        (entry) =>
+      filtered = filtered.filter((entry) => {
+        const nameUpperCase = entry.name.toUpperCase();
+        const rashiInitialsMatch = rashiInitials[selectedRashi].some(
+          (initial) => nameUpperCase.startsWith(initial)
+        );
+
+        // Check if rashiPersonalityTraits[selectedRashi] is an array before using .some()
+        const rashiPersonalityTraitsArray = Array.isArray(
+          rashiPersonalityTraits[selectedRashi]
+        )
+          ? rashiPersonalityTraits[selectedRashi]
+          : [];
+
+        const rashiPersonalityTraitsMatch = rashiPersonalityTraitsArray.some(
+          (initial) => nameUpperCase.startsWith(initial)
+        );
+
+        // Similar handling for rashiCompatibility and rashiChallenges
+        const rashiCompatibilityArray = Array.isArray(
+          rashiCompatibility[selectedRashi]
+        )
+          ? rashiCompatibility[selectedRashi]
+          : [];
+
+        const rashiCompatibilityMatch = rashiCompatibilityArray.some(
+          (initial) => nameUpperCase.startsWith(initial)
+        );
+
+        const rashiChallengesArray = Array.isArray(
+          rashiChallenges[selectedRashi]
+        )
+          ? rashiChallenges[selectedRashi]
+          : [];
+
+        const rashiChallengesMatch = rashiChallengesArray.some((initial) =>
+          nameUpperCase.startsWith(initial)
+        );
+
+        // Combine all matching criteria using logical OR operator
+        return (
           entry.name &&
-          rashiInitials[selectedRashi].some((initial) =>
-            entry.name.toUpperCase().startsWith(initial)
-          )
-      );
+          (rashiInitialsMatch ||
+            rashiPersonalityTraitsMatch ||
+            rashiCompatibilityMatch ||
+            rashiChallengesMatch)
+        );
+      });
     }
 
     setFilteredData(filtered);
@@ -147,6 +243,18 @@ const Rashi = () => {
 
   const selectedRashiLetters = selectedRashi
     ? rashiInitials[selectedRashi]
+    : [];
+
+  const selectedPersonality = selectedRashi
+    ? rashiPersonalityTraits[selectedRashi]
+    : [];
+
+  const selectedCompatibility = selectedRashi
+    ? rashiCompatibility[selectedRashi]
+    : [];
+
+  const selectedChallenges = selectedRashi
+    ? rashiChallenges[selectedRashi]
     : [];
 
   return (
@@ -513,32 +621,67 @@ const Rashi = () => {
                             <tr className="border-b border-gray-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 w-1/4 py-3 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
                               >
                                 Rashi
                               </th>
-                              <td className="px-6 py-4">{selectedRashi}</td>
+                              <td className="px-6 py-3 w-3/4">
+                                {selectedRashi}
+                              </td>
                             </tr>
                             <tr className="border-b border-gray-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4  w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
                               >
                                 Zodiac
                               </th>
-                              <td className="px-6 py-4">
+                              <td className="px-6 py-4 w-3/4 ">
                                 {rashiZodiacMapping[selectedRashi]}
                               </td>
                             </tr>
                             <tr className="border-b border-gray-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
                               >
                                 Letter
                               </th>
-                              <td className="px-6 py-4">
+                              <td className="px-6 py-4 w-3/4">
                                 {selectedRashiLetters.join(", ")}
+                              </td>
+                            </tr>
+                            <tr className="border-b border-gray-200">
+                              <th
+                                scope="row"
+                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                              >
+                                Personality Traits
+                              </th>
+                              <td className="px-6 py-4 w-3/4">
+                                {selectedPersonality}
+                              </td>
+                            </tr>
+                            <tr className="border-b border-gray-200">
+                              <th
+                                scope="row"
+                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                              >
+                                Compatibility
+                              </th>
+                              <td className="px-6 py-4 w-3/4">
+                                {selectedCompatibility}
+                              </td>
+                            </tr>
+                            <tr className="border-b border-gray-200">
+                              <th
+                                scope="row"
+                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                              >
+                                Challenges
+                              </th>
+                              <td className="px-6 py-4 w-3/4">
+                                {selectedChallenges}
                               </td>
                             </tr>
                           </tbody>
