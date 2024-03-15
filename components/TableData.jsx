@@ -330,7 +330,7 @@ const TableData = () => {
                           selectedGender.slice(1)
                         } `
                       : ""}{" "}
-                    names{" "}
+                    Names{" "}
                     {selectedLetter
                       ? `with ${selectedLetter.toUpperCase()}`
                       : ""}{" "}
