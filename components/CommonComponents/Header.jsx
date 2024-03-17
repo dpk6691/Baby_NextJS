@@ -363,7 +363,10 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/advertise-with-us" onClick={hideMenuClick}>
+                    <Link
+                      href="/company/advertise-with-us"
+                      onClick={hideMenuClick}
+                    >
                       <div
                         className={`block py-1 px-3 hover:text-pink-500 ${
                           isActive("/advertise-with-us") &&

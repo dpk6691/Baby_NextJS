@@ -19,9 +19,30 @@ const Numerology = () => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleIconClick();
+    }
+  };
+
   return (
-    <section className="pt-32 md:pt-28 px-4 mx-auto max-w-screen-2xl lg:px-12">
-      <div className="w-96 mt-5 m-auto mb-5 relative">
+    <section className="w-11/12 justify-between pt-32 mx-auto">
+      <h2 className="text-2xl mb-2 text-center text-pink-500">
+        Top 10 Most Popular Indian Baby Girl Names of 2024!
+      </h2>
+      <p className="pt-2 text-center">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+      <p className="pt-2 text-center">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+      <div className="w-96 mt-14 m-auto mb-5 relative">
         <input
           type="search"
           id="default-search-filter"
@@ -30,6 +51,7 @@ const Numerology = () => {
           required
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
         <div
           className="absolute p-2 bottom-2 right-2"

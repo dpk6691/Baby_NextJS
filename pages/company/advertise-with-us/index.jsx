@@ -1,5 +1,5 @@
 import React from "react";
-import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdSection";
+import AdSection from "../../../components/HomeComponents/AfterBannerComponemts/AdSection";
 
 const index = () => {
   return (
