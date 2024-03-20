@@ -71,7 +71,7 @@ const Header = () => {
     <>
       <header className="fixed z-50 w-full bg-transparent backdrop-blur-xl">
         <div className="w-11/12 m-auto">
-          <nav className="border-gray-200 ">
+          <nav className="border-slate-200 ">
             <div className="flex flex-wrap items-center justify-between mx-auto py-2  ">
               <Link href="/" className="w-full xl:w-auto">
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
@@ -88,7 +88,7 @@ const Header = () => {
                   <input
                     type="search"
                     id="default-search-header"
-                    className="block bg-transparent w-full py-3 pr-10 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
+                    className="block bg-transparent w-full py-3 pr-10 text-sm text-slate-900 border-0 border-b-2 border-slate-300 focus:ring-0 focus:border-0 focus:border-b-2"
                     placeholder="Search by name..."
                     required
                     value={searchValue}
@@ -125,7 +125,7 @@ const Header = () => {
                 <button
                   data-collapse-toggle="navbar-search"
                   type="button"
-                  className="inline-flex items-center p-2 w-10 h-5 justify-center text-sm text-gray-500 rounded-lg xl:hidden"
+                  className="inline-flex items-center p-2 w-10 h-5 justify-center text-sm text-slate-500 rounded-lg xl:hidden"
                   aria-controls="navbar-search"
                   aria-expanded="false"
                 >
@@ -204,7 +204,7 @@ const Header = () => {
                     </button>
                     <div
                       id="indian"
-                      className="absolute z-10 hidden w-auto text-sm bg-white border border-gray-100 rounded-3xl shadow-md"
+                      className="absolute z-10 hidden w-auto text-sm bg-white border border-slate-100 rounded-3xl shadow-md"
                     >
                       {isLoading ? (
                         <div className="space-y-5 xl:w-96 px-3 py-5 text-center animate-pulse">
@@ -317,15 +317,15 @@ const Header = () => {
                     </button>
                     <div
                       id="names-dropdown"
-                      className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-gray-100 rounded-lg shadow-md"
+                      className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-slate-100 rounded-lg shadow-md"
                     >
-                      <div className="p-4 pb-0 text-gray-900 pb-4">
+                      <div className="p-4 pb-0 text-slate-900 pb-4">
                         <ul className="space-y-4" aria-labelledby="names">
                           <li>
                             <Link
                               onClick={handleToolsItemClick}
                               href="/names/numerology"
-                              className="flex items-center text-gray-500 hover:text-blue-600"
+                              className="flex items-center text-slate-500 hover:text-blue-600"
                             >
                               <span className="sr-only">Numerology</span>
                               Numerology
@@ -335,7 +335,7 @@ const Header = () => {
                             <Link
                               onClick={handleToolsItemClick}
                               href="/indian/all-baby-names/boy"
-                              className="flex items-center text-gray-500 hover:text-blue-600"
+                              className="flex items-center text-slate-500 hover:text-blue-600"
                             >
                               <span className="sr-only">Boy Names</span>
                               Boy Names
@@ -345,7 +345,7 @@ const Header = () => {
                             <Link
                               onClick={handleToolsItemClick}
                               href="/indian/all-baby-names/girl"
-                              className="flex items-center text-gray-500 hover:text-blue-600"
+                              className="flex items-center text-slate-500 hover:text-blue-600"
                             >
                               <span className="sr-only">Girls Names</span>
                               Girls Names

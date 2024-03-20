@@ -64,7 +64,7 @@ const Numerology = () => {
         <input
           type="search"
           id="default-search-filter"
-          className="rounded-xl text-xl block bg-pink-50 w-full py-3 pr-12 text-sm text-gray-900 border-0 border-b-2 border-gray-300 focus:ring-0 focus:border-0 focus:border-b-2"
+          className="rounded-xl text-xl block bg-pink-50 w-full py-3 pr-12 text-sm text-slate-900 border-0 border-b-2 border-slate-300 focus:ring-0 focus:border-0 focus:border-b-2"
           placeholder="Name..."
           required
           value={searchValue}

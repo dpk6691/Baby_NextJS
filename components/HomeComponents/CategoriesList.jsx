@@ -73,7 +73,7 @@ const CultureList = ({ uniqueCultures, handleCultureClick }) => (
     {uniqueCultures.map((culture, index) => (
       <li key={index}>
         <div
-          className="min-w-24 bg-pink-200 text-center rounded-3xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-pink-500 hover:text-white"
+          className="min-w-24 bg-pink-200 text-center rounded-2xl text-lg py-2 w-full cursor-pointer inline-block hover:font-bold hover:bg-pink-500 hover:text-white"
           onClick={() => handleCultureClick(culture)}
         >
           {culture && culture.charAt(0).toUpperCase() + culture.slice(1)}

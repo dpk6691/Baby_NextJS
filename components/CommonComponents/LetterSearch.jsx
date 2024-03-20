@@ -5,11 +5,11 @@ import React from "react";
 const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
   const getBackgroundColor = () => {
     if (selectedGender === "boy") {
-      return "bg-blue-500";
+      return "bg-blue-500 border-blue-500";
     } else if (selectedGender === "girl") {
-      return "bg-pink-500";
+      return "bg-pink-500 border-pink-500";
     } else {
-      return "bg-gray-900";
+      return "bg-slate-900 border-slate-500";
     }
   };
 
@@ -25,9 +25,9 @@ const LetterSearch = ({ onSelectLetter, selectedGender, activeLetter }) => {
             key={letter}
             className={`inline-flex items-center cursor-pointer w-8 flex justify-center ${
               activeLetter === letter
-                ? "text-white " + getBackgroundColor()
-                : "bg-white text-gray-900 border-2 hover:bg-gray-500"
-            } py-1 px-3 rounded-xl hover:text-white`}
+                ? "text-white text-xl border-2 " + getBackgroundColor()
+                : "bg-slate-100 text-xl text-black border-slate-300 border-2 hover:bg-slate-800"
+            } py-1 px-4 rounded-xl hover:text-white`}
             onClick={() => handleLetterClick(letter)}
           >
             {letter.toUpperCase()}

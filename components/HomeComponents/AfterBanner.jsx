@@ -26,7 +26,7 @@ const AfterBanner = () => {
           </p>
           <FilterName />
         </div>
-        <div className="md:ml-5 mt-3 md:mt-0 p-5 bg-gray-50 rounded-3xl grid justify-items-stretch w-full md:w-1/4">
+        <div className="md:ml-5 mt-3 md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full md:w-1/4">
           <AdSection />
         </div>
       </div>

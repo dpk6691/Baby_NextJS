@@ -3,12 +3,12 @@ import React from "react";
 const Privacy = () => {
   return (
     <>
-      <section class="py-8 bg-white lg:py-24 dark:bg-gray-900">
+      <section class="py-8 bg-white lg:py-24 dark:bg-slate-900">
         <div class="max-w-4xl px-4 mx-auto format dark:format-invert lg:px-4">
-          <h1 class="mb-6 text-3xl font-bold text-gray-900 lg:text-4xl dark:text-white">
+          <h1 class="mb-6 text-3xl font-bold text-slate-900 lg:text-4xl dark:text-white">
             Privacy policy
           </h1>
-          <p class="mb-10 text-lg text-gray-600 dark:text-gray-400 lg:text-lg">
+          <p class="mb-10 text-lg text-slate-600 dark:text-slate-400 lg:text-lg">
             Read about the privacy policy for Flowbite. If you have a question
             please
             <a
@@ -19,7 +19,7 @@ const Privacy = () => {
             </a>
             and we will help you out as soon as we can.
           </p>
-          <hr class="my-12 border-gray-200 dark:border-gray-800" />
+          <hr class="my-12 border-slate-200 dark:border-slate-800" />
           <p>
             Thank you for choosing to be part of our community at Bergside Inc.
             (" <strong>Company</strong> ", "<strong>we</strong>", "

@@ -27,10 +27,10 @@ const GenderSearch = ({ genderSelected }) => {
           className="sr-only"
         />
         <div
-          className={`cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-xl font-medium rounded-l-2xl ${
+          className={`cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-2xl font-medium rounded-l-2xl ${
             selectedGender === "boy"
               ? "bg-blue-500 text-white  border-2 border-blue-500"
-              : "border-2 border-blue-100 hover:border-blue-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+              : "border-2 bg-blue-100 border-blue-300 hover:border-blue-500 text-slate-500 hover:bg-slate-600 hover:text-white"
           }`}
         >
           Boy
@@ -46,10 +46,10 @@ const GenderSearch = ({ genderSelected }) => {
           className="sr-only"
         />
         <div
-          className={`cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-xl font-medium rounded-r-2xl ${
+          className={`cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-2xl font-medium rounded-r-2xl ${
             selectedGender === "girl"
               ? "bg-pink-500 text-white border-2 border-pink-500 "
-              : "border-2 border-pink-100 hover:border-pink-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+              : "border-2 bg-pink-100 border-pink-300 hover:border-pink-500 text-slate-500 hover:bg-slate-600 hover:text-white"
           }`}
         >
           Girl

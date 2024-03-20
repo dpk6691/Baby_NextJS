@@ -17,24 +17,24 @@ const index = () => {
             and scrambled it to make a type specimen book.
           </p>
 
-          <dl class="text-gray-900 divide-y text-center divide-gray-200">
+          <dl class="text-slate-900 divide-y text-center divide-slate-200">
             <div class="flex flex-col pb-3">
-              <dt class="mb-1 text-gray-500">Email address</dt>
+              <dt class="mb-1 text-slate-500">Email address</dt>
               <dd class="text-md font-semibold">advertise@firststep.baby</dd>
             </div>
             <div class="flex flex-col py-3">
-              <dt class="mb-1 text-gray-500">Home address</dt>
+              <dt class="mb-1 text-slate-500">Home address</dt>
               <dd class="text-md font-semibold">Bengaluru, India</dd>
             </div>
             <div class="flex flex-col pt-3">
-              <dt class="mb-1 text-gray-500">Phone number</dt>
+              <dt class="mb-1 text-slate-500">Phone number</dt>
               <dd class="text-md font-semibold">
                 +00 123 456 789 / +12 345 678
               </dd>
             </div>
           </dl>
         </div>
-        <div className="md:ml-5 mt-5 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center md:w-1/4">
+        <div className="md:ml-5 mt-5 md:mt-0 bg-slate-50 rounded-3xl grid place-content-center md:w-1/4">
           <AdSection />
         </div>
       </div>

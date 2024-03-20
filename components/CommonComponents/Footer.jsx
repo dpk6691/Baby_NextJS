@@ -4,7 +4,7 @@ import logo from "./../../public/images/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="divide-y bg-gray-50 mt-20 rounded-t-3xl">
+    <footer className="divide-y bg-slate-50 mt-20 rounded-t-3xl">
       <div className="w-11/12 flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <div className="flex items-center rounded-full">
@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-50">
+            <h3 className="tracking-wide uppercase dark:text-slate-50">
               Product
             </h3>
             <ul className="space-y-1">
@@ -57,7 +57,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-50">
+            <h3 className="tracking-wide uppercase dark:text-slate-50">
               Company
             </h3>
             <ul className="space-y-1">
@@ -82,7 +82,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase dark:text-gray-50">Developers</h3>
+            <h3 className="uppercase dark:text-slate-50">Developers</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -102,7 +102,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <div className="uppercase dark:text-gray-50">Social media</div>
+            <div className="uppercase dark:text-slate-50">Social media</div>
             <div className="flex justify-start space-x-3">
               <a
                 rel="noopener noreferrer"
@@ -152,7 +152,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center dark:text-gray-400">
+      <div className="py-6 text-sm text-center dark:text-slate-400">
         © 2024 FirstStep.Baby. All rights reserved.
       </div>
     </footer>

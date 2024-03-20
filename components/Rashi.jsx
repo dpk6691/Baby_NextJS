@@ -282,7 +282,7 @@ const Rashi = () => {
                 onChange={(e) => {
                   setSelectedCulture(e.target.value);
                 }}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white mt-4 md:mt-0"
+                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white mt-4 md:mt-0"
               >
                 <option value="">Select Culture</option>
                 {uniqueCultures.map((culture) => (
@@ -296,7 +296,7 @@ const Rashi = () => {
               <select
                 value={selectedRashi}
                 onChange={(e) => setSelectedRashi(e.target.value)}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white mt-4 md:mt-0"
+                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white mt-4 md:mt-0"
               >
                 <option value="">Select Rashi</option>
                 {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
@@ -312,8 +312,8 @@ const Rashi = () => {
                 style={{ transition: "opacity 0.5s" }}
               >
                 {isLoading ? (
-                  <table className="w-full text-sm text-left text-gray-500">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                  <table className="w-full text-sm text-left text-slate-500">
+                    <thead className="text-xs text-slate-700 uppercase bg-slate-50">
                       <tr>
                         <th scope="col" className="px-4 py-3">
                           Name
@@ -332,282 +332,282 @@ const Rashi = () => {
                     <tbody>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                       <tr class="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-gray-200 rounded-full"></div>
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr class="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                     </tbody>
@@ -618,10 +618,10 @@ const Rashi = () => {
                       <div className=" mb-3 overflow-x-auto">
                         <table className="w-full text-sm text-left">
                           <tbody>
-                            <tr className="border-b border-gray-200">
+                            <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 w-1/4 py-3 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 w-1/4 py-3 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
                               >
                                 Rashi
                               </th>
@@ -629,10 +629,10 @@ const Rashi = () => {
                                 {selectedRashi}
                               </td>
                             </tr>
-                            <tr className="border-b border-gray-200">
+                            <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4  w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4  w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
                               >
                                 Zodiac
                               </th>
@@ -640,10 +640,10 @@ const Rashi = () => {
                                 {rashiZodiacMapping[selectedRashi]}
                               </td>
                             </tr>
-                            <tr className="border-b border-gray-200">
+                            <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
                               >
                                 Letter
                               </th>
@@ -651,10 +651,10 @@ const Rashi = () => {
                                 {selectedRashiLetters.join(", ")}
                               </td>
                             </tr>
-                            <tr className="border-b border-gray-200">
+                            <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
                               >
                                 Personality Traits
                               </th>
@@ -662,10 +662,10 @@ const Rashi = () => {
                                 {selectedPersonality}
                               </td>
                             </tr>
-                            <tr className="border-b border-gray-200">
+                            <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
                               >
                                 Compatibility
                               </th>
@@ -673,10 +673,10 @@ const Rashi = () => {
                                 {selectedCompatibility}
                               </td>
                             </tr>
-                            <tr className="border-b border-gray-200">
+                            <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-gray-900 whitespace-nowrap bg-gray-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
                               >
                                 Challenges
                               </th>
@@ -690,8 +690,8 @@ const Rashi = () => {
                     ) : null}
 
                     <div className=" mb-3 overflow-x-auto">
-                      <table className="w-full text-sm text-left text-gray-500">
-                        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                      <table className="w-full text-sm text-left text-slate-500">
+                        <thead className="text-xs text-slate-700 uppercase bg-slate-50">
                           <tr>
                             <th scope="col" className="px-4 py-3">
                               Name
@@ -715,14 +715,14 @@ const Rashi = () => {
                             )
                             .map((entry, index) => (
                               <React.Fragment key={index}>
-                                <tr className="border-b hover:bg-gray-100">
+                                <tr className="border-b hover:bg-slate-100">
                                   <td
                                     className={`px-4 py-2 font-bold underline decoration-double decoration-1 hover:decoration-2 underline-offset-4 whitespace-nowrap ${
                                       selectedGender === "boy"
                                         ? "text-blue-500 decoration-blue-500"
                                         : selectedGender === "girl"
                                         ? "text-pink-500 decoration-pink-500"
-                                        : "text-gray-500 decoration-emerald-500 "
+                                        : "text-slate-500 decoration-emerald-500 "
                                     }`}
                                   >
                                     <Link
@@ -731,15 +731,15 @@ const Rashi = () => {
                                       {entry.name}
                                     </Link>
                                   </td>
-                                  <td className="px-4 py-2 text-gray-900 whitespace-nowrap ">
+                                  <td className="px-4 py-2 text-slate-900 whitespace-nowrap ">
                                     {entry.gender}
                                   </td>
-                                  <td className="px-4 py-2 text-gray-900 whitespace-nowrap ">
+                                  <td className="px-4 py-2 text-slate-900 whitespace-nowrap ">
                                     {entry.culture &&
                                       entry.culture.charAt(0).toUpperCase() +
                                         entry.culture.slice(1)}
                                   </td>
-                                  <td className="px-4 py-2 text-gray-900 whitespace-nowrap ">
+                                  <td className="px-4 py-2 text-slate-900 whitespace-nowrap ">
                                     <button
                                       className="buttonStyle border border-transparent hover:border-slate-500 p-1 rounded-lg "
                                       onClick={() => {
@@ -779,11 +779,11 @@ const Rashi = () => {
                                 </tr>
                                 {index === 4 && (
                                   <tr
-                                    className="border-b hover:bg-gray-100 "
+                                    className="border-b hover:bg-slate-100 "
                                     key="custom-row"
                                   >
                                     <td
-                                      className="bg-gray-200 text-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap"
+                                      className="bg-slate-200 text-center px-4 py-2 font-medium text-slate-900 whitespace-nowrap"
                                       colSpan={
                                         Object.keys(filteredData[0]).length
                                       }
@@ -808,7 +808,7 @@ const Rashi = () => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
               >
                 Previous
               </button>
@@ -816,14 +816,14 @@ const Rashi = () => {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-gray-200 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white"
+                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
               >
                 Next
               </button>
             </div>
           </div>
         </div>
-        <div className="md:ml-5 mt-3 self-start md:mt-0 p-5 bg-gray-50 rounded-3xl grid justify-items-stretch gap-5 w-full md:w-1/4">
+        <div className="md:ml-5 mt-3 self-start md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full md:w-1/4">
           <AdSection />
           <div className="bg-blue-50 w-full p-7 rounded-3xl">
             <NumurolySidebar />

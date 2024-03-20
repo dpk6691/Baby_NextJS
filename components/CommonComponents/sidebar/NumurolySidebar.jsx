@@ -16,7 +16,7 @@ const NumurolySidebar = () => {
         <input
           type="search"
           id="default-search-filter"
-          className="rounded-xl text-xl block bg-pink-50 w-full py-3 pr-12 text-gray-900 border-0 border-b-2 border-blue-300 focus:ring-0 focus:border-0 focus:border-b-2"
+          className="rounded-xl text-xl block bg-pink-50 w-full py-3 pr-12 text-slate-900 border-0 border-b-2 border-blue-300 focus:ring-0 focus:border-0 focus:border-b-2"
           placeholder="Enter a name..."
           onKeyDown={(e) => {
             if (e.key === "Enter") {

@@ -32,22 +32,22 @@ const NameSelected = () => {
   const skeleton = (
     <div className="skeleton">
       <div className="my-2 mt-8 text-xl text-center animate-pulse">
-        <div className="h-4 w-72 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-        <div className="h-4 w-64 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-        <div className="h-4 w-24 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-        <div className="h-4 w-48 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-        <div className="h-4 w-36 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-        <div className="h-4 w-48 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 w-72 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 w-64 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 w-24 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 w-48 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 w-36 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 w-48 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
       </div>
       <div className="mt-4 shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35 dark:text-white">
         <div className="my-2 text-xl text-center animate-pulse">
-          <div className="h-6 w-72 bg-gray-200 mt-4 mb-7 m-auto rounded-full border-b"></div>
-          <div className="h-4 w-48 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-          <div className="h-4 w-72 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-          <div className="h-4 w-64 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-          <div className="h-4 w-48 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-          <div className="h-4 w-24 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
-          <div className="h-4 w-36 bg-gray-200 my-4 m-auto rounded-full border-b"></div>
+          <div className="h-6 w-72 bg-slate-200 mt-4 mb-7 m-auto rounded-full border-b"></div>
+          <div className="h-4 w-48 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+          <div className="h-4 w-72 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+          <div className="h-4 w-64 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+          <div className="h-4 w-48 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+          <div className="h-4 w-24 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+          <div className="h-4 w-36 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@ const NameSelected = () => {
                             <td className="text-right w-1/2 p-4">
                               Meaning of {entry.name} in {entry.culture}
                             </td>
-                            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+                            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
                               <span className="font-bold">{meaning}</span>
                             </td>
                           </tr>
@@ -118,7 +118,7 @@ const NameSelected = () => {
                           <td className="text-right w-1/2 p-4">
                             Meaning of {entry.name} in {entry.culture}
                           </td>
-                          <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+                          <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
                             <span className="font-bold">
                               {entry.meaning_of_name}
                             </span>

@@ -13,7 +13,7 @@ const Shortcut = () => {
         </a>
         <div className="px-5 pb-5">
           <a href="#">
-            <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+            <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
               Top 10 Names
             </h5>
           </a>
@@ -29,7 +29,7 @@ const Shortcut = () => {
         </a>
         <div className="px-5 pb-5">
           <a href="#">
-            <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+            <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
               Culture
             </h5>
           </a>
@@ -45,7 +45,7 @@ const Shortcut = () => {
         </a>
         <div className="px-5 pb-5">
           <a href="#">
-            <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+            <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
               Rashi
             </h5>
           </a>
@@ -61,7 +61,7 @@ const Shortcut = () => {
         </a>
         <div className="px-5 pb-5">
           <a href="#">
-            <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+            <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
               Rashi
             </h5>
           </a>

@@ -37,7 +37,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
     numerologyDetails.push(
       <div key="header" className="text-center mb-2">
         <p className="text-2xl pb-2 font-bold">Numerology Details</p>
-        <hr className="border-gray-300 my-2" />
+        <hr className="border-slate-300 my-2" />
       </div>
     );
 
@@ -64,7 +64,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
     }, 0);
 
     numerologyDetails.push(
-      <hr key="separator" className="border-gray-300 my-2" />,
+      <hr key="separator" className="border-slate-300 my-2" />,
       <table className="w-full text-xl p-6 text-left whitespace-nowrap">
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="numSum" className=" border-b">
@@ -77,7 +77,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
                   : ""}
               </span>
             </td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {reduceToSingleDigit(numerologySum)}
               </span>
@@ -93,7 +93,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
               </span>{" "}
               is for{" "}
             </td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {interpretNumerology(reduceToSingleDigit(numerologySum))}
               </span>
@@ -103,7 +103,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="luckyColor" className=" border-b">
             <td className="text-right w-1/2 p-4"> Lucky Color</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {getLuckyColor(reduceToSingleDigit(numerologySum))}
               </span>
@@ -113,7 +113,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="luckyNumber" className=" border-b">
             <td className="text-right w-1/2 p-4">Lucky Number</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {getLuckyNumber(reduceToSingleDigit(numerologySum))}
               </span>
@@ -123,7 +123,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="romanceNumber" className=" border-b">
             <td className="text-right w-1/2 p-4">Romance Number</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {getRomanceNumber(reduceToSingleDigit(numerologySum))}
               </span>
@@ -133,7 +133,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="luckyDay" className=" border-b">
             <td className="text-right w-1/2 p-4">Lucky Day</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {getLuckyDay(reduceToSingleDigit(numerologySum))}
               </span>
@@ -143,7 +143,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="rulingPlanet" className=" border-b">
             <td className="text-right w-1/2 p-4">Ruling Planet</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {getRulingPlanet(reduceToSingleDigit(numerologySum))}
               </span>
@@ -153,7 +153,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="luckGemstone" className=" border-b">
             <td className="text-right w-1/2 p-4">Luck Gemstone</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               {" "}
               <span className="font-bold">
                 {getLuckGemstone(reduceToSingleDigit(numerologySum))}
@@ -164,7 +164,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="gemstoneBenefits" className=" border-b">
             <td className="text-right w-1/2 p-4">Gemstone Benefits</td>
-            <td className="w-1/2 text-wrap px-4 py-2 border-l border-gray-300">
+            <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
               <span className="font-bold">
                 {getGemstoneBenefits(
                   getLuckGemstone(reduceToSingleDigit(numerologySum))

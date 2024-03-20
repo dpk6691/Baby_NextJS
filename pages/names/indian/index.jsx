@@ -55,7 +55,7 @@ const index = () => {
             ))}
           </ul>
         </div>
-        <div className="md:ml-5 mt-3 md:mt-0 bg-gray-50 rounded-3xl grid place-content-center w-full md:w-1/4">
+        <div className="md:ml-5 mt-3 md:mt-0 bg-slate-50 rounded-3xl grid place-content-center w-full md:w-1/4">
           <AdSection />
         </div>
       </div>

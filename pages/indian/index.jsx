@@ -57,7 +57,7 @@ const index = () => {
                 </a>
                 <div className="px-5 pb-5">
                   <a href="#">
-                    <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+                    <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
                       Top 10 Names
                     </h5>
                   </a>
@@ -73,7 +73,7 @@ const index = () => {
                 </a>
                 <div className="px-5 pb-5">
                   <a href="#">
-                    <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+                    <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
                       Baby Girl Names
                     </h5>
                   </a>
@@ -89,7 +89,7 @@ const index = () => {
                 </a>
                 <div className="px-5 pb-5">
                   <a href="#">
-                    <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+                    <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
                       Baby Girl Names
                     </h5>
                   </a>
@@ -105,7 +105,7 @@ const index = () => {
                 </a>
                 <div className="px-5 pb-5">
                   <a href="#">
-                    <h5 className="text-xl font-semibold text-center tracking-tight text-gray-900 text-center">
+                    <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
                       Numerology
                     </h5>
                   </a>
@@ -133,7 +133,7 @@ const index = () => {
             </ul>
           </div>
         </div>
-        <div className="md:ml-5 self-start mt-3 md:mt-0 p-5 bg-gray-50 rounded-3xl grid justify-items-stretch gap-5 w-full md:w-1/4">
+        <div className="md:ml-5 self-start mt-3 md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full md:w-1/4">
           <AdSection />
           <div className="bg-blue-50 w-full p-7 rounded-3xl">
             <NumurolySidebar />

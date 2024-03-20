@@ -9,6 +9,7 @@ const BabyNameSearch = () => {
   // const [countryData, setCountryData] = useState(null);
   const [selectedGender, setSelectedGender] = useState(null);
   const [selectedLetter, setSelectedLetter] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [error, setError] = useState("");
 
   const router = useRouter();
@@ -68,6 +69,13 @@ const BabyNameSearch = () => {
     router.push(url);
   };
 
+  const handleButtonClick = () => {
+    setIsVisible(true);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 3000); // 3 seconds
+  };
+
   return (
     <div className="grid p-5 md:p-9 bg-white rounded-xl grid-cols-1 content-center place-items-center">
       <div className="grid md:grid-cols-2">
@@ -79,13 +87,13 @@ const BabyNameSearch = () => {
         <form className="w-full md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
           <label
             for="cultures"
-            className="block text-sm font-medium text-gray-900 dark:text-white"
+            className="block text-sm font-medium text-slate-900 dark:text-white"
           >
             Select Cultures
           </label>
           <select
             id="cultures"
-            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-xl font-medium rounded-2xl border-2 border-gray-100 hover:border-gray-500 text-gray-500 hover:bg-gray-600 hover:text-white focus:border-gray-50 "
+            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-xl font-medium rounded-2xl bg-slate-100 border-2 border-slate-300 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white focus:border-slate-50 "
           >
             <option selected>All</option>
             {uniqueCultures.map((culture, index) => (
@@ -114,9 +122,25 @@ const BabyNameSearch = () => {
 
             {!selectedGender || !selectedLetter ? (
               <div className="text-center">
+                <div className={`mb-3 ${isVisible ? "" : "hidden"}`}>
+                  <div className="bg-red-500 text-sm text-white font-bold rounded-full px-4 py-2">
+                    <svg
+                      className="flex-shrink-0 inline w-4 h-4 mr-2"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                    </svg>
+                    Kindly select Gender and Letter both
+                  </div>
+                </div>
+
                 <button
-                  className="m-auto flex items-center py-2 px-4 text-2xl font-medium rounded-xl bg-slate-200 text-slate-400 cursor-not-allowed"
-                  disabled
+                  className="m-auto cursor-not-allowed flex items-center py-2 px-4 text-2xl font-medium rounded-xl bg-slate-200 text-slate-400"
+                  onClick={handleButtonClick}
+                  disabled={isVisible} // Disable button when the message is visible
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -134,25 +158,10 @@ const BabyNameSearch = () => {
                   </svg>{" "}
                   Search
                 </button>
-
-                <div className="mt-3">
-                  <div className="bg-pink-50 text-sm rounded-full px-4 py-2">
-                    <svg
-                      className="flex-shrink-0 inline w-4 h-4 mr-2"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                    </svg>
-                    Kindly select Gender and Letter both
-                  </div>
-                </div>
               </div>
             ) : (
               <button
-                className="flex items-center py-2 px-4 text-2xl font-medium rounded-xl bg-gray-900 text-white"
+                className="flex cursor-pointer items-center py-2 px-4 text-2xl font-medium rounded-xl bg-slate-900 text-white"
                 onClick={handleSearch}
               >
                 <svg
