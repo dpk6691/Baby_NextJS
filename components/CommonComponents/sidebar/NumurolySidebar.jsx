@@ -20,7 +20,7 @@ const NumurolySidebar = () => {
           placeholder="Enter a name..."
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              router.push(`/indian/baby-name/${searchValue.toLowerCase()}`);
+              router.push(`/names/numerology/${searchValue.toLowerCase()}`);
             }
           }}
           required

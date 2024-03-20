@@ -12,7 +12,11 @@ import NumurolySidebar from "./CommonComponents/sidebar/NumurolySidebar";
 const itemsPerPage = 50;
 const pagesToShow = 3;
 
-const TableData = () => {
+const TableData = ({
+  setSelectedGenderState,
+  setSelectedLetterState,
+  setSelectedCultureState,
+}) => {
   const router = useRouter();
   const { culture, gender, letter } = router.query;
   const { IndiaData, isLoading } = India();
@@ -35,6 +39,15 @@ const TableData = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
 
+  useEffect(() => {
+    setSelectedGenderState(urlGender);
+    setSelectedLetterState(urlLetter);
+    setSelectedCultureState(culture);
+    setSelectedGender(urlGender);
+    setSelectedLetter(urlLetter);
+    setSelectedCulture(urlCulture);
+  }, [urlGender, urlCulture, urlLetter, culture, gender, letter]);
+
   const allEntries = useMemo(() => {
     return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
   }, [IndiaData]);
@@ -50,11 +63,6 @@ const TableData = () => {
   );
 
   const { speak, voices } = useSpeechSynthesis();
-
-  useEffect(() => {
-    setSelectedGender(urlGender);
-    setSelectedLetter(urlLetter);
-  }, [urlGender, urlLetter, culture, gender, letter]);
 
   useEffect(() => {
     setSelectedLetter(

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import NumerologyDetails from "./NameSelectedComponents/NumerologyDetails";
 
 const Numerology = () => {
@@ -6,17 +7,34 @@ const Numerology = () => {
   const [lowerCaseName, setLowerCaseName] = useState("");
   const [showDetails, setShowDetails] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
 
-  const handleIconClick = () => {
-    const trimmedValue = searchValue.trim();
+  useEffect(() => {
+    const { query } = router;
+    if (query?.name) {
+      const nameParam = query.name;
+      setSearchValue(nameParam);
+      handleSearch(nameParam);
+    } else {
+      setSearchValue(""); // Initialize searchValue with an empty string
+    }
+  }, [router]);
+
+  const handleSearch = (name) => {
+    const trimmedValue = name.trim();
     if (trimmedValue === "") {
-      setError("Please enter a name before clicking.");
+      setError("Please enter a name.");
       setShowDetails(false);
     } else {
       setLowerCaseName(trimmedValue.toLowerCase());
       setShowDetails(true);
       setError("");
     }
+  };
+
+  const handleIconClick = () => {
+    handleSearch(searchValue);
+    router.push(`/names/numerology/${searchValue.toLowerCase()}`);
   };
 
   const handleKeyDown = (e) => {
@@ -77,8 +95,7 @@ const Numerology = () => {
       {error && <p className="text-red-500">{error}</p>}
       {showDetails && (
         <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl dark:bg-black/35">
-          {" "}
-          <NumerologyDetails lowerCaseName={lowerCaseName} />{" "}
+          <NumerologyDetails lowerCaseName={lowerCaseName} />
         </div>
       )}
     </section>
