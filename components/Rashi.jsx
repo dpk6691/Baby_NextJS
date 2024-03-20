@@ -615,13 +615,13 @@ const Rashi = () => {
                 ) : selectedRashi || filteredData.length > 0 ? (
                   <>
                     {selectedRashi.length > 0 ? (
-                      <div className=" mb-3 overflow-x-auto">
+                      <div className=" mb-5 border-2 rounded-xl overflow-x-auto">
                         <table className="w-full text-sm text-left">
                           <tbody>
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 w-1/4 py-3 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
+                                className="px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
                               >
                                 Rashi
                               </th>
@@ -632,7 +632,7 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4  w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
+                                className="px-6 py-4  w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
                               >
                                 Zodiac
                               </th>
@@ -643,7 +643,7 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
                               >
                                 Letter
                               </th>
@@ -654,7 +654,7 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
                               >
                                 Personality Traits
                               </th>
@@ -665,7 +665,7 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
                               >
                                 Compatibility
                               </th>
@@ -676,7 +676,7 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-50"
+                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
                               >
                                 Challenges
                               </th>
@@ -690,8 +690,8 @@ const Rashi = () => {
                     ) : null}
 
                     <div className=" mb-3 overflow-x-auto">
-                      <table className="w-full text-sm text-left text-slate-500">
-                        <thead className="text-xs text-slate-700 uppercase bg-slate-50">
+                      <table className="w-full text-sm text-left text-slate-900">
+                        <thead className="text-xs text-slate-700 uppercase bg-slate-100">
                           <tr>
                             <th scope="col" className="px-4 py-3">
                               Name
