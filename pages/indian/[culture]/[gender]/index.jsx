@@ -10,8 +10,27 @@ const GenderPage = () => {
   return (
     <div>
       <Head>
-        <title>{`Culture Page - ${selectedGenderState}/${selectedLetterState}/${selectedCultureState}`}</title>
-        <meta name="description" content="Explore cultural data" />
+        <title>
+          Best{" "}
+          {selectedCultureState // Check if selectedCultureState is not empty
+            ? selectedCultureState.split("-")[0].charAt(0).toUpperCase() +
+              selectedCultureState.split("-")[0].slice(1) +
+              " "
+            : ""}{" "}
+          Baby{" "}
+          {selectedGenderState
+            ? selectedGenderState.charAt(0).toUpperCase() +
+              selectedGenderState.slice(1).toLowerCase()
+            : "Gender"}{" "}
+          Names with Meaning and Pronunciation
+        </title>
+
+        <meta
+          name="description"
+          content={`What magical name will you give your little one? From traditional to modern, find the perfect Indian ${
+            selectedGenderState ? selectedGenderState : "Gender"
+          } name for your little one. Start browsing!`}
+        />
       </Head>
 
       <TableData

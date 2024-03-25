@@ -1,4 +1,6 @@
 module.exports = {
+  target: "server", // Set the target option to 'server' to render all pages as SSR
+
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

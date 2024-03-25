@@ -14,19 +14,14 @@ export default async function handler(req, res) {
       );
 
     if (error) throw error;
-
-    // Convert data to JSON string
     const jsonData = JSON.stringify(data);
 
-    // Compress data using gzip
     const compressedData = zlib.gzipSync(jsonData);
 
-    // Set response headers to indicate gzip compression
     res.setHeader("Content-Encoding", "gzip");
     res.setHeader("Content-Type", "application/json");
     res.setHeader("Content-Length", compressedData.length);
 
-    // Send compressed data as response
     res.status(200).end(compressedData);
   } catch (error) {
     console.error("Error fetching data:", error.message);

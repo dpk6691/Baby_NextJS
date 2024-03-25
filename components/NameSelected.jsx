@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import India from "./../pages/api/India";
 import NumerologyDetails from "../components/NameSelectedComponents/NumerologyDetails";
 import AdSection from "./HomeComponents/AfterBannerComponemts/AdSection";
 import RashiList from "./CommonComponents/sidebar/RashiList";
 
-const NameSelected = () => {
+const NameSelected = ({ onPassData }) => {
   const { IndiaData, isLoading } = India();
   const router = useRouter();
   const { name } = router.query;
@@ -14,6 +14,15 @@ const NameSelected = () => {
 
   let selectedNames = [];
   let genders = [];
+
+  useEffect(() => {
+    const fetchData = () => {
+      const data = lowerCaseName;
+      onPassData(data);
+    };
+
+    fetchData();
+  }, [onPassData, lowerCaseName]);
 
   if (lowerCaseName && IndiaData) {
     selectedNames = IndiaData.filter(

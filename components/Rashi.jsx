@@ -292,20 +292,42 @@ const Rashi = () => {
                   </option>
                 ))}
               </select>
-
-              <select
-                value={selectedRashi}
-                onChange={(e) => setSelectedRashi(e.target.value)}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white mt-4 md:mt-0"
-              >
-                <option value="">Select Rashi</option>
-                {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
-                  <option key={rashi} value={rashi}>
-                    {`${rashi} - ${zodiac}`}
-                  </option>
-                ))}
-              </select>
             </div>
+
+            <ul
+              className={`flex flex-wrap justify-center bg-${
+                selectedGender === "boy"
+                  ? "blue"
+                  : selectedGender === "girl"
+                  ? "pink"
+                  : "slate"
+              }-100 pt-6 pb-2 px-3 mb-6`}
+            >
+              {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
+                <li key={rashi} className="mr-4 mb-4">
+                  <input
+                    type="radio"
+                    id={`selectRashiOption_${rashi}`}
+                    name="rashiOptions"
+                    value={rashi}
+                    checked={selectedRashi === rashi}
+                    onChange={(e) => setSelectedRashi(e.target.value)}
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor={`selectRashiOption_${rashi}`}
+                    className={`cursor-pointer py-1 inline-flex items-center px-4 text-l bg-slate-500 text-white font-medium rounded-2xl border-2 border-slate-500 ${
+                      selectedRashi === rashi
+                        ? "border-slate-800 bg-slate-800 text-white"
+                        : "hover:bg-slate-600 hover:text-white"
+                    }`}
+                  >
+                    {`${rashi} - ${zodiac}`}
+                  </label>
+                </li>
+              ))}
+            </ul>
+
             <div className="relative">
               <div
                 className={`overflow-x-auto animate-fade-in`}
@@ -615,13 +637,19 @@ const Rashi = () => {
                 ) : selectedRashi || filteredData.length > 0 ? (
                   <>
                     {selectedRashi.length > 0 ? (
-                      <div className=" mb-5 border-2 rounded-xl overflow-x-auto">
-                        <table className="w-full text-sm text-left">
+                      <div className=" mb-5 overflow-x-auto">
+                        <table className="w-full text-base text-left">
                           <tbody>
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
+                                className={`px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-${
+                                  selectedGender === "boy"
+                                    ? "blue"
+                                    : selectedGender === "girl"
+                                    ? "pink"
+                                    : "slate"
+                                }-100`}
                               >
                                 Rashi
                               </th>
@@ -632,7 +660,13 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4  w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
+                                className={`px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-${
+                                  selectedGender === "boy"
+                                    ? "blue"
+                                    : selectedGender === "girl"
+                                    ? "pink"
+                                    : "slate"
+                                }-100`}
                               >
                                 Zodiac
                               </th>
@@ -643,7 +677,13 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
+                                className={`px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-${
+                                  selectedGender === "boy"
+                                    ? "blue"
+                                    : selectedGender === "girl"
+                                    ? "pink"
+                                    : "slate"
+                                }-100`}
                               >
                                 Letter
                               </th>
@@ -654,7 +694,13 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
+                                className={`px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-${
+                                  selectedGender === "boy"
+                                    ? "blue"
+                                    : selectedGender === "girl"
+                                    ? "pink"
+                                    : "slate"
+                                }-100`}
                               >
                                 Personality Traits
                               </th>
@@ -665,7 +711,13 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
+                                className={`px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-${
+                                  selectedGender === "boy"
+                                    ? "blue"
+                                    : selectedGender === "girl"
+                                    ? "pink"
+                                    : "slate"
+                                }-100`}
                               >
                                 Compatibility
                               </th>
@@ -676,7 +728,13 @@ const Rashi = () => {
                             <tr className="border-b border-slate-200">
                               <th
                                 scope="row"
-                                className="px-6 py-4 w-1/4 font-medium text-slate-900 whitespace-nowrap bg-slate-100"
+                                className={`px-6 w-1/4 py-4 font-medium text-slate-900 whitespace-nowrap bg-${
+                                  selectedGender === "boy"
+                                    ? "blue"
+                                    : selectedGender === "girl"
+                                    ? "pink"
+                                    : "slate"
+                                }-100`}
                               >
                                 Challenges
                               </th>
