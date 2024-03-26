@@ -334,6 +334,16 @@ const Header = () => {
                           <li>
                             <Link
                               onClick={handleToolsItemClick}
+                              href="/names/name-combiner"
+                              className="flex items-center text-slate-500 hover:text-blue-600"
+                            >
+                              <span className="sr-only">Name Combine</span>
+                              Name Combine
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              onClick={handleToolsItemClick}
                               href="/indian/all-baby-names/boy"
                               className="flex items-center text-slate-500 hover:text-blue-600"
                             >
