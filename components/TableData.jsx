@@ -368,7 +368,7 @@ const TableData = ({
                   onChange={(e) => handleSelectCulture(e.target.value)}
                   className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
                 >
-                  <option value="">All</option>
+                  <option value="">All Culture</option>
                   {uniqueCultures.map((culture) => (
                     <option
                       key={culture}

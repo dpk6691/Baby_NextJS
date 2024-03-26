@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import NumerologyDetails from "./NameSelectedComponents/NumerologyDetails";
 
-const Numerology = () => {
+const Numerology = ({ onSelectedName }) => {
   const [searchValue, setSearchValue] = useState("");
   const [lowerCaseName, setLowerCaseName] = useState("");
   const [showDetails, setShowDetails] = useState(false);
@@ -42,6 +42,12 @@ const Numerology = () => {
       handleIconClick();
     }
   };
+
+  useEffect(() => {
+    if (searchValue) {
+      onSelectedName(searchValue);
+    }
+  }, [searchValue, onSelectedName]);
 
   return (
     <section className="w-11/12 justify-between pt-32 mx-auto">
