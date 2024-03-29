@@ -17,9 +17,8 @@ const Footer = () => {
             </Link>
           </div>
           <p class="pt-5 pr-5 text-sm">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+            Know the meaning and decide on the best baby boy name or girl name
+            for your little treasure.
           </p>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
@@ -82,22 +81,17 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase dark:text-slate-50">Developers</h3>
+            <h3 className="uppercase dark:text-slate-50">Others</h3>
             <ul className="space-y-1">
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Public API
-                </a>
+                <Link href="/company/about-us" className="w-full xl:w-auto">
+                  About us
+                </Link>
               </li>
               <li>
-                <a rel="noopener noreferrer" href="#">
-                  Documentation
-                </a>
-              </li>
-              <li>
-                <a rel="noopener noreferrer" href="#">
-                  Guides
-                </a>
+                <Link href="/company/disclaimer" className="w-full xl:w-auto">
+                  Disclaimer
+                </Link>
               </li>
             </ul>
           </div>

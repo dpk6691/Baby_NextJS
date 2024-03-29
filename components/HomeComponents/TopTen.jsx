@@ -46,13 +46,13 @@ const TopTen = () => {
         </svg>
 
         <h2 className="text-2xl mb-2 text-center text-pink-500">
-          Top 10 Most Popular Indian Baby Girl Names of 2024!
+          Top 10 Most Popular Baby Girl Names with Meaning
         </h2>
         <p className="pt-2 text-center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Are you looking to name your little angel? Here is a list of the
+          latest baby girl names with meanings. You can find options if you wish
+          to go the traditional way or mix mother and father names for baby. Go
+          ahead and choose the best new baby girl name.
         </p>
         <div className="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
           {TopGirlName.map((item) => (
@@ -82,13 +82,12 @@ const TopTen = () => {
           </g>
         </svg>
         <h2 className="text-2xl mb-2 text-center text-blue-500">
-          Top 10 Most Popular Indian Baby Boy Names of 2024!
+          Top 10 Latest Baby Boy Names with Meaning
         </h2>
         <p className="pt-2 text-center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          Singling out a cute baby boy name for your little hero is always
+          special. You can find latest modern baby boy names that have deep
+          Indian roots or unique baby boy names to match your choice.
         </p>
         <div className="overflow-auto grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 mt-7 gap-5">
           {TopBoyName.map((item) => (

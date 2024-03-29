@@ -8,21 +8,22 @@ const AfterBanner = () => {
       <div className="flex flex-col lg:flex-row justify-between">
         <div className="lg:w-9/12">
           <h1 className="text-2xl mb-2">
-            Largest Collection of<br></br>
+            Baby Name<br></br>
             <span className="text-4xl font-black pb-6 text-blue-500">
-              Baby <b className="text-pink-500">Names</b>
+              Collection<b className="text-pink-500"> for Newborn</b>
             </span>
           </h1>
           <p className="pt-2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Choosing the best from the sea of baby boy names or girl names is
+            one of the exciting steps you take for your little one. The task is
+            no less difficult as you have many beautiful Indian names to choose
+            from. You can find a number of unique baby names if you wish to
+            continue with tradition, or something unique.<br></br>
+            <br></br>
+            We can provide you with a baby name list to help you with such an
+            important decision. You can consider the latest baby girl or boy
+            names, along with the description and meaning to gift your little
+            munchkin with the perfect name.
           </p>
           <FilterName />
         </div>

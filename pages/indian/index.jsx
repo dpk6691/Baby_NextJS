@@ -41,18 +41,22 @@ const index = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="w-full md:w-9/12">
             <div className="bg-pink-50 p-10 rounded-3xl">
-              <h1 className="text-2xl mb-8 text-center">Indian Baby Names</h1>
+              <h1 className="text-2xl mb-8 text-center">
+                Unique Indian Baby Names for Your Little One
+              </h1>
               <p className="text-center mb-10">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+                Find unique Indian baby names by culture that can be the perfect
+                gift for your little munchkin.<br></br>
+                <br></br>
+                Indian baby names can be a great place for you to start, if you
+                are looking for a boy or girl baby name that is a tribute to
+                your heritage or has deep roots into nature. We tried to cover
+                all the Indian culture below to find the unique but meaningful
+                names with their pronunciation and your local language.{" "}
+                <br></br>
+                <br></br>
+                Try exploring the list of names by just clicking on your
+                preferred culture.
               </p>
 
               <div className="w-full m-auto grid lg:grid-cols-4 gap-5 grid-cols-2">
@@ -66,7 +70,7 @@ const index = () => {
                   </a>
                   <div className="px-5 pb-5">
                     <a href="#">
-                      <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
+                      <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Top 10 Names
                       </h5>
                     </a>
@@ -82,7 +86,7 @@ const index = () => {
                   </a>
                   <div className="px-5 pb-5">
                     <a href="#">
-                      <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
+                      <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Baby Girl Names
                       </h5>
                     </a>
@@ -98,7 +102,7 @@ const index = () => {
                   </a>
                   <div className="px-5 pb-5">
                     <a href="#">
-                      <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
+                      <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Baby Girl Names
                       </h5>
                     </a>
@@ -114,7 +118,7 @@ const index = () => {
                   </a>
                   <div className="px-5 pb-5">
                     <a href="#">
-                      <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
+                      <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Numerology
                       </h5>
                     </a>

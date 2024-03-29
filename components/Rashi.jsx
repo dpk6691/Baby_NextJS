@@ -448,7 +448,7 @@ const Rashi = ({ onSelectRashi }) => {
 
   useEffect(() => {
     filterData();
-  }, [selectedGender, selectedCulture, currentPage, allEntries]);
+  }, [selectedGender, selectedCulture, selectedRashi, currentPage, allEntries]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -614,7 +614,7 @@ const Rashi = ({ onSelectRashi }) => {
                   onChange={(e) => {
                     setSelectedCulture(e.target.value);
                   }}
-                  className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white mt-4 md:mt-0"
+                  className="cursor-pointer bg-slate-100 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white mt-4 md:mt-0"
                 >
                   <option value="">All Culture</option>
                   {uniqueCultures.map((culture) => (
@@ -972,7 +972,7 @@ const Rashi = ({ onSelectRashi }) => {
                     {selectedRashi.length > 0 ? (
                       <div className="mb-5 overflow-x-auto flex flex-col md:flex-row items-center">
                         <span
-                          className={`fill-slate-500 ${
+                          className={`${
                             selectedGender === "boy"
                               ? "fill-blue-500"
                               : selectedGender === "girl"

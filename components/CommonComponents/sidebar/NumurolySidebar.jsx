@@ -7,10 +7,10 @@ const NumurolySidebar = () => {
   const [searchValue, setSearchValue] = useState("");
   return (
     <div>
-      <h1 className="text-2xl mb-2 text-center">Name Numerology Calculator </h1>
+      <h3 className="text-2xl mb-2 text-center">Name Numerology Calculator</h3>
       <p className="pt-2 text-center">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Decode your magical numbers, hidden powers, personality traits, and life
+        challenges with the help of our numerology calculator.
       </p>
       <div className="mt-5 m-auto relative">
         <input

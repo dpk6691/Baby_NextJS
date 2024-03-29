@@ -7,30 +7,36 @@ const index = () => {
       <div className="flex justify-between flex-col md:flex-row">
         <div className="bg-pink-50 p-10 rounded-3xl md:w-9/12">
           <h1 className="text-2xl mb-8 text-center">
-            {" "}
-            For advertising enquiries contact:
+            Advertise With FirstStep.Baby
           </h1>
+          <p className="text-center mb-2">
+            With over 10000+ page views a month, we provide advertisers a strong
+            platform to reach a high profile and engaged user base in India as
+            well as abroad. Our 90% visitors come from a niche background of
+            parents all around the world and organic.
+          </p>
           <p className="text-center mb-10">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Our aim is not to charge you only money but drive you benefit.
           </p>
 
-          <dl class="text-slate-900 divide-y text-center divide-slate-200">
+          <dl class="text-slate-900 text-center">
+            <h2 className="text-2xl mb-8 text-center">
+              For advertising Enquiries Contact:
+            </h2>
             <div class="flex flex-col pb-3">
               <dt class="mb-1 text-slate-500">Email address</dt>
-              <dd class="text-md font-semibold">advertise@firststep.baby</dd>
+              <dd class="text-md font-semibold">
+                <a
+                  className="mx-2 text-md font-semibold no-underline hover:underline"
+                  href="mailto:advertise@firststep.baby"
+                >
+                  advertise@firststep.baby
+                </a>
+              </dd>
             </div>
             <div class="flex flex-col py-3">
-              <dt class="mb-1 text-slate-500">Home address</dt>
+              <dt class="mb-1 text-slate-500">Address</dt>
               <dd class="text-md font-semibold">Bengaluru, India</dd>
-            </div>
-            <div class="flex flex-col pt-3">
-              <dt class="mb-1 text-slate-500">Phone number</dt>
-              <dd class="text-md font-semibold">
-                +00 123 456 789 / +12 345 678
-              </dd>
             </div>
           </dl>
         </div>
