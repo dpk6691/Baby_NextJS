@@ -590,7 +590,7 @@ const Rashi = ({ onSelectRashi }) => {
           <h1 className="text-2xl mb-2 text-center text-pink-500">
             Title (H1)
           </h1>
-          <p class="pt-2 mb-6 px-20 text-center">
+          <p className="pt-2 mb-6 px-20 text-center">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s.
@@ -604,7 +604,7 @@ const Rashi = ({ onSelectRashi }) => {
               />
               <div className="w-full mt-5 md:mt-0 md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
                 <label
-                  htmlFor="cultures"
+                  htmlhtmlFor="cultures"
                   className="block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Select Cultures
@@ -648,7 +648,7 @@ const Rashi = ({ onSelectRashi }) => {
                     className="hidden"
                   />
                   <label
-                    htmlFor={`selectRashiOption_${rashi}`}
+                    htmlhtmlFor={`selectRashiOption_${rashi}`}
                     className={`cursor-pointer py-1 inline-flex items-center px-4 text-l bg-slate-500 text-white font-medium rounded-2xl border-2 border-slate-500 ${
                       selectedRashi === rashi
                         ? "border-slate-800 bg-slate-800 text-white"
@@ -685,284 +685,284 @@ const Rashi = ({ onSelectRashi }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
-                        </th>
-                      </tr>
-                      <tr class="animate-pulse border-b">
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
-                        </th>
-                        <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-16 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-28  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-12 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
-                      <tr class="animate-pulse border-b">
+                      <tr className="animate-pulse border-b">
                         <th className="px-3 py-4">
-                          <div class="h-4 w-32 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-10  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-32  bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
                         </th>
                         <th className="px-3 py-4">
-                          <div class="h-4 w-24 bg-slate-200 rounded-full"></div>
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-16 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-28  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-12 bg-slate-200 rounded-full"></div>
+                        </th>
+                      </tr>
+                      <tr className="animate-pulse border-b">
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32 bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-10  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-32  bg-slate-200 rounded-full"></div>
+                        </th>
+                        <th className="px-3 py-4">
+                          <div className="h-4 w-24 bg-slate-200 rounded-full"></div>
                         </th>
                       </tr>
                     </tbody>

@@ -29,3 +29,5 @@ sitemap({
     }, {}),
   },
 });
+
+// node scripts/sitemap-generator.js

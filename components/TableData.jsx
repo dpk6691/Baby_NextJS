@@ -272,7 +272,7 @@ const TableData = ({
       <div className="flex mt-3 flex-col md:flex-row items-center justify-evenly space-y-3 md:space-y-0 md:space-x-4 p-4">
         <div className="flex flex-1 w-full justify-center md:justify-start">
           <form className="flex flex-col ">
-            <label htmlFor="simple-search" className="sr-only">
+            <label htmlhtmlFor="simple-search" className="sr-only">
               Search
             </label>
             <div className="relative w-full">
@@ -341,7 +341,7 @@ const TableData = ({
 
         <div className="w-full md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
           <label
-            htmlFor="cultures"
+            htmlhtmlFor="cultures"
             className="block text-sm font-medium text-slate-900 dark:text-white"
           >
             Select Cultures

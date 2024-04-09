@@ -60,24 +60,24 @@ const About = () => {
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
-              <figure class="max-w-lg">
+              <figure className="max-w-lg">
                 <Image
                   className="h-auto w-full max-w-lg rounded-lg"
                   src={Dharmik}
                   alt="image description"
                 />{" "}
-                <figcaption class="mt-2 text-center text-gray-500">
+                <figcaption className="mt-2 text-center text-gray-500">
                   Dharmik
                 </figcaption>
               </figure>
 
-              <figure class="max-w-lg">
+              <figure className="max-w-lg">
                 <Image
                   className="h-auto w-full max-w-lg rounded-lg"
                   src={Dipak}
                   alt="image description"
                 />
-                <figcaption class="mt-2 text-center text-gray-500">
+                <figcaption className="mt-2 text-center text-gray-500">
                   Dipak
                 </figcaption>
               </figure>

@@ -353,7 +353,7 @@ const RashiPage = () => {
         "Best with Aries(Mesh) and Leo(Simha).",
         "Challenges with Virgo (Kanya) and Pisces (Meena).",
         `<div>Dhanu rashi babies are adventurous, optimistic, and always ready for a new challenge. They have a thirst for knowledge and a love for exploring the world around them. People born under this sign are described as:
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Adventurous and free-spirited</li>
           <li>Optimistic and philosophical</li>
           <li> Independent and open-minded</li>
@@ -370,7 +370,7 @@ const RashiPage = () => {
         "Challenges with Gemini (Mithun) and Sagittarius (Dhanu).",
         `<div>Kanya rashi babies are the perfectionists of the zodiac. They're analytical, detail-oriented, and highly organized. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Analytical and detail-oriented
           </li>
           <li>Practical and organized
@@ -392,7 +392,7 @@ const RashiPage = () => {
         "Challenges with Aries (Mesh) and Libra (Tula).",
         `<div>Karka rashi babies are the nurturers of the zodiac. They're sensitive, empathetic, and deeply connected to their emotions. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Nurturing and empathetic</li>
           <li>Intuitive and compassionate
           </li>
@@ -413,7 +413,7 @@ const RashiPage = () => {
         "Challenges with Taurus (Vrishabha) and Scorpio (Vruschika).",
         `<div>Kumbha rashi babies are the rebels of the zodiac. They're independent, unconventional, and fiercely individualistic. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Independent and progressive</li>
           <li>Intellectual and visionary</li>
           <li>Humanitarian and altruistic</li>
@@ -429,7 +429,7 @@ const RashiPage = () => {
         "Most compatible with Taurus (Vrishabha) and Virgo (Kanya).",
         "Challenges with Aries (Mesh) and Libra (Tula).",
         `<div>Makar rashi babies are wise beyond their years. They're disciplined, responsible, and have a strong sense of ambition. People born under this sign are described as:
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Ambitious and disciplined, they have a strong drive to succeed in their endeavors.</li>
           <li>Practical and responsible, they excel in planning and organization.</li>
           <li>Patient and persevering, they are willing to put in the hard work to achieve their goals.</li>
@@ -445,7 +445,7 @@ const RashiPage = () => {
         "Most compatible with Cancer (Karka) and Scorpio (Vruschika).",
         "Challenges with Gemini (Mithun) and Sagittarius (Dhanu).",
         `<div>Meena rashi babies are sensitive, intuitive, and deeply empathetic. They're natural dreamers who possess a rich imagination and a creative soul. People born under this sign are described as:
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Compassionate and empathetic</li>
           <li>Creative and imaginative</li>
           <li>Intuitive and spiritual</li>
@@ -461,7 +461,7 @@ const RashiPage = () => {
         "Best with Leo (Simha) and Sagittarius (Dhanu).",
         "Challenges with Cancer (Karka) and Capricorn (Makar).",
         `<div>Mesh rashi babies are born leaders. They're energetic, adventurous, and always ready to take on new challenges. People born under this sign are described as:
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Energetic and enthusiastic</li>
           <li>Natural leaders</li>
           <li>Adventurous</li>
@@ -477,7 +477,7 @@ const RashiPage = () => {
         "Best with Libra (Tula) and Aquarius (Kumbha).",
         "Challenges with Pisces (Meena) and Virgo (Kanya).",
         `<div>Mithun rashi babies are curious, adaptable, and endlessly entertaining. With their quick wit and charming personality, they have a knack for making friends wherever they go.People born under this sign are described as:
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Curious and adaptable</li>
           <li>Charming communicators
           </li>
@@ -497,7 +497,7 @@ const RashiPage = () => {
         "Challenges with Taurus (Vrishabha) and Scorpio (Vruschika).",
         `<div>Sinha rashi babies are natural born stars. They're confident, charismatic, and love to be the center of attention. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Confident and charismatic</li>
           <li>Creative and expressive</li>
           <li>Generous and warm-hearted</li>
@@ -514,7 +514,7 @@ const RashiPage = () => {
         "Challenges with Cancer (Karka) and Capricorn (Makar).",
         `<div>Tula babies are the peacemakers of the zodiac. They're diplomatic, charming, and have a natural sense of fairness. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Diplomatic and peace-loving</li>
           <li>Social and charming</li>
           <li>Fair-minded and just</li>
@@ -531,7 +531,7 @@ const RashiPage = () => {
         "Challenges with Scorpio (Vruschika) and Aquarius (Kumbha).",
         `<div>Vrishabha rashi babies are known for their grounded and practical nature. They're reliable, patient, and have a strong sense of determination. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Grounded and practical</li>
           <li>Patient and reliable
           </li>
@@ -548,7 +548,7 @@ const RashiPage = () => {
         "Challenges with Leo (Simha) and Aquarius (Kumbha).",
         `<div>Vruschika rashi babies are intense, passionate, and fiercely loyal. They're known for their depth of emotions and their ability to see beneath the surface. People born under this sign are described as:
 
-        <ul class="list-inside mt-2 list-disc">
+        <ul className="list-inside mt-2 list-disc">
           <li>Intense and passionate</li>
           <li>Mysterious and secretive
           </li>
@@ -576,11 +576,11 @@ const RashiPage = () => {
       <div className="w-11/12 m-auto pt-32 md:pt-28">
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="lg:w-9/12">
-            <h1 class="text-2xl mb-2 text-center text-slate-900">
-              Baby Name <span class="text-pink-500">Based on Rashi</span>{" "}
-              <span class="text-blue-500">(Zodiac)</span>
+            <h1 className="text-2xl mb-2 text-center text-slate-900">
+              Baby Name <span className="text-pink-500">Based on Rashi</span>{" "}
+              <span className="text-blue-500">(Zodiac)</span>
             </h1>
-            <p class="pt-2 mb-6 md:px-20 text-center">
+            <p className="pt-2 mb-6 md:px-20 text-center">
               As per Indian astrology, parents are still believe in the impact
               of zodiac sigh for their baby. There are certain letters that are
               considered lucky for each rashi (zodiac sign). Understanding these

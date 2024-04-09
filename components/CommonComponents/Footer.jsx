@@ -16,7 +16,7 @@ const Footer = () => {
               />
             </Link>
           </div>
-          <p class="pt-5 pr-5 text-sm">
+          <p className="pt-5 pr-5 text-sm">
             Know the meaning and decide on the best baby boy name or girl name
             for your little treasure.
           </p>
