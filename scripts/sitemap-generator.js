@@ -7,7 +7,7 @@ function getDynamicRoutes() {
 }
 
 sitemap({
-  baseUrl: "https://baby-next-js.vercel.app/",
+  baseUrl: "https://baby-next-js.vercel.app",
   pagesDirectory: path.resolve(__dirname, "../pages/"),
   targetDirectory: path.resolve(__dirname, "../public/"),
   ignoredExtensions: ["js", "map", "json", "xml", "png", "jpg", "jpeg", "svg"],

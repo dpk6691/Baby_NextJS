@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      
+	<url>
+		<loc>https://baby-next-js.vercel.app/Home.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/api/India.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/company/about-us/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/company/advertise-with-us/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/company/disclaimer/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/company/privacy/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/company/terms/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/contact-us/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/indian/[culture]/[gender]/[letter]/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/indian/[culture]/[gender]/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/indian/[culture]/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/indian/baby-name/[name].jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/indian/baby-name/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/indian/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/names/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/names/name-combiner/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/names/numerology/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/rashi/[rashiName]/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/rashi/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+
+	<url>
+		<loc>https://baby-next-js.vercel.app/write-for-us/index.jsx</loc>
+		<lastmod>2024-04-09</lastmod>
+	</url>
+</urlset>
