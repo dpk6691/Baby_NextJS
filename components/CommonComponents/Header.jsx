@@ -319,7 +319,7 @@ const Header = () => {
                       id="names-dropdown"
                       className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-slate-100 rounded-lg shadow-md"
                     >
-                      <div className="p-4 pb-0 text-slate-900 pb-4">
+                      <div className="p-4 text-slate-900 pb-4">
                         <ul className="space-y-4" aria-labelledby="names">
                           <li>
                             <Link

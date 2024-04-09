@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image"; // Import Image component from Next.js
-import Dharmik from "./../../../public/images/Dharmik.png";
+import Dharmik from "./../../../public/images/dharmik.png";
 import Dipak from "./../../../public/images/dipak.jpg";
 
 const About = () => {
