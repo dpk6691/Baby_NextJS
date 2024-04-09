@@ -1214,7 +1214,7 @@ const Rashi = ({ onSelectRashi }) => {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
+                className="cursor-pointer inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
               >
                 Previous
               </button>
@@ -1222,7 +1222,7 @@ const Rashi = ({ onSelectRashi }) => {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
+                className="cursor-pointer inline-flex items-center px-6 py-1 text-l font-medium rounded-xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
               >
                 Next
               </button>

@@ -50,17 +50,15 @@ const FilterName = () => {
               <div className={activeTab === "name" ? "block" : "hidden"}>
                 <div className="grid p-5 md:p-9 bg-white rounded-xl grid-cols-1 ">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged.
+                    Most new parents or soon to be parents search for baby
+                    names. If you are one among them, you can pick a new born
+                    baby name as per your choice. If you have any particular
+                    criteria for choosing a baby name, you can create a filter
+                    for you to shorten the baby name list.
                   </p>
                   <p className="mt-2">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    This feature will ease your task, but at the same time you
+                    can have the best baby name for your little munchkin.
                   </p>
                   <div className="flex w-full md:order-2">
                     <div className="w-96 mt-5 relative">

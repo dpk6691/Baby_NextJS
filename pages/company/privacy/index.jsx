@@ -4,15 +4,15 @@ const Privacy = () => {
   return (
     <>
       <section className="w-11/12 m-auto pt-32 md:pt-28">
-        <div class="mx-auto format">
-          <h1 class="mb-6 text-3xl font-bold text-slate-900 lg:text-4xl dark:text-white">
+        <div className="mx-auto format">
+          <h1 className="mb-6 text-3xl font-bold text-slate-900 lg:text-4xl dark:text-white">
             Privacy Policy
           </h1>
-          <p class="mb-10 text-lg text-slate-600 dark:text-slate-400 lg:text-lg">
+          <p className="mb-10 text-lg text-slate-600 dark:text-slate-400 lg:text-lg">
             Your privacy is important to us. This policy explains what
             information we collect when you visit First Step and how we use it.
           </p>
-          <hr class="my-12 border-slate-200 dark:border-slate-800" />
+          <hr className="my-12 border-slate-200 dark:border-slate-800" />
           <p>
             <strong>What We Don't Collect:</strong>
           </p>

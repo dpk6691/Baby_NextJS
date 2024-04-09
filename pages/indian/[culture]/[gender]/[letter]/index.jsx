@@ -79,7 +79,7 @@ const LetterPage = () => {
               <span className="text-blue-500">Names</span> with Letter "
               {selectedLetterState ? selectedLetterState.toUpperCase() : ""}"
             </h1>
-            <p class="pt-2 mb-6 px-20 text-center">
+            <p className="pt-2 mb-6 px-20 text-center">
               Discover a range of{" "}
               {selectedCultureState
                 ? selectedCultureState

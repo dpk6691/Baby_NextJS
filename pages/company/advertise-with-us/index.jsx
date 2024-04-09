@@ -19,13 +19,13 @@ const index = () => {
             Our aim is not to charge you only money but drive you benefit.
           </p>
 
-          <dl class="text-slate-900 text-center">
+          <dl className="text-slate-900 text-center">
             <h2 className="text-2xl mb-8 text-center">
               For advertising Enquiries Contact:
             </h2>
-            <div class="flex flex-col pb-3">
-              <dt class="mb-1 text-slate-500">Email address</dt>
-              <dd class="text-md font-semibold">
+            <div className="flex flex-col pb-3">
+              <dt className="mb-1 text-slate-500">Email address</dt>
+              <dd className="text-md font-semibold">
                 <a
                   className="mx-2 text-md font-semibold no-underline hover:underline"
                   href="mailto:advertise@firststep.baby"
@@ -34,9 +34,9 @@ const index = () => {
                 </a>
               </dd>
             </div>
-            <div class="flex flex-col py-3">
-              <dt class="mb-1 text-slate-500">Address</dt>
-              <dd class="text-md font-semibold">Bengaluru, India</dd>
+            <div className="flex flex-col py-3">
+              <dt className="mb-1 text-slate-500">Address</dt>
+              <dd className="text-md font-semibold">Bengaluru, India</dd>
             </div>
           </dl>
         </div>

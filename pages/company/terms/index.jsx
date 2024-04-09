@@ -3,23 +3,23 @@ import React from "react";
 const Terms = () => {
   return (
     <>
-      <section class="py-8 bg-white lg:py-24 dark:bg-slate-900">
-        <div class="max-w-4xl px-4 mx-auto format dark:format-invert lg:px-4">
-          <h1 class="mb-6 text-3xl font-bold text-slate-900 lg:text-4xl dark:text-white">
+      <section className="py-8 bg-white lg:py-24 dark:bg-slate-900">
+        <div className="max-w-4xl px-4 mx-auto format dark:format-invert lg:px-4">
+          <h1 className="mb-6 text-3xl font-bold text-slate-900 lg:text-4xl dark:text-white">
             Terms policy
           </h1>
-          <p class="mb-10 text-lg text-slate-600 dark:text-slate-400 lg:text-lg">
+          <p className="mb-10 text-lg text-slate-600 dark:text-slate-400 lg:text-lg">
             Read about the privacy policy for Flowbite. If you have a question
             please
             <a
-              class="mx-2 font-normal text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="mx-2 font-normal text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="/contact/"
             >
               contact us
             </a>
             and we will help you out as soon as we can.
           </p>
-          <hr class="my-12 border-slate-200 dark:border-slate-800" />
+          <hr className="my-12 border-slate-200 dark:border-slate-800" />
           <p>
             Thank you for choosing to be part of our community at Bergside Inc.
             (" <strong>Company</strong> ", "<strong>we</strong>", "
@@ -29,7 +29,7 @@ const Terms = () => {
             practices with regards to your personal information, please contact
             us at{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com/contact/"
             >
               our contact page
@@ -39,7 +39,7 @@ const Terms = () => {
           <p>
             When you visit our website{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com"
             >
               https://flowbite.com
@@ -65,11 +65,11 @@ const Terms = () => {
               understand what we do with the information that we collect.
             </strong>
           </p>
-          <h2 class="mb-4 h4">TABLE OF CONTENTS</h2>
+          <h2 className="mb-4 h4">TABLE OF CONTENTS</h2>
           <ol>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#1"
               >
                 WHAT INFORMATION DO WE COLLECT?
@@ -77,7 +77,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#2"
               >
                 HOW DO WE USE YOUR INFORMATION?
@@ -85,7 +85,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#3"
               >
                 WILL YOUR INFORMATION BE SHARED WITH ANYONE?
@@ -93,7 +93,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#4"
               >
                 DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
@@ -101,7 +101,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#5"
               >
                 WHAT IS OUR STANCE ON THIRD-PARTY WEBSITES?
@@ -109,7 +109,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#6"
               >
                 HOW LONG DO WE KEEP YOUR INFORMATION?
@@ -117,7 +117,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#7"
               >
                 WHAT ARE YOUR PRIVACY RIGHTS?
@@ -125,7 +125,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#8"
               >
                 CONTROLS FOR DO-NOT-TRACK FEATURES
@@ -133,7 +133,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#9"
               >
                 DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
@@ -141,7 +141,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#10"
               >
                 DO WE MAKE UPDATES TO THIS NOTICE?
@@ -149,7 +149,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#11"
               >
                 HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
@@ -157,7 +157,7 @@ const Terms = () => {
             </li>
             <li>
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="#12"
               >
                 HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM
@@ -165,7 +165,7 @@ const Terms = () => {
               </a>
             </li>
           </ol>
-          <h2 id="1" class="mb-4 h4">
+          <h2 id="1" className="mb-4 h4">
             1. WHAT INFORMATION DO WE COLLECT?
           </h2>
           <p>
@@ -196,7 +196,7 @@ const Terms = () => {
             code associated with your payment instrument. All payment data is
             stored by Paddle. You may find their privacy notice link(s) here:{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://paddle.com/privacy/"
               rel="nofollow"
             >
@@ -271,7 +271,7 @@ const Terms = () => {
               of the Services.
             </li>
           </ul>
-          <h2 id="2" class="mb-4 h4">
+          <h2 id="2" className="mb-4 h4">
             2. HOW DO WE USE YOUR INFORMATION?
           </h2>
           <p>
@@ -306,7 +306,7 @@ const Terms = () => {
               content of the testimonial. If you wish to update, or delete your
               testimonial, please contact us at{" "}
               <a
-                class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+                className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
                 href="https://flowbite.com/contact/"
               >
                 https://flowbite.com/contact/
@@ -396,7 +396,7 @@ const Terms = () => {
               your interests and/or location and to measure its effectiveness.
             </li>
           </ul>
-          <h2 id="3" class="mb-4 h4">
+          <h2 id="3" className="mb-4 h4">
             3. WILL YOUR INFORMATION BE SHARED WITH ANYONE?
           </h2>
           <p>
@@ -454,7 +454,7 @@ const Terms = () => {
               or a portion of our business to another company.
             </li>
           </ul>
-          <h2 id="4" class="mb-4 h4">
+          <h2 id="4" className="mb-4 h4">
             4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
           </h2>
           <p>
@@ -467,7 +467,7 @@ const Terms = () => {
             information about how we use such technologies and how you can
             refuse certain cookies is set out in our Cookie Notice.
           </p>
-          <h2 id="5" class="mb-4 h4">
+          <h2 id="5" className="mb-4 h4">
             5. WHAT IS OUR STANCE ON THIRD-PARTY WEBSITES?
           </h2>
           <p>
@@ -487,7 +487,7 @@ const Terms = () => {
             review the policies of such third parties and contact them directly
             to respond to your questions.
           </p>
-          <h2 id="6" class="mb-4 h4">
+          <h2 id="6" className="mb-4 h4">
             6. HOW LONG DO WE KEEP YOUR INFORMATION?
           </h2>
           <p>
@@ -511,7 +511,7 @@ const Terms = () => {
             will securely store your personal information and isolate it from
             any further processing until deletion is possible.
           </p>
-          <h2 id="7" class="mb-4 h4">
+          <h2 id="7" className="mb-4 h4">
             7. WHAT ARE YOUR PRIVACY RIGHTS?
           </h2>
           <p>
@@ -530,7 +530,7 @@ const Terms = () => {
             also have the right to object to the processing of your personal
             information. To make such a request, please use the{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com"
             >
               contact details
@@ -552,7 +552,7 @@ const Terms = () => {
             have the right to complain to your local data protection supervisory
             authority. You can find their contact details here:{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm"
             >
               http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm
@@ -563,7 +563,7 @@ const Terms = () => {
             If you are a resident in Switzerland, the contact details for the
             data protection authorities are available here:{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://www.edoeb.admin.ch/edoeb/en/home.html"
             >
               https://www.edoeb.admin.ch/edoeb/en/home.html
@@ -573,7 +573,7 @@ const Terms = () => {
           <p>
             If you have questions or comments about your privacy rights, you may{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com/contact/"
             >
               contact us here
@@ -609,7 +609,7 @@ const Terms = () => {
             certain features or services of our Website. To opt-out of
             interest-based advertising by advertisers on our Website visit{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="http://www.aboutads.info/choices/"
             >
               http://www.aboutads.info/choices/
@@ -627,7 +627,7 @@ const Terms = () => {
             service requests, or for other non-marketing purposes. To otherwise
             opt-out, you may:
           </p>
-          <h2 id="8" class="mb-4 h4">
+          <h2 id="8" className="mb-4 h4">
             8. CONTROLS FOR DO-NOT-TRACK FEATURES
           </h2>
           <p>
@@ -643,7 +643,7 @@ const Terms = () => {
             future, we will inform you about that practice in a revised version
             of this privacy notice.
           </p>
-          <h2 id="9" class="mb-4 h4">
+          <h2 id="9" className="mb-4 h4">
             9. DO CALIFORNIA RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
           </h2>
           <p>
@@ -703,7 +703,7 @@ const Terms = () => {
             We have collected the following categories of personal information
             in the past twelve (12) months:
           </p>
-          <table class="table table-striped">
+          <table className="table table-striped">
             <thead>
               <tr>
                 <td>Category</td>
@@ -827,7 +827,7 @@ const Terms = () => {
           <p>
             You may contact us by visiting{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com/contact/"
             >
               https://flowbite.com/contact/
@@ -971,7 +971,7 @@ const Terms = () => {
           <p>
             To exercise these rights, you can contact us by visiting{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com/contact/"
             >
               https://flowbite.com/contact/
@@ -980,7 +980,7 @@ const Terms = () => {
             document. If you have a complaint about how we handle your data, we
             would like to hear from you.
           </p>
-          <h2 id="10" class="mb-4 h4">
+          <h2 id="10" className="mb-4 h4">
             10. DO WE MAKE UPDATES TO THIS NOTICE?
           </h2>
           <p>
@@ -997,13 +997,13 @@ const Terms = () => {
             privacy notice frequently to be informed of how we are protecting
             your information.
           </p>
-          <h2 id="11" class="mb-4 h4">
+          <h2 id="11" className="mb-4 h4">
             11. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
           </h2>
           <p>
             If you have questions or comments about this notice, you may{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com/contact/"
             >
               contact us here
@@ -1014,7 +1014,7 @@ const Terms = () => {
             Bergside Inc. Str. Constantin Titel Petrescu Timisoara, Timis 300103
             Romania
           </p>
-          <h2 id="12" class="mb-4 h4">
+          <h2 id="12" className="mb-4 h4">
             12. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
             YOU?
           </h2>
@@ -1025,7 +1025,7 @@ const Terms = () => {
             request to review, update, or delete your personal information,
             please visit:{" "}
             <a
-              class="text-blue-600 no-underline dark:text-blue-400 hover:underline"
+              className="text-blue-600 no-underline dark:text-blue-400 hover:underline"
               href="https://flowbite.com/contact/"
             >
               https://flowbite.com/contact/

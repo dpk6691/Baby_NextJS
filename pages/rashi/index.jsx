@@ -352,6 +352,15 @@ const RashiPage = () => {
         "Optimistic, adventurous, philosophical, honest, and independent.",
         "Best with Aries(Mesh) and Leo(Simha).",
         "Challenges with Virgo (Kanya) and Pisces (Meena).",
+        `<div>Dhanu rashi babies are adventurous, optimistic, and always ready for a new challenge. They have a thirst for knowledge and a love for exploring the world around them. People born under this sign are described as:
+        <ul class="list-inside mt-2 list-disc">
+          <li>Adventurous and free-spirited</li>
+          <li>Optimistic and philosophical</li>
+          <li> Independent and open-minded</li>
+          <li>Generous and jovial</li>
+          <li>Impulsive and restless</li>
+        </ul>
+      </div>`,
       ],
       "Kanya-baby-names": [
         ["P", "THA"],
@@ -359,6 +368,21 @@ const RashiPage = () => {
         "Practical, analytical, reliable, kind, and hardworking.",
         "Most compatible with Taurus (Vrishabha) and Capricorn (Makar).",
         "Challenges with Gemini (Mithun) and Sagittarius (Dhanu).",
+        `<div>Kanya rashi babies are the perfectionists of the zodiac. They're analytical, detail-oriented, and highly organized. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Analytical and detail-oriented
+          </li>
+          <li>Practical and organized
+          </li>
+          <li> Reliable and responsible
+          </li>
+          <li>Intelligent and methodical
+          </li>
+          <li>Modest and humble
+          </li>
+        </ul>
+      </div>`,
       ],
       "Karka-baby-names": [
         ["DD", "H"],
@@ -366,6 +390,20 @@ const RashiPage = () => {
         "Emotional, intuitive, protective, nurturing, and imaginative.",
         "Most compatible with Scorpio (Vruschika) and Pisces (Meena).",
         "Challenges with Aries (Mesh) and Libra (Tula).",
+        `<div>Karka rashi babies are the nurturers of the zodiac. They're sensitive, empathetic, and deeply connected to their emotions. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Nurturing and empathetic</li>
+          <li>Intuitive and compassionate
+          </li>
+          <li>Family-oriented and protective
+          </li>
+          <li>Imaginative and creative
+          </li>
+          <li>Tenacious and resilient
+          </li>
+        </ul>
+      </div>`,
       ],
       "Kumbha-baby-names": [
         ["G", "S", "Sh"],
@@ -373,6 +411,16 @@ const RashiPage = () => {
         "Innovative, intellectual, humanitarian, eccentric, and independent.",
         "Best with Gemini (Mithun) and Libra (Tula).",
         "Challenges with Taurus (Vrishabha) and Scorpio (Vruschika).",
+        `<div>Kumbha rashi babies are the rebels of the zodiac. They're independent, unconventional, and fiercely individualistic. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Independent and progressive</li>
+          <li>Intellectual and visionary</li>
+          <li>Humanitarian and altruistic</li>
+          <li>Eccentric and unconventional</li>
+          <li>Detached and aloof at times</li>
+        </ul>
+      </div>`,
       ],
       "Makar-baby-names": [
         ["KH", "J"],
@@ -380,6 +428,15 @@ const RashiPage = () => {
         "Responsible, disciplined, ambitious, practical, and cautious.",
         "Most compatible with Taurus (Vrishabha) and Virgo (Kanya).",
         "Challenges with Aries (Mesh) and Libra (Tula).",
+        `<div>Makar rashi babies are wise beyond their years. They're disciplined, responsible, and have a strong sense of ambition. People born under this sign are described as:
+        <ul class="list-inside mt-2 list-disc">
+          <li>Ambitious and disciplined, they have a strong drive to succeed in their endeavors.</li>
+          <li>Practical and responsible, they excel in planning and organization.</li>
+          <li>Patient and persevering, they are willing to put in the hard work to achieve their goals.</li>
+          <li>Reserved and traditional, they value stability and tradition.</li>
+          <li>Cautious and sometimes pessimistic</li>
+        </ul>
+      </div>`,
       ],
       "Meena-baby-names": [
         ["D", "CH", "Z", "TH"],
@@ -387,6 +444,15 @@ const RashiPage = () => {
         "Compassionate, artistic, intuitive, gentle, and wise.",
         "Most compatible with Cancer (Karka) and Scorpio (Vruschika).",
         "Challenges with Gemini (Mithun) and Sagittarius (Dhanu).",
+        `<div>Meena rashi babies are sensitive, intuitive, and deeply empathetic. They're natural dreamers who possess a rich imagination and a creative soul. People born under this sign are described as:
+        <ul class="list-inside mt-2 list-disc">
+          <li>Compassionate and empathetic</li>
+          <li>Creative and imaginative</li>
+          <li>Intuitive and spiritual</li>
+          <li>Sensitive and vulnerable</li>
+          <li>Escapist tendencies</li>
+        </ul>
+      </div>`,
       ],
       "Mesha-baby-names": [
         ["A", "L", "E", "I", "O"],
@@ -394,6 +460,15 @@ const RashiPage = () => {
         "Courageous, confident, enthusiastic, determined, and independent.",
         "Best with Leo (Simha) and Sagittarius (Dhanu).",
         "Challenges with Cancer (Karka) and Capricorn (Makar).",
+        `<div>Mesh rashi babies are born leaders. They're energetic, adventurous, and always ready to take on new challenges. People born under this sign are described as:
+        <ul class="list-inside mt-2 list-disc">
+          <li>Energetic and enthusiastic</li>
+          <li>Natural leaders</li>
+          <li>Adventurous</li>
+          <li>Competitive</li>
+          <li>Bold and courageous</li>
+        </ul>
+      </div>`,
       ],
       "Mithun-baby-names": [
         ["K", "CHH", "GH", "Q", "C"],
@@ -401,6 +476,18 @@ const RashiPage = () => {
         "Adaptable, outgoing, intelligent, witty, and expressive.",
         "Best with Libra (Tula) and Aquarius (Kumbha).",
         "Challenges with Pisces (Meena) and Virgo (Kanya).",
+        `<div>Mithun rashi babies are curious, adaptable, and endlessly entertaining. With their quick wit and charming personality, they have a knack for making friends wherever they go.People born under this sign are described as:
+        <ul class="list-inside mt-2 list-disc">
+          <li>Curious and adaptable</li>
+          <li>Charming communicators
+          </li>
+          <li>Versatile and quick-witted
+          </li>
+          <li>Playful and fun-loving
+          </li>
+          <li>Expressive and articulate</li>
+        </ul>
+      </div>`,
       ],
       "Simha-baby-names": [
         ["M", "TT"],
@@ -408,6 +495,16 @@ const RashiPage = () => {
         "Confident, generous, loyal, dramatic, and charismatic.",
         "Best with Aries (Mesh) and Sagittarius (Dhanu).",
         "Challenges with Taurus (Vrishabha) and Scorpio (Vruschika).",
+        `<div>Sinha rashi babies are natural born stars. They're confident, charismatic, and love to be the center of attention. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Confident and charismatic</li>
+          <li>Creative and expressive</li>
+          <li>Generous and warm-hearted</li>
+          <li>Ambitious and driven</li>
+          <li>Loyal and protective</li>
+        </ul>
+      </div>`,
       ],
       "Tula-baby-names": [
         ["R", "T"],
@@ -415,6 +512,16 @@ const RashiPage = () => {
         "Diplomatic, charming, social, cooperative, and fair-minded.",
         "Best with Gemini (Mithun) and Aquarius (Kumbha).",
         "Challenges with Cancer (Karka) and Capricorn (Makar).",
+        `<div>Tula babies are the peacemakers of the zodiac. They're diplomatic, charming, and have a natural sense of fairness. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Diplomatic and peace-loving</li>
+          <li>Social and charming</li>
+          <li>Fair-minded and just</li>
+          <li>Romantic and idealistic</li>
+          <li>Indecisive at times</li>
+        </ul>
+      </div>`,
       ],
       "Vrishabha-baby-names": [
         ["B", "V", "U", "W"],
@@ -422,6 +529,16 @@ const RashiPage = () => {
         "Reliable, patient, practical, devoted, and sensual.",
         "Most compatible with Virgo (Kanya) and Capricorn (Makar).",
         "Challenges with Scorpio (Vruschika) and Aquarius (Kumbha).",
+        `<div>Vrishabha rashi babies are known for their grounded and practical nature. They're reliable, patient, and have a strong sense of determination. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Grounded and practical</li>
+          <li>Patient and reliable
+          </li>
+          <li>Determined and persistent          </li>
+          <li>Affectionate and loyal</li>
+        </ul>
+      </div>`,
       ],
       "Vruschika-baby-names": [
         ["N", "Y"],
@@ -429,6 +546,18 @@ const RashiPage = () => {
         "Passionate, resourceful, brave, stubborn, and loyal.",
         "Most compatible with Cancer (Karka) and Pisces (Meena).",
         "Challenges with Leo (Simha) and Aquarius (Kumbha).",
+        `<div>Vruschika rashi babies are intense, passionate, and fiercely loyal. They're known for their depth of emotions and their ability to see beneath the surface. People born under this sign are described as:
+
+        <ul class="list-inside mt-2 list-disc">
+          <li>Intense and passionate</li>
+          <li>Mysterious and secretive
+          </li>
+          <li>Determined and resourceful
+          </li>
+          <li>Loyal and devoted</li>
+          <li>Stubborn and sometimes jealous</li>
+        </ul>
+      </div>`,
       ],
     }),
     []
@@ -445,55 +574,65 @@ const RashiPage = () => {
       </Head>
 
       <div className="w-11/12 m-auto pt-32 md:pt-28">
-        <h1 className="text-2xl mb-2 text-center text-pink-500">
-          Rashi/Zodiac Chart
-        </h1>
-        <p className="pt-2 text-center">
-          The following table shows you which Latter or Alphabets are considered
-          auspicious to start your baby's name with for each Rashi/Zodiac.
-        </p>
-
         <div className="flex flex-col lg:flex-row justify-between">
           <div className="lg:w-9/12">
-            <table className="w-full p-6 mt-10 text-md text-left whitespace-nowrap">
-              <thead>
-                <tr className="bg-slate-50">
-                  <th className="p-3">Sign</th>
-                  <th className="p-3">Rashi</th>
-                  <th className="p-3">Zodiac</th>
-                  <th className="p-3"> Suggested letters</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
-                  <tr key={rashi} className="border-b hover:bg-slate-100 ">
-                    <td className="px-4 py-2 text-slate-800">
-                      <Link
-                        className="fill-slate-700"
-                        href={`/rashi/${rashi.toLowerCase()}-baby-names`}
-                      >
-                        {rashiZodiacSign[rashi]}
-                      </Link>
-                    </td>
-                    <td className="px-4 py-2 font-bold underline decoration-double decoration-1 hover:decoration-2 underline-offset-4 whitespace-nowrap text-slate-800 decoration-emerald-500 ">
-                      <Link href={`/rashi/${rashi.toLowerCase()}-baby-names`}>
-                        {rashi}
-                      </Link>
-                    </td>
-                    <td className="px-4 py-2 font-bold underline decoration-double decoration-1 hover:decoration-2 underline-offset-4 whitespace-nowrap text-slate-800 decoration-emerald-500 ">
-                      <Link href={`/rashi/${rashi.toLowerCase()}-baby-names`}>
-                        {zodiac}
-                      </Link>
-                    </td>
-                    <td className="px-4 py-2 text-slate-800">
-                      {rashiInitials[rashi].join(", ")}
-                    </td>
+            <h1 class="text-2xl mb-2 text-center text-slate-900">
+              Baby Name <span class="text-pink-500">Based on Rashi</span>{" "}
+              <span class="text-blue-500">(Zodiac)</span>
+            </h1>
+            <p class="pt-2 mb-6 md:px-20 text-center">
+              As per Indian astrology, parents are still believe in the impact
+              of zodiac sigh for their baby. There are certain letters that are
+              considered lucky for each rashi (zodiac sign). Understanding these
+              astrological aspects can help you choose a name that's not just
+              beautiful, but also aligns with their cosmic blueprint. <br />
+              <br />
+              Explore the stars and find the perfect name for your little one?
+              The following table shows you which letter or alphabets are
+              considered auspicious to start your baby's name with for each
+              Rashi/Zodiac.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full p-6 mt-10 text-md text-left whitespace-nowrap ">
+                <thead>
+                  <tr className="bg-slate-50">
+                    <th className="p-3">Sign</th>
+                    <th className="p-3">Rashi</th>
+                    <th className="p-3">Zodiac</th>
+                    <th className="p-3"> Suggested letters</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {Object.entries(rashiZodiacMapping).map(([rashi, zodiac]) => (
+                    <tr key={rashi} className="border-b hover:bg-slate-100 ">
+                      <td className="px-4 py-2 text-slate-800">
+                        <Link
+                          className="fill-slate-700"
+                          href={`/rashi/${rashi.toLowerCase()}-baby-names`}
+                        >
+                          {rashiZodiacSign[rashi]}
+                        </Link>
+                      </td>
+                      <td className="px-4 py-2 font-bold underline decoration-double decoration-1 hover:decoration-2 underline-offset-4 whitespace-nowrap text-slate-800 decoration-emerald-500 ">
+                        <Link href={`/rashi/${rashi.toLowerCase()}-baby-names`}>
+                          {rashi}
+                        </Link>
+                      </td>
+                      <td className="px-4 py-2 font-bold underline decoration-double decoration-1 hover:decoration-2 underline-offset-4 whitespace-nowrap text-slate-800 decoration-emerald-500 ">
+                        <Link href={`/rashi/${rashi.toLowerCase()}-baby-names`}>
+                          {zodiac}
+                        </Link>
+                      </td>
+                      <td className="px-4 py-2 text-slate-800">
+                        {rashiInitials[rashi].join(", ")}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div className="md:ml-5 mt-3 md:mt-10 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full md:w-1/4">
+          <div className="md:ml-3 mt-5 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full md:w-1/4">
             <AdSection />
           </div>
         </div>
@@ -502,22 +641,16 @@ const RashiPage = () => {
           {Object.entries(rashiDetails).map(([key, value], index) => (
             <Accordion
               key={index}
-              title={`${key.replace("-baby-names", "")} - ${value[1]}`}
+              title={`${key.replace("-baby-names", " Rashi Name")} | ${
+                value[1]
+              }`}
               sectionId={index}
               openSection={openSection}
               setOpenSection={setOpenSection}
             >
               <div>
-                <p className="mb-4">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever
-                  since the 1500s. Lorem Ipsum is simply dummy text of the
-                  printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: value[5] }}></p>
+
                 <div className="my-7 fill-slate-700">
                   {rashiZodiacSign[key.replace("-baby-names", "")]}
                 </div>
