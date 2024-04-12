@@ -590,7 +590,7 @@ const Rashi = ({ onSelectRashi }) => {
           <h1 className="text-2xl mb-2 text-center text-pink-500">
             Title (H1)
           </h1>
-          <p className="pt-2 mb-6 px-20 text-center">
+          <p className="pt-2 mb-6 md:px-20 text-center">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s.
@@ -604,7 +604,7 @@ const Rashi = ({ onSelectRashi }) => {
               />
               <div className="w-full mt-5 md:mt-0 md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
                 <label
-                  htmlhtmlFor="cultures"
+                  htmlFor="cultures"
                   className="block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Select Cultures
@@ -648,7 +648,7 @@ const Rashi = ({ onSelectRashi }) => {
                     className="hidden"
                   />
                   <label
-                    htmlhtmlFor={`selectRashiOption_${rashi}`}
+                    htmlFor={`selectRashiOption_${rashi}`}
                     className={`cursor-pointer py-1 inline-flex items-center px-4 text-l bg-slate-500 text-white font-medium rounded-2xl border-2 border-slate-500 ${
                       selectedRashi === rashi
                         ? "border-slate-800 bg-slate-800 text-white"

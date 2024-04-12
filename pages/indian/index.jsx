@@ -40,7 +40,7 @@ const index = () => {
       <div className="w-11/12 m-auto pt-32 md:pt-28">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="w-full md:w-9/12">
-            <div className="bg-pink-50 p-10 rounded-3xl">
+            <div className="bg-pink-50 p-4 md:p-10 rounded-3xl">
               <h1 className="text-2xl mb-8 text-center">
                 Unique Indian Baby Names for Your Little One
               </h1>

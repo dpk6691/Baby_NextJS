@@ -61,7 +61,7 @@ const NameCombiner = () => {
     <div className="w-11/12 m-auto pt-32 md:pt-28">
       <form onSubmit={handleSubmit} className="mb-8">
         <div className="mb-4">
-          <label htmlhtmlFor="fatherName" className="block mb-2">
+          <label htmlFor="fatherName" className="block mb-2">
             Father's Name
           </label>
           <input
@@ -74,7 +74,7 @@ const NameCombiner = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlhtmlFor="motherName" className="block mb-2">
+          <label htmlFor="motherName" className="block mb-2">
             Mother's Name
           </label>
           <input
@@ -87,7 +87,7 @@ const NameCombiner = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlhtmlFor="gender" className="block mb-2">
+          <label htmlFor="gender" className="block mb-2">
             Gender
           </label>
           <select

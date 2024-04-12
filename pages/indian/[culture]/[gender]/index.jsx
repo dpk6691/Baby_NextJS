@@ -54,7 +54,7 @@ const GenderPage = () => {
               <span className="text-pink-500">Names</span>{" "}
               <span className="text-blue-500">List</span>
             </h1>
-            <p className="pt-2 mb-6 px-20 text-center">
+            <p className="pt-2 mb-6 md:px-20 text-center">
               Every parent and relative has a wish to give a unique and lovely
               name to their upcoming or new arrived little family member. Here,
               we have listed all the traditional, unique and latest Gujarati boy

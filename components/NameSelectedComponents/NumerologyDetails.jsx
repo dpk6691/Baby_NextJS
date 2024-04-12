@@ -65,7 +65,7 @@ const NumerologyDetails = ({ lowerCaseName }) => {
 
     numerologyDetails.push(
       <hr key="separator" className="border-slate-300 my-2" />,
-      <table className="w-full text-xl p-6 text-left whitespace-nowrap">
+      <table className="w-full text-xl p-6 text-left ">
         {lowerCaseName && lowerCaseName.trim().length > 0 && (
           <tr key="numSum" className=" border-b">
             <td className="text-right w-1/2 p-4">

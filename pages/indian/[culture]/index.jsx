@@ -69,7 +69,7 @@ const CulturePage = () => {
               Baby <span className="text-pink-500">Names</span>{" "}
               <span className="text-blue-500">Collection</span>
             </h1>
-            <p className="pt-2 mb-6 px-20 text-center">
+            <p className="pt-2 mb-6 md:px-20 text-center">
               Looking for a unique{" "}
               {selectedCultureState
                 ? selectedCultureState

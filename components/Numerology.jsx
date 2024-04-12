@@ -70,7 +70,7 @@ const Numerology = ({ onSelectedName }) => {
             not, you can enhance your child’s luck by gifting your baby with the
             best baby name as per numerology.
           </p>
-          <div className="w-96 mt-14 mb-5 relative">
+          <div className="md:w-96 mt-14 mb-5 relative">
             <input
               type="search"
               id="default-search-filter"

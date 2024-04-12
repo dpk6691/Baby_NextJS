@@ -41,7 +41,7 @@ const NameSelected = ({ onPassData }) => {
   const skeleton = (
     <div className="skeleton">
       <div className="my-2 mt-8 text-xl text-center animate-pulse">
-        <div className="h-4 w-72 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
+        <div className="h-4 md:w-72 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
         <div className="h-4 w-64 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
         <div className="h-4 w-24 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
         <div className="h-4 w-48 bg-slate-200 my-4 m-auto rounded-full border-b"></div>
@@ -63,7 +63,7 @@ const NameSelected = ({ onPassData }) => {
   );
 
   return (
-    <div className="container mx-auto pt-32 md:pt-28">
+    <div className="w-11/12 m-auto pt-32 md:pt-28">
       <h1 className="text-4xl mb-5 text-center">
         Selected Name:{" "}
         <span className="font-bold">
@@ -85,62 +85,64 @@ const NameSelected = ({ onPassData }) => {
               </span>
             </p>
           )}
-          <div className="grid md:grid-cols-12 gap-4">
-            <div className="md:col-span-3 col-span-6 bg-blue-50 w-full p-7 rounded-3xl mt-4">
-              <AdSection />
-            </div>
-            <div className="col-span-6">
-              {selectedNames.map((entry, index) => (
-                <div key={index}>
-                  {Array.isArray(entry.meaning_of_name) ? (
-                    entry.meaning_of_name.map((meaning, i) => {
-                      if (
-                        displayedMeanings[entry.culture] &&
-                        displayedMeanings[entry.culture].has(meaning)
-                      ) {
-                        return null;
-                      }
-                      if (!displayedMeanings[entry.culture]) {
-                        displayedMeanings[entry.culture] = new Set();
-                      }
-                      displayedMeanings[entry.culture].add(meaning);
-                      return (
-                        <table
-                          key={i}
-                          className="w-full text-xl p-6 text-left whitespace-nowrap"
-                        >
+          <div className="w-full">
+            <div className="md:grid md:grid-cols-12 gap-4">
+              <div className="md:col-span-3 col-span-6 bg-blue-50 w-full p-7 rounded-3xl mt-4">
+                <AdSection />
+              </div>
+              <div className="mt-4 col-span-6">
+                {selectedNames.map((entry, index) => (
+                  <div key={index}>
+                    {Array.isArray(entry.meaning_of_name) ? (
+                      entry.meaning_of_name.map((meaning, i) => {
+                        if (
+                          displayedMeanings[entry.culture] &&
+                          displayedMeanings[entry.culture].has(meaning)
+                        ) {
+                          return null;
+                        }
+                        if (!displayedMeanings[entry.culture]) {
+                          displayedMeanings[entry.culture] = new Set();
+                        }
+                        displayedMeanings[entry.culture].add(meaning);
+                        return (
+                          <table
+                            key={i}
+                            className="w-full text-xl p-6 text-left whitespace-nowrap"
+                          >
+                            <tr className="border-b">
+                              <td className="text-right w-1/2 p-4">
+                                Meaning of {entry.name} in {entry.culture}
+                              </td>
+                              <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
+                                <span className="font-bold">{meaning}</span>
+                              </td>
+                            </tr>
+                          </table>
+                        );
+                      })
+                    ) : (
+                      <div className="">
+                        <table className="w-full m-auto text-xl p-6 text-left">
                           <tr className="border-b">
                             <td className="text-right w-1/2 p-4">
                               Meaning of {entry.name} in {entry.culture}
                             </td>
                             <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
-                              <span className="font-bold">{meaning}</span>
+                              <span className="font-bold">
+                                {entry.meaning_of_name}
+                              </span>
                             </td>
                           </tr>
                         </table>
-                      );
-                    })
-                  ) : (
-                    <div>
-                      <table className="w-full m-auto text-xl p-6 text-left whitespace-nowrap">
-                        <tr className="border-b">
-                          <td className="text-right w-1/2 p-4">
-                            Meaning of {entry.name} in {entry.culture}
-                          </td>
-                          <td className="w-1/2 text-wrap px-4 py-2 border-l border-slate-300">
-                            <span className="font-bold">
-                              {entry.meaning_of_name}
-                            </span>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="md:col-span-3 col-span-6 bg-pink-50 w-full rounded-3xl mt-4">
-              <RashiList />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="md:col-span-3 col-span-6 bg-pink-50 w-full rounded-3xl mt-4">
+                <RashiList />
+              </div>
             </div>
           </div>
 

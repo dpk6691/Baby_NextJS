@@ -272,7 +272,7 @@ const TableData = ({
       <div className="flex mt-3 flex-col md:flex-row items-center justify-evenly space-y-3 md:space-y-0 md:space-x-4 p-4">
         <div className="flex flex-1 w-full justify-center md:justify-start">
           <form className="flex flex-col ">
-            <label htmlhtmlFor="simple-search" className="sr-only">
+            <label htmlFor="simple-search" className="sr-only">
               Search
             </label>
             <div className="relative w-full">
@@ -294,7 +294,7 @@ const TableData = ({
               <input
                 type="text"
                 id="simple-search"
-                className={`cursor-pointer py-2 pr-4 pl-10 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500${
+                className={`cursor-pointer pr-4 pl-10 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500${
                   searchWarning ? "border-red-500" : ""
                 }`}
                 placeholder={`Search ${
@@ -341,7 +341,7 @@ const TableData = ({
 
         <div className="w-full md:w-auto flex flex-1 flex-col md:flex-row space-y-2 md:space-y-0 items-center md:items-center justify-end md:space-x-3 flex-shrink-0">
           <label
-            htmlhtmlFor="cultures"
+            htmlFor="cultures"
             className="block text-sm font-medium text-slate-900 dark:text-white"
           >
             Select Cultures
@@ -350,7 +350,7 @@ const TableData = ({
             id="cultures"
             value={selectedCulture || ""} // Ensure a default value if selectedCulture is null or undefined
             onChange={(e) => handleSelectCulture(e.target.value)}
-            className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
+            className="cursor-pointer inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
           >
             <option value="">All Culture</option>
             {uniqueCultures.map((culture) => (
@@ -875,7 +875,7 @@ const TableData = ({
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
+          className="cursor-pointer inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
         >
           <span>previous</span>
         </button>
@@ -925,7 +925,7 @@ const TableData = ({
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="cursor-pointer py-2 px-4 inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
+          className="cursor-pointer inline-flex items-center px-6 py-1 text-l font-medium rounded-2xl border-2 border-slate-200 hover:border-slate-500 text-slate-500 hover:bg-slate-600 hover:text-white"
         >
           <span>Next</span>
         </button>
