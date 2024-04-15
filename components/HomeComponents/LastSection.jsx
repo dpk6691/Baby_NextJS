@@ -1,264 +1,205 @@
+import Link from "next/link";
 import React from "react";
+import First from "../../public/images/1.jpg";
+import Second from "../../public/images/2.jpg";
+import Third from "../../public/images/3.jpg";
+import Image from "next/image";
 
 const LastSection = () => {
   return (
-    <div className="w-11/12 m-auto pt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 grid-cols-1 md:pt-24">
+    <div className="w-11/12 m-auto pt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 grid-cols-1 md:pt-24">
       <div className="w-full hover:bg-blue-100 bg-blue-50 rounded-3xl">
-        <img
-          className="p-8 rounded-t-lg"
-          src="https://flowbite.com/docs/images/products/apple-watch.png"
+        <Image
+          className="w-full p-6 rounded-lg"
+          src={First}
           alt="product image"
         />
 
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
-            Most popular names in India
+          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
+            Unveiling India's Top Baby Names
           </h5>
 
           <ul className="my-4 space-y-3">
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Modern baby names
+                  Top 2024 Indian Baby Names (Girl & Boy)
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Baby names inspired by the sun
+                  Top International Names with Indian Appeal
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Gift of God'
+                  Timeless Elegance: Classic Indian Names for Every Era
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Short baby names
+                  Nicknames with Flair: 5 Adorable Monikers for Your Little One
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Love & Kindness'
+                  Top 10 baby names by Indian Culture
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="w-full hover:bg-pink-100 bg-pink-50 rounded-3xl">
-        <img
-          className="p-8 rounded-t-lg"
-          src="https://flowbite.com/docs/images/products/apple-watch.png"
+        <Image
+          className="w-full p-6 rounded-lg"
+          src={Second}
           alt="product image"
         />
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
-            Baby names by origin
+          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
+            Baby Names by Indian Culture
           </h5>
           <ul className="my-4 space-y-3">
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Modern baby names
+                  Hindu Baby Names (Rich in Meaning & Mythology):
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Baby names inspired by the sun
+                  North Indian Baby Names (Mughal Influence & Rich History):
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Gift of God'
+                  Jain Baby Names (Peace & Non-Violence)
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Short baby names
+                  Tribal Baby Names (Nature-Inspired & Symbolic):
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Love & Kindness'
+                  Parsi Baby Names (Zoroastrian Heritage & Strength)
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
       <div className="w-full hover:bg-blue-100 bg-blue-50 rounded-3xl">
-        <img
-          className="p-8 rounded-t-lg"
-          src="https://flowbite.com/docs/images/products/apple-watch.png"
+        <Image
+          className="w-full p-6 rounded-lg"
+          src={Third}
           alt="product image"
         />
         <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
+          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
             Baby names by theme
           </h5>
           <ul className="my-4 space-y-3">
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Modern baby names
+                  Uniquely You: Names with Bold Personalities (Modern):
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Baby names inspired by the sun
+                  Nature's Symphony: Names Inspired by Earth & Sky
+                  (Nature-Inspired)
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Gift of God'
+                  Blessings & Grace: Names with Spiritual Meanings (Gift of
+                  God):
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Short baby names
+                  Sweet & Simple: Short & Memorable Names (Short)
                 </span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="#"
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Love & Kindness'
+                  Kindred Hearts: Names Radiating Compassion (Love & Kindness)
                 </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="w-full hover:bg-pink-100 bg-pink-50 rounded-3xl">
-        <img
-          className="p-8 rounded-t-lg"
-          src="https://flowbite.com/docs/images/products/apple-watch.png"
-          alt="product image"
-        />
-
-        <div className="px-5 pb-5">
-          <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900 text-center">
-            All Baby Name Lists
-          </h5>
-
-          <ul className="my-4 space-y-3">
-            <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
-              >
-                <span className="flex-1 ms-3 text-center ">
-                  Modern baby names
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
-              >
-                <span className="flex-1 ms-3 text-center ">
-                  Baby names inspired by the sun
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
-              >
-                <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Gift of God'
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
-              >
-                <span className="flex-1 ms-3 text-center ">
-                  Short baby names
-                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
-              >
-                <span className="flex-1 ms-3 text-center ">
-                  Names meaning 'Love & Kindness'
-                </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

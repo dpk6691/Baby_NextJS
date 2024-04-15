@@ -5,6 +5,12 @@ import { useRouter } from "next/router";
 import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdSection";
 import RashiList from "../../components/CommonComponents/sidebar/RashiList";
 import NumurolySidebar from "../../components/CommonComponents/sidebar/NumurolySidebar";
+import Image from "next/image";
+import TopTen from "../../public/images/TopTenNames.jpg";
+import First from "../../public/images/1.jpg";
+import Second from "../../public/images/3.jpg";
+import Third from "../../public/images/2.jpg";
+import Link from "next/link";
 
 const index = () => {
   const { IndiaData } = India();
@@ -61,67 +67,67 @@ const index = () => {
 
               <div className="w-full m-auto grid lg:grid-cols-4 gap-5 grid-cols-2">
                 <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
-                  <a href="#">
-                    <img
-                      className="p-8 rounded-t-lg"
-                      src="https://flowbite.com/docs/images/products/apple-watch.png"
+                  <Link href="#">
+                    <Image
+                      className="p-4 rounded-lg"
+                      src={TopTen}
                       alt="product image"
                     />
-                  </a>
+                  </Link>
                   <div className="px-5 pb-5">
-                    <a href="#">
+                    <Link href="#">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Top 10 Names
                       </h5>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
-                  <a href="#">
-                    <img
-                      className="p-8 rounded-t-lg"
-                      src="https://flowbite.com/docs/images/products/apple-watch.png"
+                  <Link href="/indian/all-baby-names/girl">
+                    <Image
+                      className="p-4 rounded-lg"
+                      src={Second}
                       alt="product image"
                     />
-                  </a>
+                  </Link>
                   <div className="px-5 pb-5">
-                    <a href="#">
+                    <Link href="/indian/all-baby-names/girl">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Baby Girl Names
                       </h5>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
-                  <a href="#">
-                    <img
-                      className="p-8 rounded-t-lg"
-                      src="https://flowbite.com/docs/images/products/apple-watch.png"
+                  <Link href="/indian/all-baby-names/boy">
+                    <Image
+                      className="p-4 rounded-lg"
+                      src={First}
                       alt="product image"
                     />
-                  </a>
+                  </Link>
                   <div className="px-5 pb-5">
-                    <a href="#">
+                    <Link href="/indian/all-baby-names/boy">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
-                        Baby Girl Names
+                        Baby Boy Names
                       </h5>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
-                  <a href="#">
-                    <img
-                      className="p-8 rounded-t-lg"
-                      src="https://flowbite.com/docs/images/products/apple-watch.png"
+                  <Link href="/names/numerology">
+                    <Image
+                      className="p-4 rounded-lg"
+                      src={Third}
                       alt="product image"
                     />
-                  </a>
+                  </Link>
                   <div className="px-5 pb-5">
-                    <a href="#">
+                    <Link href="/names/numerology">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Numerology
                       </h5>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

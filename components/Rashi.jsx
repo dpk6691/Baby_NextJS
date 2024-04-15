@@ -366,6 +366,9 @@ const Rashi = ({ onSelectRashi }) => {
     []
   );
 
+  const formattedRashi = selectedRashi.replace("-baby-names", "");
+  const formattedZodiac = rashiZodiacMapping[formattedRashi + "-baby-names"];
+
   const rashiPersonalityTraits = useMemo(
     () => ({
       "Dhanu-baby-names":
@@ -588,12 +591,13 @@ const Rashi = ({ onSelectRashi }) => {
       <div className="flex flex-col md:flex-row justify-between">
         <div className="w-full md:w-9/12">
           <h1 className="text-2xl mb-2 text-center text-pink-500">
-            Title (H1)
+            {formattedRashi} ({formattedZodiac}) Rashi Baby Names
           </h1>
           <p className="pt-2 mb-6 md:px-20 text-center">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+            Find the list of {formattedRashi} ({formattedZodiac}) rashi baby
+            names for boy and girl with their meaning. In this list you will
+            definitely find the best name for your baby boy or girl under the{" "}
+            {formattedRashi} ({formattedZodiac}) Rashi sign.
           </p>
           <div className="shadow-lg border-4 bg-white/80 w-full border-black-500/100 p-4 rounded-3xl">
             <div className="flex flex-col md:flex-row justify-between mb-5">
