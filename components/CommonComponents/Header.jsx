@@ -366,7 +366,7 @@ const Header = () => {
                     </div>
                   </li>
                   <li>
-                    <Link href="https://www.google.com">
+                    <Link href="https://blog.firststep.baby/">
                       <div className="block py-1 px-3 hover:text-pink-500">
                         Blog
                       </div>

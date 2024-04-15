@@ -39,7 +39,7 @@ const Contact = () => {
                   Our Location
                 </h4>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  99 S.t Jomblo Park Pekanbaru 28292. Indonesia
+                  Bengaluru, India
                 </p>
               </div>
             </div>
@@ -79,7 +79,7 @@ const Contact = () => {
                   Phone Number
                 </h4>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  (+62)81 414 257 9980
+                  (+91)94 297 94 596
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Contact = () => {
                   Email Address
                 </h4>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  info@yourdomain.com
+                  connect@firststep.baby
                 </p>
               </div>
             </div>
