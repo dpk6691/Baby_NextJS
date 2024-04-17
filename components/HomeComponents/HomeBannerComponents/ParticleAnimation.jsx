@@ -161,7 +161,7 @@ const ParticleAnimation = () => {
           isLoading ? "animate-fade-in" : "animate-fade-out"
         } w-full text-pink-500 text-4xl font-black h-[33vh] transition-opacity duration-1000`}
       >
-        Worlds Laregest Baby Name Collection
+        Worlds Largest Baby Name Collection
       </div>
       <canvas
         className={`bg-blue-50 ${

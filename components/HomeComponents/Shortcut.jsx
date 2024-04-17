@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const Shortcut = () => {
   return (
-    <div className="w-11/12 m-auto pt-14 grid lg:grid-cols-4 gap-5 grid-cols-2 md:pt-24">
-      <div className="w-full p-4 max-w-sm hover:bg-blue-100 bg-blue-50 rounded-3xl">
+    <div className="w-11/12 m-auto pt-14 grid xl:grid-cols-4 md:grid-cols-2 gap-5 grid-cols-1 md:pt-24">
+      <div className="w-full p-4 hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <Link href="https://blog.firststep.baby">
           <Image
             className="bg-white rounded-xl"
@@ -25,7 +25,7 @@ const Shortcut = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full p-4 max-w-sm hover:bg-pink-100 bg-pink-50 rounded-3xl">
+      <div className="w-full p-4 hover:bg-pink-100 bg-pink-50 rounded-3xl">
         <Link href="/indian">
           <Image className="bg-white rounded-xl" src={Calture} alt="Culture" />
         </Link>
@@ -37,7 +37,7 @@ const Shortcut = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full p-4 max-w-sm hover:bg-blue-100 bg-blue-50 rounded-3xl">
+      <div className="w-full p-4 hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <Link href="/rashi">
           <Image className="bg-white rounded-xl" src={Rashi} alt="Rashi" />
         </Link>
@@ -49,7 +49,7 @@ const Shortcut = () => {
           </Link>
         </div>
       </div>
-      <div className="w-full p-4 max-w-sm hover:bg-pink-100 bg-pink-50 rounded-3xl">
+      <div className="w-full p-4 hover:bg-pink-100 bg-pink-50 rounded-3xl">
         <Link href="https://blog.firststep.baby">
           <Image className="bg-white rounded-xl" src={Blog} alt="Culture" />
         </Link>

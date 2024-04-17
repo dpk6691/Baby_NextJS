@@ -4,9 +4,9 @@ import FilterName from "./FilterName";
 
 const AfterBanner = () => {
   return (
-    <div className="w-11/12 m-auto pt-5 md:pt-14">
-      <div className="flex flex-col lg:flex-row justify-between">
-        <div className="lg:w-9/12">
+    <div className="w-11/12 m-auto pt-10 md:pt-14">
+      <div className="flex flex-col xl:flex-row justify-between">
+        <div className="xl:w-9/12">
           <h1 className="text-2xl mb-2">
             Baby Name<br></br>
             <span className="text-4xl font-black pb-6 text-blue-500">
@@ -27,7 +27,7 @@ const AfterBanner = () => {
           </p>
           <FilterName />
         </div>
-        <div className="md:ml-5 mt-3 md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full md:w-1/4">
+        <div className="xl:ml-5 mt-3 xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full xl:w-1/4">
           <AdSection />
         </div>
       </div>

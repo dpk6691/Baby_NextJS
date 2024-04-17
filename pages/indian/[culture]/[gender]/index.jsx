@@ -36,9 +36,9 @@ const GenderPage = () => {
         />
       </Head>
 
-      <div className="w-11/12 m-auto pt-32 md:pt-28">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="w-full md:w-9/12">
+      <div className="w-11/12 m-auto pt-32 xl:pt-28">
+        <div className="flex flex-col xl:flex-row justify-between">
+          <div className="w-full xl:w-9/12">
             <h1 className="text-2xl mb-2 text-center text-slate-900">
               {selectedCultureState
                 ? selectedCultureState
@@ -69,7 +69,7 @@ const GenderPage = () => {
               setSelectedCultureState={setSelectedCultureState}
             />
           </div>
-          <div className="md:ml-5 mt-3 self-start md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full md:w-1/4">
+          <div className="xl:ml-5 mt-7 self-start xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full xl:w-1/4">
             <AdSection />
             <div className="bg-blue-50 w-full p-7 rounded-3xl">
               <NumurolySidebar />

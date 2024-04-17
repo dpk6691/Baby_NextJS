@@ -63,7 +63,7 @@ const NameSelected = ({ onPassData }) => {
   );
 
   return (
-    <div className="w-11/12 m-auto pt-32 md:pt-28">
+    <div className="w-11/12 m-auto pt-32 xl:pt-28">
       <h1 className="text-4xl mb-5 text-center">
         Selected Name:{" "}
         <span className="font-bold">
@@ -86,8 +86,8 @@ const NameSelected = ({ onPassData }) => {
             </p>
           )}
           <div className="w-full">
-            <div className="md:grid md:grid-cols-12 gap-4">
-              <div className="md:col-span-3 col-span-6 bg-blue-50 w-full p-7 rounded-3xl mt-4">
+            <div className="xl:grid xl:grid-cols-12 gap-4">
+              <div className="md:col-span-3 col-span-6 bg-blue-50 w-full p-7 rounded-3xl grid justify-items-stretch mt-4">
                 <AdSection />
               </div>
               <div className="mt-4 col-span-6">
@@ -108,7 +108,7 @@ const NameSelected = ({ onPassData }) => {
                         return (
                           <table
                             key={i}
-                            className="w-full text-xl p-6 text-left whitespace-nowrap"
+                            className=" w-full text-xl p-6 text-left whitespace-nowrap"
                           >
                             <tr className="border-b">
                               <td className="text-right w-1/2 p-4">

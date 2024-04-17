@@ -369,7 +369,7 @@ const TableData = ({
 
       <div className="overflow-x-auto">
         {isLoading ? (
-          <table className="w-full text-sm text-left text-slate-500">
+          <table className=" w-full text-sm text-left text-slate-500">
             <thead className="text-xs text-slate-700 uppercase bg-slate-50">
               <tr>
                 <th className="px-3 py-4">
@@ -733,7 +733,7 @@ const TableData = ({
             </tbody>
           </table>
         ) : (
-          <table className="w-full text-sm text-left text-slate-500 dark:text-slate-400">
+          <table className=" w-full text-sm text-left text-slate-500 dark:text-slate-400">
             <thead className="text-xs text-slate-700 uppercase bg-slate-50 dark:bg-slate-700 dark:text-slate-400">
               <tr>
                 <th scope="col" className="px-4 py-3">
@@ -783,6 +783,7 @@ const TableData = ({
                       className="border-b dark:border-slate-600 hover:bg-slate-100 "
                     >
                       <td
+                        data-label="Name"
                         className={`px-4 py-2 font-bold underline decoration-double decoration-1 hover:decoration-2 underline-offset-4 whitespace-nowrap ${
                           selectedGender === "boy"
                             ? "text-blue-500 decoration-blue-500"
@@ -798,21 +799,47 @@ const TableData = ({
                       {selectedCulture &&
                         selectedCulture.toLowerCase() !== "all" && (
                           <>
-                            <td className="px-4 py-2 font-medium text-slate-900 whitespace-nowrap dark:text-white">
+                            <td
+                              data-label={
+                                selectedCulture
+                                  ? `${
+                                      selectedCulture.charAt(0).toUpperCase() +
+                                      selectedCulture.slice(1)
+                                    } Name`
+                                  : "Default Language"
+                              }
+                              className="px-4 py-2 font-medium text-slate-900 whitespace-nowrap dark:text-white"
+                            >
                               {language}
                             </td>
                           </>
                         )}
-                      <td className="px-4 py-2 text-slate-900 whitespace-nowrap dark:text-white">
+                      <td
+                        data-label="Meaning"
+                        className="px-4 py-2 text-slate-900 whitespace-nowrap dark:text-white"
+                      >
                         {meaning_of_name}
                       </td>
                       {selectedCulture &&
                         selectedCulture.toLowerCase() !== "all" && (
-                          <td className="px-4 py-2 text-slate-900 whitespace-nowrap dark:text-white">
+                          <td
+                            data-label={
+                              selectedCulture
+                                ? `${
+                                    selectedCulture.charAt(0).toUpperCase() +
+                                    selectedCulture.slice(1)
+                                  } Meaning`
+                                : "Default Language"
+                            }
+                            className="px-4 py-2 text-slate-900 whitespace-nowrap dark:text-white"
+                          >
                             {meaning_in_language}
                           </td>
                         )}
-                      <td className="px-4 py-2 text-slate-900 whitespace-nowrap dark:text-white">
+                      <td
+                        data-label="Pronunciation"
+                        className="px-4 py-2 text-slate-900 whitespace-nowrap dark:text-white"
+                      >
                         <button
                           className="buttonStyle border border-transparent hover:border-slate-500 p-1 rounded-lg dark:hover:border-slate-100"
                           onClick={() => {

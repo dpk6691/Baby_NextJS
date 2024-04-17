@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const LastSection = () => {
   return (
-    <div className="w-11/12 m-auto pt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 grid-cols-1 md:pt-24">
+    <div className="w-11/12 m-auto pt-14 grid lg:grid-cols-3 gap-5 grid-cols-1 md:pt-24">
       <div className="w-full p-6 hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <Image
           className="w-full bg-white rounded-xl"

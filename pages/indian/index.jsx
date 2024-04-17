@@ -43,9 +43,9 @@ const index = () => {
           content="Biggest collection of Indian baby names as per all Indian culture at firststep.baby. Discover name and meaning with their respective language. "
         />
       </Head>
-      <div className="w-11/12 m-auto pt-32 md:pt-28">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="w-full md:w-9/12">
+      <div className="w-11/12 m-auto pt-32 xl:pt-28">
+        <div className="flex flex-col xl:flex-row justify-between">
+          <div className="w-full xl:w-9/12">
             <div className="bg-pink-50 p-4 md:p-10 rounded-3xl">
               <h1 className="text-2xl mb-8 text-center">
                 Unique Indian Baby Names for Your Little One
@@ -65,8 +65,8 @@ const index = () => {
                 preferred culture.
               </p>
 
-              <div className="w-full m-auto grid lg:grid-cols-4 gap-5 grid-cols-2">
-                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+              <div className="w-full m-auto grid md:grid-cols-2 lg:grid-cols-4 gap-5 grid-cols-1">
+                <div className="w-full p-4 hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="#">
                     <Image
                       className="bg-slate-100 rounded-lg"
@@ -82,7 +82,7 @@ const index = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="/indian/all-baby-names/girl">
                     <Image
                       className="bg-pink-100 rounded-lg"
@@ -98,7 +98,7 @@ const index = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="/indian/all-baby-names/boy">
                     <Image
                       className=" bg-blue-100 rounded-lg"
@@ -114,7 +114,7 @@ const index = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="/names/numerology">
                     <Image
                       className="rounded-lg"
@@ -152,7 +152,7 @@ const index = () => {
               </ul>
             </div>
           </div>
-          <div className="md:ml-5 self-start mt-3 md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full md:w-1/4">
+          <div className="xl:ml-5 self-start mt-8 xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full xl:w-1/4">
             <AdSection />
             <div className="bg-blue-50 w-full p-7 rounded-3xl">
               <NumurolySidebar />

@@ -3,9 +3,9 @@ import AdSection from "../../../components/HomeComponents/AfterBannerComponemts/
 
 const index = () => {
   return (
-    <div className="w-11/12 m-auto pt-32 md:pt-28">
-      <div className="flex justify-between flex-col md:flex-row">
-        <div className="bg-pink-50 p-10 rounded-3xl md:w-9/12">
+    <div className="w-11/12 m-auto pt-32 xl:pt-28">
+      <div className="flex justify-between flex-col xl:flex-row">
+        <div className="bg-pink-50 p-10 rounded-3xl xl:w-9/12">
           <h1 className="text-2xl mb-8 text-center">
             Advertise With FirstStep.Baby
           </h1>
@@ -40,7 +40,7 @@ const index = () => {
             </div>
           </dl>
         </div>
-        <div className="md:ml-5 mt-5 md:mt-0 bg-slate-50 rounded-3xl grid place-content-center md:w-1/4">
+        <div className="xl:ml-5 mt-7 xl:mt-0 bg-slate-50 rounded-3xl p-5 xl:w-1/4 grid justify-items-stretch">
           <AdSection />
         </div>
       </div>

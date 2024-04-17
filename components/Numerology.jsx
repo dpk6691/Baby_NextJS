@@ -52,9 +52,9 @@ const Numerology = ({ onSelectedName }) => {
   }, [searchValue, onSelectedName]);
 
   return (
-    <section className="w-11/12 m-auto pt-36 md:pt-24 ">
-      <div className="flex flex-col lg:flex-row justify-between">
-        <div className="lg:w-9/12 flex flex-col">
+    <section className="w-11/12 m-auto pt-36 xl:pt-24 ">
+      <div className="flex flex-col xl:flex-row justify-between">
+        <div className="xl:w-9/12 flex flex-col">
           <h2 className="text-2xl mb-2 text-pink-500">
             Baby Names as Per Numerology
           </h2>
@@ -111,7 +111,7 @@ const Numerology = ({ onSelectedName }) => {
             </div>
           )}
         </div>
-        <div className="md:ml-5 mt-3 md:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full md:w-1/4">
+        <div className="xl:ml-5 mt-7 xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch w-full xl:w-1/4">
           <AdSection />
         </div>
       </div>
