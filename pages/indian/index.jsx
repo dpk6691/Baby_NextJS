@@ -6,10 +6,10 @@ import AdSection from "../../components/HomeComponents/AfterBannerComponemts/AdS
 import RashiList from "../../components/CommonComponents/sidebar/RashiList";
 import NumurolySidebar from "../../components/CommonComponents/sidebar/NumurolySidebar";
 import Image from "next/image";
-import TopTen from "../../public/images/TopTenNames.jpg";
-import First from "../../public/images/1.jpg";
-import Second from "../../public/images/3.jpg";
-import Third from "../../public/images/2.jpg";
+import TopTen from "../../public/images/Artboard1.png";
+import First from "../../public/images/Artboard9.png";
+import Second from "../../public/images/Artboard8.png";
+import Third from "../../public/images/Artboard10.png";
 import Link from "next/link";
 
 const index = () => {
@@ -66,15 +66,15 @@ const index = () => {
               </p>
 
               <div className="w-full m-auto grid lg:grid-cols-4 gap-5 grid-cols-2">
-                <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="#">
                     <Image
-                      className="p-4 rounded-lg"
+                      className="bg-slate-100 rounded-lg"
                       src={TopTen}
                       alt="product image"
                     />
                   </Link>
-                  <div className="px-5 pb-5">
+                  <div className="pt-4">
                     <Link href="#">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Top 10 Names
@@ -82,15 +82,15 @@ const index = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="/indian/all-baby-names/girl">
                     <Image
-                      className="p-4 rounded-lg"
+                      className="bg-pink-100 rounded-lg"
                       src={Second}
                       alt="product image"
                     />
                   </Link>
-                  <div className="px-5 pb-5">
+                  <div className="pt-4">
                     <Link href="/indian/all-baby-names/girl">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Baby Girl Names
@@ -98,15 +98,15 @@ const index = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="/indian/all-baby-names/boy">
                     <Image
-                      className="p-4 rounded-lg"
+                      className=" bg-blue-100 rounded-lg"
                       src={First}
                       alt="product image"
                     />
                   </Link>
-                  <div className="px-5 pb-5">
+                  <div className="pt-4">
                     <Link href="/indian/all-baby-names/boy">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Baby Boy Names
@@ -114,15 +114,15 @@ const index = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-full max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
+                <div className="w-full p-4 max-w-sm hover:bg-pink-200 bg-white rounded-3xl">
                   <Link href="/names/numerology">
                     <Image
-                      className="p-4 rounded-lg"
+                      className="rounded-lg"
                       src={Third}
                       alt="product image"
                     />
                   </Link>
-                  <div className="px-5 pb-5">
+                  <div className="pt-4">
                     <Link href="/names/numerology">
                       <h5 className="text-xl font-semibold tracking-tight text-slate-900 text-center">
                         Numerology

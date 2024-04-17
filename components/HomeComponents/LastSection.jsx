@@ -1,21 +1,21 @@
 import Link from "next/link";
 import React from "react";
-import First from "../../public/images/1.jpg";
-import Second from "../../public/images/2.jpg";
-import Third from "../../public/images/3.jpg";
+import First from "../../public/images/Artboard6.png";
+import Second from "../../public/images/Artboard2.png";
+import Third from "../../public/images/Artboard7.png";
 import Image from "next/image";
 
 const LastSection = () => {
   return (
     <div className="w-11/12 m-auto pt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 grid-cols-1 md:pt-24">
-      <div className="w-full hover:bg-blue-100 bg-blue-50 rounded-3xl">
+      <div className="w-full p-6 hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <Image
-          className="w-full p-6 rounded-lg"
+          className="w-full bg-white rounded-xl"
           src={First}
           alt="product image"
         />
 
-        <div className="px-5 pb-5">
+        <div className="pt-5">
           <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
             Unveiling India's Top Baby Names
           </h5>
@@ -74,13 +74,13 @@ const LastSection = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full hover:bg-pink-100 bg-pink-50 rounded-3xl">
+      <div className="w-full p-6  hover:bg-pink-100 bg-pink-50 rounded-3xl">
         <Image
-          className="w-full p-6 rounded-lg"
+          className="w-full bg-white rounded-xl"
           src={Second}
           alt="product image"
         />
-        <div className="px-5 pb-5">
+        <div className="pt-5">
           <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
             Baby Names by Indian Culture
           </h5>
@@ -138,13 +138,13 @@ const LastSection = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full hover:bg-blue-100 bg-blue-50 rounded-3xl">
+      <div className="w-full p-6 hover:bg-blue-100 bg-blue-50 rounded-3xl">
         <Image
-          className="w-full p-6 rounded-lg"
+          className="w-full bg-white rounded-lg"
           src={Third}
           alt="product image"
         />
-        <div className="px-5 pb-5">
+        <div className="pt-5">
           <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
             Baby names by theme
           </h5>
