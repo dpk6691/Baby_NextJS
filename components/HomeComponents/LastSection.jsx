@@ -47,7 +47,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Timeless Elegance: Classic Indian Names for Every Era
+                  Classic Indian Names for Every Era
                 </span>
               </Link>
             </li>
@@ -57,7 +57,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Nicknames with Flair: 5 Adorable Monikers for Your Little One
+                  5 Adorable Monikers for Your Little One
                 </span>
               </Link>
             </li>
@@ -91,7 +91,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Hindu Baby Names (Rich in Meaning & Mythology):
+                  Hindu Baby Names
                 </span>
               </Link>
             </li>
@@ -101,7 +101,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  North Indian Baby Names (Mughal Influence & Rich History):
+                  North Indian Baby Names
                 </span>
               </Link>
             </li>
@@ -111,7 +111,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Jain Baby Names (Peace & Non-Violence)
+                  Jain Baby Names
                 </span>
               </Link>
             </li>
@@ -121,7 +121,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Tribal Baby Names (Nature-Inspired & Symbolic):
+                  Tribal Baby Names
                 </span>
               </Link>
             </li>
@@ -131,7 +131,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Parsi Baby Names (Zoroastrian Heritage & Strength)
+                  Parsi Baby Names
                 </span>
               </Link>
             </li>
@@ -155,7 +155,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Uniquely You: Names with Bold Personalities (Modern):
+                  Modern Names with Bold Personalities
                 </span>
               </Link>
             </li>
@@ -165,8 +165,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Nature's Symphony: Names Inspired by Earth & Sky
-                  (Nature-Inspired)
+                  Names Inspired by Earth & Sky
                 </span>
               </Link>
             </li>
@@ -176,8 +175,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Blessings & Grace: Names with Spiritual Meanings (Gift of
-                  God):
+                  Names with Spiritual Meanings
                 </span>
               </Link>
             </li>
@@ -187,7 +185,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Sweet & Simple: Short & Memorable Names (Short)
+                  Short & Sweet Memorable Names
                 </span>
               </Link>
             </li>
@@ -197,7 +195,7 @@ const LastSection = () => {
                 className="flex items-center p-2 text-slate-900 rounded-lg bg-white border hover:border-slate-300 group hover:shadow"
               >
                 <span className="flex-1 ms-3 text-center ">
-                  Kindred Hearts: Names Radiating Compassion (Love & Kindness)
+                  Names Radiating Compassion
                 </span>
               </Link>
             </li>
