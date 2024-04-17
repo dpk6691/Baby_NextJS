@@ -146,7 +146,7 @@ const LastSection = () => {
         />
         <div className="pt-5">
           <h5 className="text-xl font-semibold text-center tracking-tight text-slate-900">
-            Baby names by theme
+            Baby Names by Theme
           </h5>
           <ul className="my-4 space-y-3">
             <li>
