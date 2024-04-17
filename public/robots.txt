@@ -1,4 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow: /JavaScript:void(0)
+Disallow: /#
 
 Sitemap: https://www.firststep.baby/sitemap.xml

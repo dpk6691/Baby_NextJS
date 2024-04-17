@@ -6,16 +6,19 @@ const Contact = () => {
       <div className="w-11/12 m-auto pt-32 md:pt-28">
         <div className="gap-6 md:grid-cols-2 grid">
           <div className="grid place-content-center">
-            <span className="mb-4 block text-base font-semibold text-primary">
+            <span className="mb-1 text-xl font-bold text-dark dark:text-white">
               Contact Us
             </span>
-            <h2 className="mb-6 text-[32px] font-bold uppercase text-dark dark:text-white sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-              GET IN TOUCH WITH US
-            </h2>
             <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eius tempor incididunt ut labore e dolore magna aliqua. Ut enim
-              adiqua minim veniam quis nostrud exercitation ullamco
+              We love to hear from our users! Please use the appropriate email
+              for your inquiry.
+            </p>
+            <span className="mb-1 text-xl font-bold text-dark dark:text-white">
+              Advertising Inquiries
+            </span>
+            <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
+              Advertisers can connect with us for further details at
+              advertise@firststep.baby
             </p>
           </div>
           <div className="bg-pink-50 p-10 rounded-3xl">

@@ -1,7 +1,7 @@
 module.exports = {
   target: "server", // Set the target option to 'server' to render all pages as SSR
 
-  webpack(config) {
+  webpack: (config, { isServer }) => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -25,6 +25,11 @@ module.exports = {
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
+
+    if (isServer) {
+      // Replace the path below with the `sitemap.js` file location
+      require("./sitemap/sitemap");
+    }
 
     return config;
   },

@@ -4,7 +4,7 @@ Baby Names is a web application built with Next.js, React.js, and Tailwind CSS.
 
 ## Live Demo
 
-Explore the live demo (https://baby-next-js.vercel.app/).
+Explore the live demo (https://www.firststep.baby).
 
 ## Features
 
