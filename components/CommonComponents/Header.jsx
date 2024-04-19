@@ -331,7 +331,7 @@ const Header = () => {
                               Numerology
                             </Link>
                           </li>
-                          <li>
+                          {/* <li>
                             <Link
                               onClick={handleToolsItemClick}
                               href="/names/name-combiner"
@@ -340,7 +340,7 @@ const Header = () => {
                               <span className="sr-only">Name Combine</span>
                               Name Combine
                             </Link>
-                          </li>
+                          </li> */}
                           <li>
                             <Link
                               onClick={handleToolsItemClick}
@@ -365,13 +365,13 @@ const Header = () => {
                       </div>
                     </div>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="https://blog.firststep.baby/">
                       <div className="block py-1 px-3 hover:text-pink-500">
                         Blog
                       </div>
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link
                       href="/company/advertise-with-us"

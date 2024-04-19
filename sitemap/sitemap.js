@@ -4,9 +4,9 @@ const fs = require("fs");
 async function generateSiteMap() {
   try {
     const pages = await globby([
-      "pages/**/*.tsx",
-      "!pages/_*.tsx",
-      // "!pages/**/[slug].tsx",
+      "pages/**/*.jsx",
+      "!pages/_*.jsx",
+      "!pages/**/[slug].tsx",
       "!pages/api",
     ]);
 
@@ -26,7 +26,7 @@ async function generateSiteMap() {
              const route = path === "./pages/index" ? "" : path;
              return `
              <url>
-               <loc>${`http://localhost:3000${route}`}</loc>
+               <loc>${`https://www.firststep.baby${route}`}</loc>
                <lastmod>${currentDate}</lastmod>
                <changefreq>monthly</changefreq>
                <priority>1.0</priority>
