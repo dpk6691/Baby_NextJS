@@ -42,7 +42,7 @@ const TableData = ({
     setSelectedCultureState(culture);
     setSelectedGender(urlGender);
     setSelectedLetter(urlLetter);
-    setSelectedCulture(urlCulture);
+    setSelectedCulture(urlCulture || "");
   }, [urlGender, urlCulture, urlLetter, culture, gender, letter]);
 
   const allEntries = useMemo(() => {
@@ -79,7 +79,7 @@ const TableData = ({
           ? gender.toLowerCase() === selectedGender
           : true;
         const matchesCulture =
-          selectedCulture.toLowerCase() === "" ||
+          (selectedCulture && selectedCulture.toLowerCase() === "") ||
           selectedCulture.toLowerCase() === "all"
             ? true
             : culture.toLowerCase() === selectedCulture.toLowerCase();

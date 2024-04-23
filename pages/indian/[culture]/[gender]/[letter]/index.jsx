@@ -26,7 +26,7 @@ const LetterPage = () => {
     <div>
       <Head>
         <title>
-          {totalNames}{" "}
+          {/* {totalNames}{" "} */}
           {selectedCultureState // Check if selectedCultureState is not empty
             ? selectedCultureState.split("-")[0].charAt(0).toUpperCase() +
               selectedCultureState.split("-")[0].slice(1) +
