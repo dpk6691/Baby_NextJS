@@ -8,13 +8,18 @@ import AdSection from "../../../../components/HomeComponents/AfterBannerComponem
 const GenderPage = () => {
   const [selectedGenderState, setSelectedGenderState] = useState("");
   const [selectedLetterState, setSelectedLetterState] = useState("");
+  const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
   const [selectedCultureState, setSelectedCultureState] = useState("");
+
+  const handleTotalFilteredObjectsChange = (total) => {
+    setTotalFilteredObjects(total);
+  };
 
   return (
     <div>
       <Head>
         <title>
-          Best{" "}
+          {totalFilteredObjects} Best{" "}
           {selectedCultureState // Check if selectedCultureState is not empty
             ? selectedCultureState.split("-")[0].charAt(0).toUpperCase() +
               selectedCultureState.split("-")[0].slice(1) +
@@ -60,13 +65,14 @@ const GenderPage = () => {
               we have listed all the traditional, unique and latest Gujarati boy
               names with their meaning and pronunciations to make it easier for
               you to choose. <br></br>
-              <br></br>We will be always thankful for your feedback /
-              suggestions to our email aww@firststep.baby
+              <br></br>We will be always thankful for your feedback/suggestions
+              to our email aww@firststep.baby
             </p>
             <TableData
               setSelectedGenderState={setSelectedGenderState}
               setSelectedLetterState={setSelectedLetterState}
               setSelectedCultureState={setSelectedCultureState}
+              onTotalChange={handleTotalFilteredObjectsChange}
             />
           </div>
           <div className="xl:ml-5 mt-7 self-start xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full xl:w-1/4">

@@ -10,23 +10,18 @@ const LetterPage = () => {
   const { IndiaData } = India();
   const [selectedGenderState, setSelectedGenderState] = useState("");
   const [selectedLetterState, setSelectedLetterState] = useState("");
+  const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
   const [selectedCultureState, setSelectedCultureState] = useState("");
 
-  const selectedCultureStateLast = selectedCultureState
-    ? selectedCultureState.charAt(0).toUpperCase() +
-      selectedCultureState.slice(1).toLowerCase().replace("-baby-names", "")
-    : "";
-
-  const totalNames = selectedCultureStateLast
-    ? IndiaData?.filter((item) => item.culture == selectedCultureStateLast)
-        .length
-    : 0;
+  const handleTotalFilteredObjectsChange = (total) => {
+    setTotalFilteredObjects(total);
+  };
 
   return (
     <div>
       <Head>
         <title>
-          {/* {totalNames}{" "} */}
+          {totalFilteredObjects}{" "}
           {selectedCultureState // Check if selectedCultureState is not empty
             ? selectedCultureState.split("-")[0].charAt(0).toUpperCase() +
               selectedCultureState.split("-")[0].slice(1) +
@@ -46,7 +41,7 @@ const LetterPage = () => {
               : "Gender"
           } names that start with the letter '${
             selectedLetterState ? selectedLetterState.toUpperCase() : ""
-          }'. Explore the list of ${totalNames} ${
+          }'. Explore the list of ${totalFilteredObjects} ${
             selectedCultureState
               ? selectedCultureState.split("-")[0].charAt(0).toUpperCase() +
                 selectedCultureState.split("-")[0].slice(1)
@@ -115,6 +110,7 @@ const LetterPage = () => {
               setSelectedGenderState={setSelectedGenderState}
               setSelectedLetterState={setSelectedLetterState}
               setSelectedCultureState={setSelectedCultureState}
+              onTotalChange={handleTotalFilteredObjectsChange}
             />
           </div>
           <div className="xl:ml-5 mt-7 self-start xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full xl:w-1/4">

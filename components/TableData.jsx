@@ -10,6 +10,7 @@ const itemsPerPage = 50;
 const pagesToShow = 3;
 
 const TableData = ({
+  onTotalChange,
   setSelectedGenderState,
   setSelectedLetterState,
   setSelectedCultureState,
@@ -44,6 +45,10 @@ const TableData = ({
     setSelectedLetter(urlLetter);
     setSelectedCulture(urlCulture || "");
   }, [urlGender, urlCulture, urlLetter, culture, gender, letter]);
+
+  useEffect(() => {
+    onTotalChange(totalFilteredObjects);
+  }, [onTotalChange, totalFilteredObjects]);
 
   const allEntries = useMemo(() => {
     return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Layout from "./layout";
 import Home from "./Home";
-import India from "./../pages/api/India"; // Assuming India.jsx exports the India component
+import India from "./../pages/api/India";
 import { useRouter } from "next/router";
 import TableData from "../components/TableData";
 import NameSelected from "../components/NameSelected";
