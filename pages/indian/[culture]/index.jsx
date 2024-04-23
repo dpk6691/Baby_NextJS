@@ -7,25 +7,20 @@ import NumurolySidebar from "../../../components/CommonComponents/sidebar/Numuro
 import RashiList from "../../../components/CommonComponents/sidebar/RashiList";
 
 const CulturePage = () => {
-  const { IndiaData } = India();
   const [selectedGenderState, setSelectedGenderState] = useState("");
+  const [totalFilteredObjects, setTotalFilteredObjects] = useState(0);
   const [selectedLetterState, setSelectedLetterState] = useState("");
   const [selectedCultureState, setSelectedCultureState] = useState("");
 
-  const selectedCultureStateLast = selectedCultureState
-    ? selectedCultureState.charAt(0).toUpperCase() +
-      selectedCultureState.slice(1).toLowerCase().replace("-baby-names", "")
-    : "";
-
-  const totalNames = selectedCultureStateLast
-    ? IndiaData?.filter((item) => item.culture == selectedCultureStateLast)
-        .length
-    : 0;
+  const handleTotalFilteredObjectsChange = (total) => {
+    setTotalFilteredObjects(total);
+  };
 
   return (
     <div>
       <Head>
         <title>
+          {totalFilteredObjects}{" "}
           {selectedCultureState // Check if selectedCultureState is not empty
             ? selectedCultureState.split("-")[0].charAt(0).toUpperCase() +
               selectedCultureState.split("-")[0].slice(1) +
@@ -35,7 +30,7 @@ const CulturePage = () => {
         </title>
         <meta
           name="description"
-          content={`Firststep.baby brought to you ${totalNames} ${
+          content={`Firststep.baby brought to you ${totalFilteredObjects} ${
             selectedCultureState
               ? selectedCultureState
                   .split("-")[0]
@@ -87,6 +82,7 @@ const CulturePage = () => {
               setSelectedGenderState={setSelectedGenderState}
               setSelectedLetterState={setSelectedLetterState}
               setSelectedCultureState={setSelectedCultureState}
+              onTotalChange={handleTotalFilteredObjectsChange}
             />
           </div>
           <div className="xl:ml-8 mt-8 self-start xl:mt-0 p-5 bg-slate-50 rounded-3xl grid justify-items-stretch gap-5 w-full xl:w-1/4">
