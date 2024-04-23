@@ -88,9 +88,9 @@ const Privacy = () => {
             us at
             <a
               className="mx-2 font-normal text-blue-500 no-underline hover:underline"
-              href="mailto:aww@firststep.baby"
+              href="mailto:connect@firststep.baby"
             >
-              aww@firststep.baby
+              connect@firststep.baby
             </a>
           </p>
         </div>
