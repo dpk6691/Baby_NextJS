@@ -66,11 +66,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/company/terms" className="w-full xl:w-auto">
-                  Terms
-                </Link>
-              </li>
-              <li>
                 <Link
                   href="/company/advertise-with-us"
                   className="w-full xl:w-auto"
