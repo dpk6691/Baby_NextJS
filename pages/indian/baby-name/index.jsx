@@ -4,9 +4,9 @@ import { useEffect } from "react";
 const BabyNameIndexPage = () => {
   const router = useRouter();
 
+  // Redirect to the specified destination
   useEffect(() => {
-    // Redirect to /indian/all
-    router.replace("/indian/all");
+    router.push("/indian/all-baby-names");
   }, []);
 
   return null; // No content is rendered for this page

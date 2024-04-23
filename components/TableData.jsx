@@ -920,9 +920,9 @@ const TableData = ({
                 onClick={() => handlePageChange(1)}
                 className={`px-2 py-1 text-sm rounded-md ${
                   currentPage === 1
-                    ? "text-blue-500"
-                    : "text-slate-500 hover:text-primary-700 dark:hover:bg-slate-800 dark:text-slate-300 hover:bg-slate-100"
-                } dark:bg-slate-800 bg-blue-100/60`}
+                    ? "text-blue-500 bg-slate-800"
+                    : "text-slate-500 hover:text-primary-700 hover:bg-slate-100"
+                }  bg-blue-100/60`}
               >
                 1
               </button>
@@ -944,9 +944,9 @@ const TableData = ({
                 onClick={() => handlePageChange(totalPages)}
                 className={`px-2 py-1 text-sm rounded-md ${
                   currentPage === totalPages
-                    ? "text-blue-500"
-                    : "text-slate-500 hover:text-primary-700 dark:hover:bg-slate-800 dark:text-slate-300 hover:bg-slate-100"
-                } dark:bg-slate-800 bg-blue-100/60`}
+                    ? "text-blue-500 bg-slate-800"
+                    : "text-slate-500 hover:text-primary-700 hover:bg-slate-100"
+                } bg-blue-100/60`}
               >
                 {totalPages}
               </button>

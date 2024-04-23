@@ -33,4 +33,13 @@ module.exports = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/indian/baby-name",
+        destination: "/indian/all-baby-names",
+        permanent: true,
+      },
+    ];
+  },
 };

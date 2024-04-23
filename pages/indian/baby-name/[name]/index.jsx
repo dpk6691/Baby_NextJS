@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import NameSelected from "../../../components/NameSelected";
+import NameSelected from "../../../../components/NameSelected";
 import Head from "next/head";
 
 const NamePage = () => {
   const [receivedData, setReceivedData] = useState("");
 
   const handlePassData = (data) => {
-    console.log("Received data:", data);
     setReceivedData(data);
   };
 

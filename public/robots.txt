@@ -1,4 +1,4 @@
 User-agent: *
-Crawl-Delay: 20
+Crawl-Delay: 30
 
 sitemap: https://www.firststep.baby/sitemap.xml
