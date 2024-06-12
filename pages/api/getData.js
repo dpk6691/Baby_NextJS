@@ -27,17 +27,29 @@ export default async function handler(req, res) {
       return;
     }
 
-    // Fetch data from Supabase if cache is expired or not available
-    const { data, error } = await supabase
-      .from("India")
-      .select(
-        "gender, culture, name, language, meaning_of_name, meaning_in_language"
-      );
+    // Fetch data from Supabase with a timeout
+    const fetchDataWithTimeout = new Promise((resolve, reject) => {
+      const timeout = setTimeout(
+        () => reject(new Error("Request timed out")),
+        10000
+      ); // 10 seconds timeout
 
-    if (error) {
-      console.error("Supabase query error:", error);
-      throw new Error(error.message);
-    }
+      supabase
+        .from("India")
+        .select(
+          "gender, culture, name, language, meaning_of_name, meaning_in_language"
+        )
+        .then(({ data, error }) => {
+          clearTimeout(timeout);
+          if (error) {
+            reject(error);
+          } else {
+            resolve(data);
+          }
+        });
+    });
+
+    const data = await fetchDataWithTimeout;
 
     // Update cache with new data
     cachedData = data;
