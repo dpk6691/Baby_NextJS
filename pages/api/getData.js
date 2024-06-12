@@ -1,59 +1,20 @@
-import { MongoClient } from "mongodb";
-import zlib from "zlib";
+import axios from "axios";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-const mongoUri = process.env.MONGO_URI;
-const dbName = process.env.MONGO_DB_NAME;
-const collectionName = "India";
+const mongoApiKey = process.env.MONGO_API_KEY;
+const mongoApiUrl = process.env.MONGO_API_URL;
+const database = process.env.MONGO_DB_NAME;
+const collection = "India";
 
-if (!mongoUri || !dbName) {
-  throw new Error("Missing MongoDB URI or Database Name");
+if (!mongoApiKey || !mongoApiUrl || !database) {
+  throw new Error("Missing MongoDB API key, URL, or Database Name");
 }
-
-let cachedData; // Variable to store cached data
-let cacheExpiry = 0; // Variable to store cache expiry time
-
-let client;
-let db;
-let collection;
-
-const connectToMongo = async () => {
-  if (!client) {
-    client = new MongoClient(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    await client.connect();
-    db = client.db(dbName);
-    collection = db.collection(collectionName);
-  }
-};
 
 export default async function handler(req, res) {
   try {
-    console.log("Request received at:", new Date().toISOString());
-
-    // Check if cached data is still valid
-    if (cachedData && Date.now() < cacheExpiry) {
-      console.log("Serving cached data at:", new Date().toISOString());
-      // Serve data from cache
-      const compressedData = zlib.gzipSync(JSON.stringify(cachedData));
-      res.setHeader("Content-Encoding", "gzip");
-      res.setHeader("Content-Type", "application/json");
-      res.setHeader("Content-Length", compressedData.length);
-      res.setHeader("Cache-Control", "max-age=259200"); // Cache for 3 days
-      res.status(200).end(compressedData);
-      return;
-    }
-
-    console.log("Fetching data from MongoDB at:", new Date().toISOString());
-
-    // Connect to MongoDB
-    await connectToMongo();
-
-    // Fetch data from MongoDB with a timeout
+    // Fetch data from MongoDB Atlas Data API with a timeout
     const fetchDataWithTimeout = async (timeoutMs) => {
       return new Promise((resolve, reject) => {
         const timeout = setTimeout(
@@ -61,53 +22,57 @@ export default async function handler(req, res) {
           timeoutMs
         );
 
-        collection
-          .find({})
-          .project({
-            gender: 1,
-            culture: 1,
-            name: 1,
-            language: 1,
-            meaning_of_name: 1,
-            meaning_in_language: 1,
-          })
-          .toArray((err, data) => {
+        const data = JSON.stringify({
+          collection: collection,
+          database: database,
+          dataSource: "BabyNameIndia",
+          projection: {
+            gender: 10000,
+            culture: 10000,
+            name: 10000,
+            language: 10000,
+            meaning_of_name: 10000,
+            meaning_in_language: 10000,
+          },
+        });
+
+        const config = {
+          method: "post",
+          url: mongoApiUrl,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Request-Headers": "*",
+            "api-key": mongoApiKey,
+            Accept: "application/ejson",
+          },
+          data: data,
+        };
+
+        axios(config)
+          .then((response) => {
+            console.log("API Response:", response.data); // Log the API response
             clearTimeout(timeout);
-            if (err) {
-              reject(err);
+            if (response.data.document) {
+              resolve(response.data.document); // Access the document object
             } else {
-              resolve(data);
+              reject(new Error("No document found"));
             }
+          })
+          .catch((error) => {
+            clearTimeout(timeout);
+            reject(error);
           });
       });
     };
 
-    const data = await fetchDataWithTimeout(20000); // 20 seconds timeout
+    const data = await fetchDataWithTimeout(30000); // 30 seconds timeout
 
-    console.log("Data fetched successfully at:", new Date().toISOString());
-
-    // Update cache with new data
-    cachedData = data;
-    cacheExpiry = Date.now() + 3 * 24 * 60 * 60 * 1000; // Cache for 3 days
-
-    const jsonData = JSON.stringify(data);
-    const compressedData = zlib.gzipSync(jsonData);
-
-    res.setHeader("Content-Encoding", "gzip");
     res.setHeader("Content-Type", "application/json");
-    res.setHeader("Content-Length", compressedData.length);
-    res.setHeader("Cache-Control", "max-age=259200"); // Cache for 3 days
-
-    res.status(200).end(compressedData);
+    res.status(200).json(data);
   } catch (error) {
-    console.error("Error in handler:", error);
+    console.error("Error in handler:", error.message, error.stack);
     res
       .status(500)
       .json({ error: "Failed to fetch data", details: error.message });
-  } finally {
-    if (client) {
-      await client.close();
-      client = null;
-    }
   }
 }
