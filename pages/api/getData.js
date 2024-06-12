@@ -3,6 +3,11 @@ import zlib from "zlib";
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error("Missing Supabase URL or Key");
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 let cachedData; // Variable to store cached data
@@ -29,7 +34,10 @@ export default async function handler(req, res) {
         "gender, culture, name, language, meaning_of_name, meaning_in_language"
       );
 
-    if (error) throw error;
+    if (error) {
+      console.error("Supabase query error:", error);
+      throw new Error(error.message);
+    }
 
     // Update cache with new data
     cachedData = data;
@@ -45,7 +53,9 @@ export default async function handler(req, res) {
 
     res.status(200).end(compressedData);
   } catch (error) {
-    console.error("Error fetching data:", error.message);
-    res.status(500).json({ error: "Failed to fetch data" });
+    console.error("Error in handler:", error);
+    res
+      .status(500)
+      .json({ error: "Failed to fetch data", details: error.message });
   }
 }
