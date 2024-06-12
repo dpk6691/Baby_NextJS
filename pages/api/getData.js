@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 import zlib from "zlib";
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_ANON_KEY;
+const supabaseUrl = https://qycwdzeatinkjfsvvmnj.supabase.co;
+const supabaseKey = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5Y3dkemVhdGlua2pmc3Z2bW5qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDczOTYyNDIsImV4cCI6MjAyMjk3MjI0Mn0.CYLbLyI70TCseUmfFTQ1E9J-A5zE9ad8W32Uw_ttOIs;
 
 if (!supabaseUrl || !supabaseKey) {
   throw new Error("Missing Supabase URL or Key");
@@ -28,28 +28,30 @@ export default async function handler(req, res) {
     }
 
     // Fetch data from Supabase with a timeout
-    const fetchDataWithTimeout = new Promise((resolve, reject) => {
-      const timeout = setTimeout(
-        () => reject(new Error("Request timed out")),
-        10000
-      ); // 10 seconds timeout
+    const fetchDataWithTimeout = async (timeoutMs) => {
+      return new Promise((resolve, reject) => {
+        const timeout = setTimeout(
+          () => reject(new Error("Request timed out")),
+          timeoutMs
+        );
 
-      supabase
-        .from("India")
-        .select(
-          "gender, culture, name, language, meaning_of_name, meaning_in_language"
-        )
-        .then(({ data, error }) => {
-          clearTimeout(timeout);
-          if (error) {
-            reject(error);
-          } else {
-            resolve(data);
-          }
-        });
-    });
+        supabase
+          .from("India")
+          .select(
+            "gender, culture, name, language, meaning_of_name, meaning_in_language"
+          )
+          .then(({ data, error }) => {
+            clearTimeout(timeout);
+            if (error) {
+              reject(error);
+            } else {
+              resolve(data);
+            }
+          });
+      });
+    };
 
-    const data = await fetchDataWithTimeout;
+    const data = await fetchDataWithTimeout(10000); // 10 seconds timeout
 
     // Update cache with new data
     cachedData = data;
