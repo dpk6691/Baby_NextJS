@@ -1,10 +1,11 @@
 import { createClient } from "@supabase/supabase-js";
 import zlib from "zlib";
+import dotenv from "dotenv";
 
-// Ensure these values are securely set in your environment
-const supabaseUrl = "https://qycwdzeatinkjfsvvmnj.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5Y3dkemVhdGlua2pmc3Z2bW5qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDczOTYyNDIsImV4cCI6MjAyMjk3MjI0Mn0.CYLbLyI70TCseUmfFTQ1E9J-A5zE9ad8W32Uw_ttOIs";
+dotenv.config();
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
   throw new Error("Missing Supabase URL or Key");
@@ -17,8 +18,10 @@ let cacheExpiry = 0; // Variable to store cache expiry time
 
 export default async function handler(req, res) {
   try {
+    console.log("Request received at:", new Date().toISOString());
     // Check if cached data is still valid
     if (cachedData && Date.now() < cacheExpiry) {
+      console.log("Serving cached data at:", new Date().toISOString());
       // Serve data from cache
       const compressedData = zlib.gzipSync(JSON.stringify(cachedData));
       res.setHeader("Content-Encoding", "gzip");
@@ -28,6 +31,8 @@ export default async function handler(req, res) {
       res.status(200).end(compressedData);
       return;
     }
+
+    console.log("Fetching data from Supabase at:", new Date().toISOString());
 
     // Fetch data from Supabase with a timeout
     const fetchDataWithTimeout = async (timeoutMs) => {
@@ -57,7 +62,9 @@ export default async function handler(req, res) {
       });
     };
 
-    const data = await fetchDataWithTimeout(10000); // 10 seconds timeout
+    const data = await fetchDataWithTimeout(20000); // 10 seconds timeout
+
+    console.log("Data fetched successfully at:", new Date().toISOString());
 
     // Update cache with new data
     cachedData = data;
