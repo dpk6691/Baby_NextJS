@@ -13,11 +13,11 @@ import Third from "../../public/images/Artboard10.png";
 import Link from "next/link";
 
 const index = () => {
-  const { IndiaData } = India();
+  const { indiaData } = India();
 
   const allEntries = useMemo(() => {
-    return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
-  }, [IndiaData]);
+    return indiaData && Array.isArray(indiaData) ? indiaData.flat() : [];
+  }, [indiaData]);
 
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
