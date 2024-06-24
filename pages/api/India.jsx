@@ -1,5 +1,3 @@
-// India.jsx
-
 import { useQuery } from "react-query";
 
 const fetchIndiaData = async () => {
