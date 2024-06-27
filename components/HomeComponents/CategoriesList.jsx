@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import India from "../../pages/api/India";
+import India from "../../api/India";
 import { useRouter } from "next/router";
 
 const CategoriesList = () => {
