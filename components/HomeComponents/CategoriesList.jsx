@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
-import India from "./../../pages/api/India";
+import India from "../../pages/api/India";
 import { useRouter } from "next/router";
 
 const CategoriesList = () => {
-  const { IndiaData, isLoading } = India();
+  const { data, isLoading } = India();
   const allEntries = useMemo(() => {
-    return IndiaData ? IndiaData.flat() : [];
-  }, [IndiaData]);
+    return data ? data.flat() : [];
+  }, [data]);
 
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
