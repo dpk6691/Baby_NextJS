@@ -4,34 +4,27 @@ import { useRouter } from "next/router";
 import India from "./../../pages/api/India";
 import Image from "next/image";
 import logo from "./../../public/images/logo.png";
-import "flowbite";
 
 const Header = () => {
   const { IndiaData, isLoading } = India();
   const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
   const [showSearchButton, setShowSearchButton] = useState(false);
+  const [showIndianDropdown, setShowIndianDropdown] = useState(false);
+  const [showNamesDropdown, setShowNamesDropdown] = useState(false);
 
-  const isActive = (path) => {
-    return router.pathname === path;
-  };
-
-  const isIndianActive = () => {
-    return router.pathname.startsWith("/indian/");
-  };
-
-  const isToolsActive = () => {
-    return router.pathname.startsWith("/names");
-  };
+  const isActive = (path) => router.pathname === path;
+  const isIndianActive = () => router.pathname.startsWith("/indian/");
+  const isToolsActive = () => router.pathname.startsWith("/names");
 
   useEffect(() => {
     setShowSearchButton(typeof window !== "undefined");
   }, []);
 
-  const allEntries = useMemo(() => {
-    return IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : [];
-  }, [IndiaData]);
-
+  const allEntries = useMemo(
+    () => (IndiaData && Array.isArray(IndiaData) ? IndiaData.flat() : []),
+    [IndiaData]
+  );
   const allCultures = useMemo(
     () => allEntries.map((entry) => entry.culture),
     [allEntries]
@@ -44,39 +37,37 @@ const Header = () => {
   const handleCultureClick = (culture) => {
     const url = `/indian/${culture.toLowerCase()}-baby-names`;
     router.push(url);
-    hideMenuClick();
+    setShowIndianDropdown(false);
   };
 
-  const hideMenuClick = () => {
-    const navbarSearch = document.getElementById("navbar-search");
-    const indianDropdown = document.getElementById("indian");
-    const toolsDropdown = document.getElementById("names-dropdown");
-
-    if (navbarSearch) {
-      navbarSearch.classList.add("hidden");
-    }
-    if (indianDropdown) {
-      indianDropdown.classList.add("hidden");
-    }
-    if (toolsDropdown) {
-      toolsDropdown.classList.add("hidden");
+  const handleDropdownToggle = (type) => {
+    if (type === "indian") {
+      setShowIndianDropdown(!showIndianDropdown);
+      setShowNamesDropdown(false);
+    } else if (type === "names") {
+      setShowNamesDropdown(!showNamesDropdown);
+      setShowIndianDropdown(false);
     }
   };
 
-  const handleToolsItemClick = () => {
-    hideMenuClick();
+  const handleMenuClick = () => {
+    setShowIndianDropdown(false);
+    setShowNamesDropdown(false);
   };
 
   return (
     <>
       <header className="fixed z-50 w-full bg-transparent backdrop-blur-xl">
         <div className="w-11/12 m-auto">
-          <nav className="border-slate-200 ">
-            <div className="flex flex-wrap items-center justify-between mx-auto py-2  ">
-              <Link href="/" className="w-full xl:w-auto">
+          <nav className="border-slate-200">
+            <div className="flex flex-wrap items-center justify-between mx-auto py-2">
+              <Link
+                href="/"
+                className="w-full xl:w-auto"
+                onClick={handleMenuClick}
+              >
                 <div className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
                   <Image
-                    onClick={hideMenuClick}
                     className="w-60 m-auto max-h-screen py-2 xl:py-4"
                     src={logo}
                     alt="Logo"
@@ -123,11 +114,9 @@ const Header = () => {
                 </div>
 
                 <button
-                  data-collapse-toggle="navbar-search"
                   type="button"
                   className="inline-flex items-center p-2 w-10 h-5 justify-center text-sm text-slate-500 rounded-lg xl:hidden"
-                  aria-controls="navbar-search"
-                  aria-expanded="false"
+                  onClick={() => setShowIndianDropdown(!showIndianDropdown)}
                 >
                   <span className="sr-only">Open main menu</span>
                   <svg
@@ -148,13 +137,15 @@ const Header = () => {
                 </button>
               </div>
               <div
-                className="items-center justify-between hidden w-full xl:flex xl:w-auto xl:order-1"
+                className={`items-center justify-between hidden w-full xl:flex xl:w-auto xl:order-1 ${
+                  showIndianDropdown ? "block" : "hidden"
+                }`}
                 id="navbar-search"
               >
                 <ul className="flex flex-col mt-5 xl:mt-0 xl:flex-row xl:px-4 py-2 font-medium rounded-lg space-y-3 xl:space-y-0 xl:space-x-3 rtl:space-x-reverse">
                   <li>
-                    <Link href="/" onClick={hideMenuClick}>
-                      <div className="block py-1 px-3 ">
+                    <Link href="/" onClick={handleMenuClick}>
+                      <div className="block py-1 px-3">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -177,13 +168,12 @@ const Header = () => {
                   </li>
                   <li>
                     <button
-                      id="indian-button"
-                      data-dropdown-toggle="indian"
-                      className={
+                      className={`flex py-1 px-3 items-center ${
                         isIndianActive()
-                          ? "flex py-1 px-3 items-center hover:text-blue-500 text-blue-500"
-                          : "flex py-1 px-3 items-center hover:text-pink-500"
-                      }
+                          ? "text-blue-500"
+                          : "hover:text-pink-500"
+                      }`}
+                      onClick={() => handleDropdownToggle("indian")}
                     >
                       Indian
                       <svg
@@ -202,82 +192,39 @@ const Header = () => {
                         />
                       </svg>
                     </button>
-                    <div
-                      id="indian"
-                      className="absolute z-10 hidden w-auto text-sm bg-white border border-slate-100 rounded-3xl shadow-md"
-                    >
-                      {isLoading ? (
-                        <div className="space-y-5 xl:w-96 px-3 py-5 text-center animate-pulse">
-                          <div className="flex items-center w-full">
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                    {showIndianDropdown && (
+                      <div className="absolute z-10 grid grid-cols-4 w-auto text-sm bg-white border border-slate-100 rounded-xl shadow-md">
+                        {isLoading ? (
+                          <div className="space-y-5 xl:w-96 px-3 py-5 text-center animate-pulse">
+                            <div className="flex items-center w-full">
+                              <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                              <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                              <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                              <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                            </div>
+                            <div className="flex items-center w-full">
+                              <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                              <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                              <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
+                              <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
+                            </div>
                           </div>
-                          <div className="flex items-center w-full">
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                          </div>
-                          <div className="flex items-center w-full">
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                          </div>
-                          <div className="flex items-center w-full">
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                          </div>
-                          <div className="flex items-center w-full">
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-200 mx-2 rounded-full w-1/5"></div>
-                            <div className="h-3 bg-pink-300 mx-2 rounded-full w-1/5"></div>
-                          </div>
-                          <span className="sr-only">Loading...</span>
-                        </div>
-                      ) : (
-                        <ul className="p-4 flex xl:w-96 flex-wrap">
-                          {uniqueCultures.map((culture, index) => (
-                            <li key={index} onClick={hideMenuClick}>
-                              <div
-                                className="min-w-28 flex items-center py-2 cursor-pointer inline-block hover:text-pink-500"
-                                onClick={() => handleCultureClick(culture)}
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="1.5"
-                                  stroke="currentColor"
-                                  className="w-5 h-5 pr-1"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                                  />
-                                </svg>
-                                {culture &&
-                                  culture.charAt(0).toUpperCase() +
-                                    culture.slice(1)}
-                              </div>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
+                        ) : (
+                          uniqueCultures.map((culture) => (
+                            <button
+                              key={culture}
+                              onClick={() => handleCultureClick(culture)}
+                              className="block py-2 px-4 text-sm w-full hover:text-pink-500 rounded-lg"
+                            >
+                              {culture}
+                            </button>
+                          ))
+                        )}
+                      </div>
+                    )}
                   </li>
                   <li>
-                    <Link
-                      href="/rashi"
-                      className="flex items-center"
-                      onClick={hideMenuClick}
-                    >
+                    <Link href="/rashi" className="flex items-center">
                       <div
                         className={`block py-1 px-3 hover:text-pink-500 ${
                           isActive("/rashi") &&
@@ -290,13 +237,12 @@ const Header = () => {
                   </li>
                   <li>
                     <button
-                      id="Names"
-                      data-dropdown-toggle="names-dropdown"
-                      className={
-                        isToolsActive("/names")
-                          ? "flex py-1 px-3 items-center hover:text-blue-500 text-blue-500"
-                          : "flex py-1 px-3 items-center hover:text-pink-500"
-                      }
+                      className={`flex py-1 px-3 items-center ${
+                        isToolsActive()
+                          ? "text-blue-500"
+                          : "hover:text-pink-500"
+                      }`}
+                      onClick={() => handleDropdownToggle("names")}
                     >
                       Names
                       <svg
@@ -315,55 +261,39 @@ const Header = () => {
                         />
                       </svg>
                     </button>
-                    <div
-                      id="names-dropdown"
-                      className="absolute z-10 grid hidden w-auto grid-cols-1 text-sm bg-white border border-slate-100 rounded-lg shadow-md"
-                    >
-                      <div className="p-4 text-slate-900 pb-4">
-                        <ul className="space-y-4" aria-labelledby="names">
-                          <li>
-                            <Link
-                              onClick={handleToolsItemClick}
-                              href="/names/numerology"
-                              className="flex items-center text-slate-500 hover:text-blue-600"
-                            >
-                              <span className="sr-only">Numerology</span>
-                              Numerology
-                            </Link>
-                          </li>
-                          {/* <li>
-                            <Link
-                              onClick={handleToolsItemClick}
+                    {showNamesDropdown && (
+                      <div className="absolute z-10 w-auto text-sm p-3 bg-white border border-slate-100 rounded-xl shadow-md">
+                        <Link
+                          href="/names/numerology"
+                          className="flex pb-2 items-center hover:text-pink-500"
+                        >
+                          <span className="sr-only">Numerology</span>
+                          Numerology
+                        </Link>
+                        {/* <Link
                               href="/names/name-combiner"
                               className="flex items-center text-slate-500 hover:text-blue-600"
                             >
                               <span className="sr-only">Name Combine</span>
                               Name Combine
                             </Link>
-                          </li> */}
-                          <li>
-                            <Link
-                              onClick={handleToolsItemClick}
-                              href="/indian/all-baby-names/boy"
-                              className="flex items-center text-slate-500 hover:text-blue-600"
-                            >
-                              <span className="sr-only">Boy Names</span>
-                              Boy Names
-                            </Link>
-                          </li>
-                          <li>
-                            <Link
-                              onClick={handleToolsItemClick}
-                              href="/indian/all-baby-names/girl"
-                              className="flex items-center text-slate-500 hover:text-blue-600"
-                            >
-                              <span className="sr-only">Girls Names</span>
-                              Girls Names
-                            </Link>
-                          </li>
-                        </ul>
+                            */}
+                        <Link
+                          href="/indian/all-baby-names/boy"
+                          className="flex pb-2 items-center hover:text-pink-500"
+                        >
+                          <span className="sr-only">Boy Names</span>
+                          Boy Names
+                        </Link>
+                        <Link
+                          href="/indian/all-baby-names/girl"
+                          className="flex items-center hover:text-pink-500"
+                        >
+                          <span className="sr-only">Girls Names</span>
+                          Girls Names
+                        </Link>
                       </div>
-                    </div>
+                    )}
                   </li>
                   {/* <li>
                     <Link href="https://blog.firststep.baby/">
@@ -373,10 +303,7 @@ const Header = () => {
                     </Link>
                   </li> */}
                   <li>
-                    <Link
-                      href="/company/advertise-with-us"
-                      onClick={hideMenuClick}
-                    >
+                    <Link href="/company/advertise-with-us">
                       <div
                         className={`block py-1 px-3 hover:text-pink-500 ${
                           isActive("/advertise-with-us") &&
@@ -388,7 +315,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/contact-us" onClick={hideMenuClick}>
+                    <Link href="/contact-us">
                       <div
                         className={`block py-1 px-3 hover:text-pink-500 ${
                           isActive("/contact-us") &&
@@ -405,6 +332,159 @@ const Header = () => {
           </nav>
         </div>
       </header>
+
+      <div
+        className={`absolute top-28 overflow-y-auto left-0 z-20 w-full h-[32rem] bg-white shadow-md xl:hidden transition-transform ${
+          showIndianDropdown || showNamesDropdown
+            ? "translate-x-0"
+            : "translate-x-full"
+        }`}
+      >
+        <ul className="flex flex-col p-5 space-y-4 font-medium">
+          <li>
+            <Link
+              href="/"
+              className="block py-2 px-4 text-slate-900 hover:bg-gray-100 rounded-lg"
+              onClick={handleMenuClick}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <button
+              className="flex py-2 px-4 items-center text-slate-900 hover:bg-gray-100 rounded-lg"
+              onClick={() => handleDropdownToggle("indian")}
+            >
+              Indian
+              <svg
+                className="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            {showIndianDropdown && (
+              <div className="pt-2 pb-3 grid grid-cols-2 md:grid-cols-4 place-items-center bg-slate-50">
+                {uniqueCultures.map((culture) => (
+                  <button
+                    key={culture}
+                    onClick={() => handleCultureClick(culture)}
+                    className="block py-2 px-4 text-slate-900 hover:bg-gray-100 rounded-lg w-full text-left"
+                  >
+                    {culture}
+                  </button>
+                ))}
+              </div>
+            )}
+          </li>
+          <li>
+            <Link href="/rashi" className="flex items-center">
+              <div
+                className={`block py-1 px-3 hover:text-pink-500 ${
+                  isActive("/rashi") && "hover:text-blue-500 text-blue-500"
+                }`}
+              >
+                Rashi
+              </div>
+            </Link>
+          </li>
+          <li>
+            <button
+              className="flex py-2 px-4 items-center text-slate-900 hover:bg-gray-100 rounded-lg"
+              onClick={() => handleDropdownToggle("names")}
+            >
+              Names
+              <svg
+                className="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            {showNamesDropdown && (
+              <div class="pt-2 pb-3 grid grid-cols-2 md:grid-cols-4 place-items-center bg-slate-50">
+                <Link
+                  href="/names/numerology"
+                  className="block py-2 px-4 text-slate-900 hover:bg-gray-100 rounded-lg w-full text-left"
+                >
+                  <span className="sr-only">Numerology</span>
+                  Numerology
+                </Link>
+                {/* <Link
+                              href="/names/name-combiner"
+                              className="block py-2 px-4 text-slate-900 hover:bg-gray-100 rounded-lg w-full text-left"
+                            >
+                              <span className="sr-only">Name Combine</span>
+                              Name Combine
+                            </Link>
+                            */}
+                <Link
+                  href="/indian/all-baby-names/boy"
+                  className="block py-2 px-4 text-slate-900 hover:bg-gray-100 rounded-lg w-full text-left"
+                >
+                  <span className="sr-only">Boy Names</span>
+                  Boy Names
+                </Link>
+                <Link
+                  href="/indian/all-baby-names/girl"
+                  className="block py-2 px-4 text-slate-900 hover:bg-gray-100 rounded-lg w-full text-left"
+                >
+                  <span className="sr-only">Girls Names</span>
+                  Girls Names
+                </Link>
+              </div>
+            )}
+          </li>
+          {/* <li>
+                    <Link href="https://blog.firststep.baby/">
+                      <div className="block py-1 px-3 hover:text-pink-500">
+                        Blog
+                      </div>
+                    </Link>
+                  </li> */}
+          <li>
+            <Link href="/company/advertise-with-us">
+              <div
+                className={`block py-1 px-3 hover:text-pink-500 ${
+                  isActive("/advertise-with-us") &&
+                  "hover:text-blue-500 text-blue-500"
+                }`}
+              >
+                Advertise with us
+              </div>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact-us">
+              <div
+                className={`block py-1 px-3 hover:text-pink-500 ${
+                  isActive("/contact-us") && "hover:text-blue-500 text-blue-500"
+                }`}
+              >
+                Contact
+              </div>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </>
   );
 };
